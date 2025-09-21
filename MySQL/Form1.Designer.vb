@@ -24,7 +24,16 @@ Partial Class Form1
     Private Sub InitializeComponent()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        Button2 = New Button()
+        Button1 = New Button()
         GroupBox3 = New GroupBox()
+        TextBox18 = New TextBox()
+        TextBox17 = New TextBox()
+        TextBox16 = New TextBox()
+        TextBox12 = New TextBox()
+        TextBox13 = New TextBox()
+        TextBox14 = New TextBox()
+        TextBox15 = New TextBox()
         Label17 = New Label()
         Label16 = New Label()
         Label14 = New Label()
@@ -33,6 +42,11 @@ Partial Class Form1
         Label11 = New Label()
         Label10 = New Label()
         GroupBox2 = New GroupBox()
+        ComboBox4 = New ComboBox()
+        ComboBox3 = New ComboBox()
+        Label21 = New Label()
+        CheckBox2 = New CheckBox()
+        CheckBox1 = New CheckBox()
         lblAge = New TextBox()
         TextBox11 = New TextBox()
         TextBox10 = New TextBox()
@@ -51,6 +65,8 @@ Partial Class Form1
         Label3 = New Label()
         Label2 = New Label()
         GroupBox1 = New GroupBox()
+        ComboBox2 = New ComboBox()
+        ComboBox1 = New ComboBox()
         TextBox3 = New TextBox()
         TextBox1 = New TextBox()
         Label18 = New Label()
@@ -58,22 +74,6 @@ Partial Class Form1
         Label20 = New Label()
         Label1 = New Label()
         TabPage2 = New TabPage()
-        TextBox12 = New TextBox()
-        TextBox13 = New TextBox()
-        TextBox14 = New TextBox()
-        TextBox15 = New TextBox()
-        TextBox16 = New TextBox()
-        TextBox17 = New TextBox()
-        TextBox18 = New TextBox()
-        CheckBox1 = New CheckBox()
-        CheckBox2 = New CheckBox()
-        Label21 = New Label()
-        ComboBox1 = New ComboBox()
-        ComboBox2 = New ComboBox()
-        ComboBox3 = New ComboBox()
-        ComboBox4 = New ComboBox()
-        Button1 = New Button()
-        Button2 = New Button()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         GroupBox3.SuspendLayout()
@@ -108,6 +108,24 @@ Partial Class Form1
         TabPage1.Text = "TabPage1"
         TabPage1.UseVisualStyleBackColor = True
         ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(509, 589)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(75, 23)
+        Button2.TabIndex = 24
+        Button2.Text = "Clear"
+        Button2.UseVisualStyleBackColor = True
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(385, 589)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(75, 23)
+        Button1.TabIndex = 23
+        Button1.Text = "New"
+        Button1.UseVisualStyleBackColor = True
+        ' 
         ' GroupBox3
         ' 
         GroupBox3.Controls.Add(TextBox18)
@@ -131,6 +149,55 @@ Partial Class Form1
         GroupBox3.TabIndex = 22
         GroupBox3.TabStop = False
         GroupBox3.Text = "Address"
+        ' 
+        ' TextBox18
+        ' 
+        TextBox18.Location = New Point(421, 24)
+        TextBox18.Name = "TextBox18"
+        TextBox18.Size = New Size(404, 23)
+        TextBox18.TabIndex = 30
+        ' 
+        ' TextBox17
+        ' 
+        TextBox17.Location = New Point(421, 51)
+        TextBox17.Name = "TextBox17"
+        TextBox17.Size = New Size(404, 23)
+        TextBox17.TabIndex = 29
+        ' 
+        ' TextBox16
+        ' 
+        TextBox16.Location = New Point(421, 77)
+        TextBox16.Name = "TextBox16"
+        TextBox16.Size = New Size(404, 23)
+        TextBox16.TabIndex = 28
+        ' 
+        ' TextBox12
+        ' 
+        TextBox12.Location = New Point(421, 182)
+        TextBox12.Name = "TextBox12"
+        TextBox12.Size = New Size(404, 23)
+        TextBox12.TabIndex = 27
+        ' 
+        ' TextBox13
+        ' 
+        TextBox13.Location = New Point(421, 156)
+        TextBox13.Name = "TextBox13"
+        TextBox13.Size = New Size(404, 23)
+        TextBox13.TabIndex = 26
+        ' 
+        ' TextBox14
+        ' 
+        TextBox14.Location = New Point(421, 130)
+        TextBox14.Name = "TextBox14"
+        TextBox14.Size = New Size(404, 23)
+        TextBox14.TabIndex = 25
+        ' 
+        ' TextBox15
+        ' 
+        TextBox15.Location = New Point(421, 104)
+        TextBox15.Name = "TextBox15"
+        TextBox15.Size = New Size(404, 23)
+        TextBox15.TabIndex = 24
         ' 
         ' Label17
         ' 
@@ -227,12 +294,64 @@ Partial Class Form1
         GroupBox2.TabStop = False
         GroupBox2.Text = "Personal Details"
         ' 
+        ' ComboBox4
+        ' 
+        ComboBox4.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox4.FormattingEnabled = True
+        ComboBox4.Location = New Point(694, 123)
+        ComboBox4.Name = "ComboBox4"
+        ComboBox4.Size = New Size(182, 23)
+        ComboBox4.TabIndex = 38
+        ' 
+        ' ComboBox3
+        ' 
+        ComboBox3.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox3.FormattingEnabled = True
+        ComboBox3.Location = New Point(178, 126)
+        ComboBox3.Name = "ComboBox3"
+        ComboBox3.Size = New Size(265, 23)
+        ComboBox3.TabIndex = 37
+        ' 
+        ' Label21
+        ' 
+        Label21.Font = New Font("Segoe UI", 11F)
+        Label21.Location = New Point(594, 126)
+        Label21.Name = "Label21"
+        Label21.Size = New Size(98, 23)
+        Label21.TabIndex = 36
+        Label21.Text = "Civil Status"
+        ' 
+        ' CheckBox2
+        ' 
+        CheckBox2.AutoEllipsis = True
+        CheckBox2.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        CheckBox2.Location = New Point(882, 68)
+        CheckBox2.Name = "CheckBox2"
+        CheckBox2.Size = New Size(108, 28)
+        CheckBox2.TabIndex = 35
+        CheckBox2.Text = "I have no Suffix"
+        CheckBox2.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox1
+        ' 
+        CheckBox1.AutoEllipsis = True
+        CheckBox1.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        CheckBox1.Location = New Point(449, 45)
+        CheckBox1.Name = "CheckBox1"
+        CheckBox1.Size = New Size(157, 28)
+        CheckBox1.TabIndex = 34
+        CheckBox1.Text = "I have no Middle Name"
+        CheckBox1.UseVisualStyleBackColor = True
+        ' 
         ' lblAge
         ' 
+        lblAge.Enabled = False
         lblAge.Location = New Point(694, 96)
         lblAge.Name = "lblAge"
+        lblAge.ReadOnly = True
         lblAge.Size = New Size(182, 23)
         lblAge.TabIndex = 33
+        lblAge.TabStop = False
         ' 
         ' TextBox11
         ' 
@@ -382,6 +501,24 @@ Partial Class Form1
         GroupBox1.TabStop = False
         GroupBox1.Text = "Employment Details"
         ' 
+        ' ComboBox2
+        ' 
+        ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox2.FormattingEnabled = True
+        ComboBox2.Location = New Point(400, 108)
+        ComboBox2.Name = "ComboBox2"
+        ComboBox2.Size = New Size(404, 23)
+        ComboBox2.TabIndex = 24
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(400, 54)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(404, 23)
+        ComboBox1.TabIndex = 23
+        ' 
         ' TextBox3
         ' 
         TextBox3.Location = New Point(400, 80)
@@ -391,10 +528,13 @@ Partial Class Form1
         ' 
         ' TextBox1
         ' 
+        TextBox1.Enabled = False
         TextBox1.Location = New Point(400, 27)
         TextBox1.Name = "TextBox1"
+        TextBox1.ReadOnly = True
         TextBox1.Size = New Size(404, 23)
         TextBox1.TabIndex = 20
+        TextBox1.TabStop = False
         ' 
         ' Label18
         ' 
@@ -434,147 +574,13 @@ Partial Class Form1
         ' 
         ' TabPage2
         ' 
-        TabPage2.Location = New Point(4, 29)
+        TabPage2.Location = New Point(4, 26)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1010, 627)
+        TabPage2.Size = New Size(1010, 630)
         TabPage2.TabIndex = 1
         TabPage2.Text = "TabPage2"
         TabPage2.UseVisualStyleBackColor = True
-        ' 
-        ' TextBox12
-        ' 
-        TextBox12.Location = New Point(421, 182)
-        TextBox12.Name = "TextBox12"
-        TextBox12.Size = New Size(404, 23)
-        TextBox12.TabIndex = 27
-        ' 
-        ' TextBox13
-        ' 
-        TextBox13.Location = New Point(421, 156)
-        TextBox13.Name = "TextBox13"
-        TextBox13.Size = New Size(404, 23)
-        TextBox13.TabIndex = 26
-        ' 
-        ' TextBox14
-        ' 
-        TextBox14.Location = New Point(421, 130)
-        TextBox14.Name = "TextBox14"
-        TextBox14.Size = New Size(404, 23)
-        TextBox14.TabIndex = 25
-        ' 
-        ' TextBox15
-        ' 
-        TextBox15.Location = New Point(421, 104)
-        TextBox15.Name = "TextBox15"
-        TextBox15.Size = New Size(404, 23)
-        TextBox15.TabIndex = 24
-        ' 
-        ' TextBox16
-        ' 
-        TextBox16.Location = New Point(421, 77)
-        TextBox16.Name = "TextBox16"
-        TextBox16.Size = New Size(404, 23)
-        TextBox16.TabIndex = 28
-        ' 
-        ' TextBox17
-        ' 
-        TextBox17.Location = New Point(421, 51)
-        TextBox17.Name = "TextBox17"
-        TextBox17.Size = New Size(404, 23)
-        TextBox17.TabIndex = 29
-        ' 
-        ' TextBox18
-        ' 
-        TextBox18.Location = New Point(421, 24)
-        TextBox18.Name = "TextBox18"
-        TextBox18.Size = New Size(404, 23)
-        TextBox18.TabIndex = 30
-        ' 
-        ' CheckBox1
-        ' 
-        CheckBox1.AutoEllipsis = True
-        CheckBox1.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        CheckBox1.Location = New Point(449, 45)
-        CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(157, 28)
-        CheckBox1.TabIndex = 34
-        CheckBox1.Text = "I have no Middle Name"
-        CheckBox1.UseVisualStyleBackColor = True
-        ' 
-        ' CheckBox2
-        ' 
-        CheckBox2.AutoEllipsis = True
-        CheckBox2.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        CheckBox2.Location = New Point(882, 68)
-        CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(108, 28)
-        CheckBox2.TabIndex = 35
-        CheckBox2.Text = "I have no Suffix"
-        CheckBox2.UseVisualStyleBackColor = True
-        ' 
-        ' Label21
-        ' 
-        Label21.Font = New Font("Segoe UI", 11F)
-        Label21.Location = New Point(594, 126)
-        Label21.Name = "Label21"
-        Label21.Size = New Size(98, 23)
-        Label21.TabIndex = 36
-        Label21.Text = "Civil Status"
-        ' 
-        ' ComboBox1
-        ' 
-        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(400, 54)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(404, 23)
-        ComboBox1.TabIndex = 23
-        ' 
-        ' ComboBox2
-        ' 
-        ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
-        ComboBox2.FormattingEnabled = True
-        ComboBox2.Location = New Point(400, 108)
-        ComboBox2.Name = "ComboBox2"
-        ComboBox2.Size = New Size(404, 23)
-        ComboBox2.TabIndex = 24
-        ' 
-        ' ComboBox3
-        ' 
-        ComboBox3.DropDownStyle = ComboBoxStyle.DropDownList
-        ComboBox3.FormattingEnabled = True
-        ComboBox3.Location = New Point(178, 126)
-        ComboBox3.Name = "ComboBox3"
-        ComboBox3.Size = New Size(265, 23)
-        ComboBox3.TabIndex = 37
-        ' 
-        ' ComboBox4
-        ' 
-        ComboBox4.DropDownStyle = ComboBoxStyle.DropDownList
-        ComboBox4.FormattingEnabled = True
-        ComboBox4.Location = New Point(694, 123)
-        ComboBox4.Name = "ComboBox4"
-        ComboBox4.Size = New Size(182, 23)
-        ComboBox4.TabIndex = 38
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(385, 589)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(75, 23)
-        Button1.TabIndex = 23
-        Button1.Text = "New"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(509, 589)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(75, 23)
-        Button2.TabIndex = 24
-        Button2.Text = "Clear"
-        Button2.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
@@ -584,6 +590,7 @@ Partial Class Form1
         AutoScrollMinSize = New Size(800, 600)
         ClientSize = New Size(1018, 660)
         Controls.Add(TabControl1)
+        KeyPreview = True
         Name = "Form1"
         ShowInTaskbar = False
         StartPosition = FormStartPosition.CenterScreen

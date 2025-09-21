@@ -52,4 +52,16 @@
     Private Sub TextBox12_TextChanged(sender As Object, e As EventArgs) Handles TextBox12.TextChanged
 
     End Sub
+
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        ' Check if Enter is pressed
+        If e.KeyCode = Keys.Enter Then
+            ' Suppress the default ding sound
+            e.SuppressKeyPress = True
+
+            ' Move focus to next control (Tab order)
+            Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
+        End If
+    End Sub
+
 End Class
