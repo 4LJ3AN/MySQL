@@ -22,9 +22,9 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        TabControl1 = New TabControl()
+        TabControl = New TabControl()
         detailstab = New TabPage()
-        Button2 = New Button()
+        clebtn = New Button()
         savbtn = New Button()
         GroupBox2 = New GroupBox()
         Label12 = New Label()
@@ -73,12 +73,15 @@ Partial Class Form1
         Label19 = New Label()
         Label1 = New Label()
         dgvtab = New TabPage()
+        Label13 = New Label()
+        seabox = New TextBox()
+        sbybox = New ComboBox()
+        refbtn = New Button()
         delbtn = New Button()
         updbtn = New Button()
         dgvEmployees = New DataGridView()
         BackgroundWorker1 = New ComponentModel.BackgroundWorker()
-        refbtn = New Button()
-        TabControl1.SuspendLayout()
+        TabControl.SuspendLayout()
         detailstab.SuspendLayout()
         GroupBox2.SuspendLayout()
         GroupBox1.SuspendLayout()
@@ -86,21 +89,21 @@ Partial Class Form1
         CType(dgvEmployees, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' TabControl1
+        ' TabControl
         ' 
-        TabControl1.Controls.Add(detailstab)
-        TabControl1.Controls.Add(dgvtab)
-        TabControl1.Dock = DockStyle.Fill
-        TabControl1.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TabControl1.Location = New Point(0, 0)
-        TabControl1.Name = "TabControl1"
-        TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1018, 660)
-        TabControl1.TabIndex = 0
+        TabControl.Controls.Add(detailstab)
+        TabControl.Controls.Add(dgvtab)
+        TabControl.Dock = DockStyle.Fill
+        TabControl.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TabControl.Location = New Point(0, 0)
+        TabControl.Name = "TabControl"
+        TabControl.SelectedIndex = 0
+        TabControl.Size = New Size(1018, 660)
+        TabControl.TabIndex = 0
         ' 
         ' detailstab
         ' 
-        detailstab.Controls.Add(Button2)
+        detailstab.Controls.Add(clebtn)
         detailstab.Controls.Add(savbtn)
         detailstab.Controls.Add(GroupBox2)
         detailstab.Controls.Add(GroupBox1)
@@ -109,21 +112,21 @@ Partial Class Form1
         detailstab.Padding = New Padding(3)
         detailstab.Size = New Size(1010, 630)
         detailstab.TabIndex = 0
-        detailstab.Text = "TabPage1"
+        detailstab.Text = "Form"
         detailstab.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' clebtn
         ' 
-        Button2.Location = New Point(509, 589)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(75, 23)
-        Button2.TabIndex = 24
-        Button2.Text = "Clear"
-        Button2.UseVisualStyleBackColor = True
+        clebtn.Location = New Point(527, 591)
+        clebtn.Name = "clebtn"
+        clebtn.Size = New Size(75, 23)
+        clebtn.TabIndex = 24
+        clebtn.Text = "Clear"
+        clebtn.UseVisualStyleBackColor = True
         ' 
         ' savbtn
         ' 
-        savbtn.Location = New Point(388, 589)
+        savbtn.Location = New Point(406, 591)
         savbtn.Name = "savbtn"
         savbtn.Size = New Size(75, 23)
         savbtn.TabIndex = 23
@@ -211,7 +214,7 @@ Partial Class Form1
         suflbl.AutoSize = True
         suflbl.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         suflbl.ForeColor = Color.Red
-        suflbl.Location = New Point(624, 109)
+        suflbl.Location = New Point(624, 108)
         suflbl.Name = "suflbl"
         suflbl.Size = New Size(21, 25)
         suflbl.TabIndex = 47
@@ -222,7 +225,7 @@ Partial Class Form1
         addlbl.AutoSize = True
         addlbl.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         addlbl.ForeColor = Color.Red
-        addlbl.Location = New Point(149, 280)
+        addlbl.Location = New Point(149, 279)
         addlbl.Name = "addlbl"
         addlbl.Size = New Size(21, 25)
         addlbl.TabIndex = 46
@@ -233,7 +236,7 @@ Partial Class Form1
         emalbl.AutoSize = True
         emalbl.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         emalbl.ForeColor = Color.Red
-        emalbl.Location = New Point(149, 243)
+        emalbl.Location = New Point(149, 241)
         emalbl.Name = "emalbl"
         emalbl.Size = New Size(21, 25)
         emalbl.TabIndex = 45
@@ -244,7 +247,7 @@ Partial Class Form1
         conlbl.AutoSize = True
         conlbl.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         conlbl.ForeColor = Color.Red
-        conlbl.Location = New Point(149, 205)
+        conlbl.Location = New Point(149, 204)
         conlbl.Name = "conlbl"
         conlbl.Size = New Size(21, 25)
         conlbl.TabIndex = 44
@@ -277,7 +280,7 @@ Partial Class Form1
         lnlbl.AutoSize = True
         lnlbl.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lnlbl.ForeColor = Color.Red
-        lnlbl.Location = New Point(149, 107)
+        lnlbl.Location = New Point(149, 105)
         lnlbl.Name = "lnlbl"
         lnlbl.Size = New Size(21, 25)
         lnlbl.TabIndex = 42
@@ -299,7 +302,7 @@ Partial Class Form1
         fnlbl.AutoSize = True
         fnlbl.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         fnlbl.ForeColor = Color.Red
-        fnlbl.Location = New Point(149, 39)
+        fnlbl.Location = New Point(149, 38)
         fnlbl.Name = "fnlbl"
         fnlbl.Size = New Size(21, 25)
         fnlbl.TabIndex = 27
@@ -624,6 +627,9 @@ Partial Class Form1
         ' 
         ' dgvtab
         ' 
+        dgvtab.Controls.Add(Label13)
+        dgvtab.Controls.Add(seabox)
+        dgvtab.Controls.Add(sbybox)
         dgvtab.Controls.Add(refbtn)
         dgvtab.Controls.Add(delbtn)
         dgvtab.Controls.Add(updbtn)
@@ -633,8 +639,44 @@ Partial Class Form1
         dgvtab.Padding = New Padding(3)
         dgvtab.Size = New Size(1010, 630)
         dgvtab.TabIndex = 1
-        dgvtab.Text = "TabPage2"
+        dgvtab.Text = "List"
         dgvtab.UseVisualStyleBackColor = True
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label13.Location = New Point(0, 15)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(78, 18)
+        Label13.TabIndex = 6
+        Label13.Text = "Search by:"
+        ' 
+        ' seabox
+        ' 
+        seabox.Location = New Point(193, 11)
+        seabox.Name = "seabox"
+        seabox.Size = New Size(195, 25)
+        seabox.TabIndex = 5
+        ' 
+        ' sbybox
+        ' 
+        sbybox.DropDownStyle = ComboBoxStyle.DropDownList
+        sbybox.FormattingEnabled = True
+        sbybox.Items.AddRange(New Object() {"Employee ID", "Name", "Email", "Contact #"})
+        sbybox.Location = New Point(78, 11)
+        sbybox.Name = "sbybox"
+        sbybox.Size = New Size(111, 25)
+        sbybox.TabIndex = 4
+        ' 
+        ' refbtn
+        ' 
+        refbtn.Location = New Point(925, 2)
+        refbtn.Name = "refbtn"
+        refbtn.Size = New Size(75, 41)
+        refbtn.TabIndex = 3
+        refbtn.Text = "Refresh"
+        refbtn.UseVisualStyleBackColor = True
         ' 
         ' delbtn
         ' 
@@ -656,21 +698,15 @@ Partial Class Form1
         ' 
         ' dgvEmployees
         ' 
+        dgvEmployees.AllowUserToAddRows = False
+        dgvEmployees.AllowUserToDeleteRows = False
         dgvEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvEmployees.Location = New Point(0, 45)
+        dgvEmployees.MultiSelect = False
         dgvEmployees.Name = "dgvEmployees"
         dgvEmployees.ReadOnly = True
         dgvEmployees.Size = New Size(1010, 535)
         dgvEmployees.TabIndex = 0
-        ' 
-        ' refbtn
-        ' 
-        refbtn.Location = New Point(925, 2)
-        refbtn.Name = "refbtn"
-        refbtn.Size = New Size(75, 41)
-        refbtn.TabIndex = 3
-        refbtn.Text = "Refresh"
-        refbtn.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
@@ -679,24 +715,25 @@ Partial Class Form1
         AutoScroll = True
         AutoScrollMinSize = New Size(800, 600)
         ClientSize = New Size(1018, 660)
-        Controls.Add(TabControl1)
+        Controls.Add(TabControl)
         KeyPreview = True
         Name = "Form1"
         ShowInTaskbar = False
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form1"
-        TabControl1.ResumeLayout(False)
+        Text = "Emplyee Records"
+        TabControl.ResumeLayout(False)
         detailstab.ResumeLayout(False)
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         dgvtab.ResumeLayout(False)
+        dgvtab.PerformLayout()
         CType(dgvEmployees, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabControl As TabControl
     Friend WithEvents detailstab As TabPage
     Friend WithEvents dgvtab As TabPage
     Friend WithEvents GroupBox2 As GroupBox
@@ -728,7 +765,7 @@ Partial Class Form1
     Friend WithEvents cstbox As ComboBox
     Friend WithEvents genbox As ComboBox
     Friend WithEvents posbox As ComboBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents clebtn As Button
     Friend WithEvents savbtn As Button
     Friend WithEvents addbox As TextBox
     Friend WithEvents Label10 As Label
@@ -752,5 +789,8 @@ Partial Class Form1
     Friend WithEvents delbtn As Button
     Friend WithEvents refbtn As Button
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label13 As Label
+    Friend WithEvents seabox As TextBox
+    Friend WithEvents sbybox As ComboBox
 
 End Class

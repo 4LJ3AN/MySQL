@@ -113,7 +113,7 @@ Public Class Form1
                 End Using
             End Using
 
-            MessageBox.Show("Employee inserted successfully!")
+            'MessageBox.Show("Employee inserted successfully!")
             LoadEmployees()
         Catch ex As Exception
             MessageBox.Show("Error inserting employee: " & ex.Message)
@@ -135,9 +135,31 @@ Public Class Form1
 
             ' Generate next ID only after insert
             idbox.Text = GenerateEmployeeID()
+            clearDetails()
+            mncb.Checked = False
+            sufcb.Checked = False
         End If
     End Sub
 
+    Private Sub clearDetails()
+        idbox.Text = GenerateEmployeeID()
+        posbox.SelectedIndex = -1
+        salbox.Clear()
+        fnbox.Clear()
+        mnbox.Clear()
+        lnbox.Clear()
+        bdybox.Value = Date.Today
+        genbox.SelectedIndex = -1
+        conbox.Clear()
+        emabox.Clear()
+        addbox.Clear()
+        sufbox.SelectedIndex = -1
+        cstbox.SelectedIndex = -1
+    End Sub
+
+    Private Sub clrBtn_Click(sender As Object, e As EventArgs) Handles clebtn.Click
+        clearDetails()
+    End Sub
     Private Sub LoadEmployees()
         Try
             Using conn As New MySqlConnection(connStr)
@@ -212,7 +234,7 @@ Public Class Form1
         End If
 
         ' Switch to details tab
-        TabControl1.SelectedTab = detailstab
+        TabControl.SelectedTab = detailstab
     End Sub
 
     Private Sub UpdateEmployee()
@@ -244,7 +266,7 @@ Public Class Form1
                 End Using
             End Using
 
-            MessageBox.Show("Employee updated successfully!")
+            'MessageBox.Show("Employee updated successfully!")
             LoadEmployees()
         Catch ex As Exception
             MessageBox.Show("Error updating employee: " & ex.Message)
@@ -406,27 +428,35 @@ Public Class Form1
     Private Sub NameBox_TextChanged(sender As Object, e As EventArgs) Handles fnbox.TextChanged, mnbox.TextChanged, lnbox.TextChanged
         Dim tb As TextBox = DirectCast(sender, TextBox)
 
+        ' Save caret position
+        Dim selStart As Integer = tb.SelectionStart
+
+        Dim newText As String = tb.Text
+
         ' Enforce max length = 20
-        If tb.Text.Length > 20 Then
-            tb.Text = tb.Text.Substring(0, 20)
-            tb.SelectionStart = tb.Text.Length
+        If newText.Length > 20 Then
+            newText = newText.Substring(0, 20)
         End If
 
         ' Remove double spaces
-        tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, "\s{2,}", " ")
-        tb.SelectionStart = tb.Text.Length
+        newText = System.Text.RegularExpressions.Regex.Replace(newText, "\s{2,}", " ")
 
         ' Capitalize each word
-        Dim words = tb.Text.Split(" "c)
+        Dim words = newText.Split(" "c)
         For i As Integer = 0 To words.Length - 1
             If words(i).Length > 0 Then
                 words(i) = Char.ToUpper(words(i)(0)) & words(i).Substring(1).ToLower()
             End If
         Next
-        Dim formatted = String.Join(" ", words)
-        If tb.Text <> formatted Then
-            tb.Text = formatted
-            tb.SelectionStart = tb.Text.Length
+        newText = String.Join(" ", words)
+
+        ' Apply changes only if different
+        If tb.Text <> newText Then
+            tb.Text = newText
+
+            ' Restore caret position (clamped to valid range)
+            If selStart > tb.Text.Length Then selStart = tb.Text.Length
+            tb.SelectionStart = selStart
         End If
     End Sub
 
@@ -440,21 +470,31 @@ Public Class Form1
     Private Sub conbox_TextChanged(sender As Object, e As EventArgs) Handles conbox.TextChanged
         Dim tb As TextBox = DirectCast(sender, TextBox)
 
-        ' Remove any non-digit just in case
-        tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, "[^\d]", "")
-        tb.SelectionStart = tb.Text.Length
+        ' Strip non-digits
+        Dim selStart As Integer = tb.SelectionStart
+        Dim originalLength As Integer = tb.Text.Length
 
-        ' Handle "09..." case → remove first 0
-        If tb.Text.StartsWith("09") Then
-            tb.Text = tb.Text.Substring(1) ' cut leading 0
-            tb.SelectionStart = tb.Text.Length
+        Dim newText As String = System.Text.RegularExpressions.Regex.Replace(tb.Text, "[^\d]", "")
+
+        ' Handle "09" case → drop first 0
+        If newText.StartsWith("09") Then
+            newText = newText.Substring(1)
         End If
 
         ' Limit to 10 digits
-        If tb.Text.Length > 10 Then
-            tb.Text = tb.Text.Substring(0, 10)
-            tb.SelectionStart = tb.Text.Length
+        If newText.Length > 10 Then
+            newText = newText.Substring(0, 10)
         End If
+
+        If tb.Text <> newText Then
+            tb.Text = newText
+            Dim diff As Integer = tb.Text.Length - originalLength
+            selStart += diff
+            If selStart < 0 Then selStart = 0
+            If selStart > tb.Text.Length Then selStart = tb.Text.Length
+        End If
+
+        tb.SelectionStart = selStart
     End Sub
 
     Private Sub addbox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles addbox.KeyPress
@@ -464,64 +504,309 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub addbox_TextChanged(sender As Object, e As EventArgs) Handles addbox.TextChanged
+    Private Sub AddBox_TextChanged(sender As Object, e As EventArgs) Handles addbox.TextChanged
         Dim tb As TextBox = DirectCast(sender, TextBox)
 
-        ' Enforce max length
-        If tb.Text.Length > 55 Then
-            tb.Text = tb.Text.Substring(0, 55)
-            tb.SelectionStart = tb.Text.Length
+        ' Save caret position
+        Dim selStart As Integer = tb.SelectionStart
+
+        Dim newText As String = tb.Text
+
+        ' Enforce max length = 55
+        If newText.Length > 55 Then
+            newText = newText.Substring(0, 55)
         End If
 
-        ' Remove chained spaces
-        tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, "\s{2,}", " ")
-        tb.SelectionStart = tb.Text.Length
+        ' Remove double spaces
+        newText = System.Text.RegularExpressions.Regex.Replace(newText, "\s{2,}", " ")
 
         ' Capitalize each word
-        Dim words = tb.Text.Split(" "c)
+        Dim words = newText.Split(" "c)
         For i As Integer = 0 To words.Length - 1
             If words(i).Length > 0 Then
                 words(i) = Char.ToUpper(words(i)(0)) & words(i).Substring(1)
             End If
         Next
-        Dim formatted = String.Join(" ", words)
-        If tb.Text <> formatted Then
-            tb.Text = formatted
-            tb.SelectionStart = tb.Text.Length
+        newText = String.Join(" ", words)
+
+        ' Apply only if different
+        If tb.Text <> newText Then
+            tb.Text = newText
+            If selStart > tb.Text.Length Then selStart = tb.Text.Length
+            tb.SelectionStart = selStart
+        End If
+    End Sub
+
+    Private Sub EmaBox_TextChanged(sender As Object, e As EventArgs) Handles emabox.TextChanged
+        Dim tb As TextBox = DirectCast(sender, TextBox)
+
+        ' Save caret position
+        Dim selStart As Integer = tb.SelectionStart
+
+        Dim newText As String = tb.Text
+
+        ' Enforce allowed characters only
+        newText = System.Text.RegularExpressions.Regex.Replace(newText, "[^a-zA-Z0-9@._]", "")
+
+        ' Force lowercase (common convention for emails)
+        newText = newText.ToLower()
+
+        ' Apply only if different
+        If tb.Text <> newText Then
+            tb.Text = newText
+            If selStart > tb.Text.Length Then selStart = tb.Text.Length
+            tb.SelectionStart = selStart
         End If
     End Sub
 
     Private Function ValidateInputs() As Boolean
-        ' Contact validation
-        If String.IsNullOrWhiteSpace(conbox.Text) OrElse conbox.Text.Length <> 10 Then
-            MessageBox.Show("Contact number must be exactly 10 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
+        Dim errors As New List(Of String)()
+
+        ' First Name
+        If String.IsNullOrWhiteSpace(fnbox.Text) Then
+            errors.Add("First name cannot be empty.")
         End If
 
-        If Not conbox.Text.StartsWith("9") Then
-            MessageBox.Show("Contact number must start with 9 (valid PH number).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
+        ' Middle Name (optional if mncb is checked)
+        If Not mncb.Checked AndAlso String.IsNullOrWhiteSpace(mnbox.Text) Then
+            errors.Add("Middle name cannot be empty unless the 'No Middle Name' box is checked.")
+        End If
+
+        ' Last Name
+        If String.IsNullOrWhiteSpace(lnbox.Text) Then
+            errors.Add("Last name cannot be empty.")
+        End If
+
+        ' Suffix (optional if sufcb is checked)
+        If Not sufcb.Checked AndAlso String.IsNullOrWhiteSpace(sufbox.Text) Then
+            errors.Add("Suffix cannot be empty unless the 'No Suffix' box is checked.")
+        End If
+
+        ' Birthday + Age validation
+        If String.IsNullOrWhiteSpace(bdybox.Text) Then
+            errors.Add("Birthday must be provided.")
+        Else
+            Dim bday As Date
+            If Date.TryParse(bdybox.Text, bday) Then
+                Dim today As Date = Date.Today
+                Dim age As Integer = today.Year - bday.Year
+                If bday > today.AddYears(-age) Then
+                    age -= 1
+                End If
+
+                If age < 18 Then
+                    errors.Add("Employee must be at least 18 years old.")
+                End If
+
+                If age > 80 Then
+                    errors.Add("Employee must not exceed 80 years old.")
+                End If
+            Else
+                errors.Add("Invalid birthday format.")
+            End If
+        End If
+
+        ' Contact validation
+        If String.IsNullOrWhiteSpace(conbox.Text) Then
+            errors.Add("Contact number cannot be empty.")
+        Else
+            If conbox.Text.Length <> 10 Then
+                errors.Add("Contact number must be exactly 10 digits.")
+            End If
+            If Not conbox.Text.StartsWith("9") Then
+                errors.Add("Contact number must start with 9 (valid PH number).")
+            End If
         End If
 
         ' Email validation
         If String.IsNullOrWhiteSpace(emabox.Text) Then
-            MessageBox.Show("Email cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
+            errors.Add("Email cannot be empty.")
+        Else
+            ' Split into local-part and domain
+            Dim parts = emabox.Text.Split("@"c)
+            If parts.Length <> 2 Then
+                errors.Add("Email format is invalid.")
+            Else
+                Dim localPart As String = parts(0)
+                Dim domainPart As String = "@" & parts(1).ToLower()
+
+                ' Local part must be at least 6 characters
+                If localPart.Length < 6 Then
+                    errors.Add("Email username (before @) must be at least 6 characters long.")
+                End If
+
+                ' Only allow specific domains
+                Dim validDomains As String() = {"@gmail.com", "@yahoo.com", "@email.com", "@outlook.com", "@hotmail.com"}
+                Dim isValidDomain As Boolean = validDomains.Any(Function(d) domainPart = d)
+                If Not isValidDomain Then
+                    errors.Add("Email must end with a valid domain (gmail.com, yahoo.com, email.com, outlook.com, hotmail.com).")
+                End If
+            End If
         End If
 
-        ' Allow only specific domains
-        Dim validDomains As String() = {"@gmail.com", "@yahoo.com", "@email.com", "@outlook.com", "@hotmail.com"}
-        Dim isValidDomain As Boolean = validDomains.Any(Function(d) emabox.Text.ToLower().EndsWith(d))
+        ' Address
+        If String.IsNullOrWhiteSpace(addbox.Text) Then
+            errors.Add("Address cannot be empty.")
+        End If
 
-        If Not isValidDomain Then
-            MessageBox.Show("Email must end with a valid domain (gmail.com, yahoo.com, email.com, outlook.com, hotmail.com).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ' Salary
+        If String.IsNullOrWhiteSpace(salbox.Text) Then
+            errors.Add("Salary cannot be empty.")
+        End If
+
+        ' Civil Status
+        If String.IsNullOrWhiteSpace(cstbox.Text) Then
+            errors.Add("Civil status must be selected.")
+        End If
+
+        ' Show errors if any
+        If errors.Count > 0 Then
+            MessageBox.Show(String.Join(Environment.NewLine, errors), "Validation Errors", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End If
 
         Return True
     End Function
 
+
     Private Sub refbtn_Click(sender As Object, e As EventArgs) Handles refbtn.Click
+        sbybox.SelectedIndex = -1
+        seabox.Clear()
         LoadEmployees()
     End Sub
+
+    ' Reset search box when search-by option changes
+    Private Sub sbybox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sbybox.SelectedIndexChanged
+        seabox.Text = "" ' clear old search text
+    End Sub
+
+    ' Validation depending on selected search option
+    Private Sub seaboxValidation(sender As Object, e As EventArgs) Handles seabox.TextChanged
+        If sbybox.SelectedIndex < 0 Then Exit Sub
+
+        Dim tb As TextBox = seabox
+        Dim selStart As Integer = tb.SelectionStart
+        Dim newText As String = tb.Text
+
+        Select Case sbybox.SelectedItem.ToString()
+            Case "Employee ID", "Contact #"
+                ' Allow only digits
+                newText = System.Text.RegularExpressions.Regex.Replace(newText, "[^\d]", "")
+
+                ' Treat leading "09" as "9"
+                If newText.StartsWith("09") Then
+                    newText = newText.Substring(1)
+                End If
+
+            Case "Name (search in all three field names)"
+                ' Same rules as your name fields
+                ' Max length = 20
+                If newText.Length > 20 Then newText = newText.Substring(0, 20)
+
+                ' Remove double spaces
+                newText = System.Text.RegularExpressions.Regex.Replace(newText, "\s{2,}", " ")
+
+                ' Capitalize each word
+                Dim words = newText.Split(" "c)
+                For i As Integer = 0 To words.Length - 1
+                    If words(i).Length > 0 Then
+                        words(i) = Char.ToUpper(words(i)(0)) & words(i).Substring(1).ToLower()
+                    End If
+                Next
+                newText = String.Join(" ", words)
+
+            Case "Email"
+                ' Allow letters, numbers, @, ., _
+                newText = System.Text.RegularExpressions.Regex.Replace(newText, "[^a-zA-Z0-9@._]", "")
+        End Select
+
+        ' Apply changes only if different
+        If tb.Text <> newText Then
+            tb.Text = newText
+            ' Restore caret position
+            If selStart > tb.Text.Length Then selStart = tb.Text.Length
+            tb.SelectionStart = selStart
+        End If
+    End Sub
+
+    Private Sub seabox_TextChanged(sender As Object, e As EventArgs) Handles seabox.TextChanged
+        If sbybox.SelectedIndex < 0 Then Exit Sub
+        PerformSearch()
+    End Sub
+
+    ' Run search dynamically as user types
+    Private Sub PerformSearch()
+        If sbybox.SelectedIndex < 0 Then Return
+
+        Dim searchBy As String = sbybox.SelectedItem.ToString()
+        Dim searchText As String = seabox.Text.Trim()
+
+        ' If empty, show all rows
+        If String.IsNullOrEmpty(searchText) Then
+            LoadEmployees()
+            Return
+        End If
+
+        Dim query As String = ""
+        Select Case searchBy
+            Case "Employee ID"
+                query = "SELECT * FROM employees WHERE id LIKE @search"
+            Case "Name"
+                ' CONCAT_WS skips NULL values; TRIM removes leading/trailing spaces
+                query = "SELECT * FROM employees " &
+                        "WHERE LOWER(TRIM(CONCAT_WS(' ', fname, mname, lname))) LIKE @search"
+            Case "Email"
+                query = "SELECT * FROM employees WHERE LOWER(email) LIKE @search"
+            Case "Contact #"
+                query = "SELECT * FROM employees WHERE contact LIKE @search"
+            Case Else
+                Return
+        End Select
+
+        Try
+            Using conn As New MySqlConnection(connStr)
+                conn.Open()
+                Using cmd As New MySqlCommand(query, conn)
+                    ' parameter is already lowercased for case-insensitive comparisons where we use LOWER(...)
+                    If searchBy = "Email" OrElse searchBy = "Name (search in all three field names)" Then
+                        cmd.Parameters.AddWithValue("@search", "%" & searchText.ToLower() & "%")
+                    Else
+                        cmd.Parameters.AddWithValue("@search", "%" & searchText & "%")
+                    End If
+
+                    Using adapter As New MySqlDataAdapter(cmd)
+                        Dim dt As New DataTable()
+                        adapter.Fill(dt)
+                        dgvEmployees.DataSource = dt
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error while searching: " & ex.Message, "Search Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub TabControl_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl.SelectedIndexChanged
+        ' Only clear fields when leaving the details tab
+        If TabControl.SelectedTab IsNot detailstab Then
+            clearDetails()
+            mncb.Checked = False
+            sufcb.Checked = False
+            sbybox.SelectedIndex = -1
+            seabox.Clear()
+            LoadEmployees()
+        End If
+    End Sub
+
+    Private Sub dgv_SelectionChanged(sender As Object, e As EventArgs) Handles dgvEmployees.SelectionChanged
+        ' Enable buttons only if exactly 1 row is selected and it's not the new row
+        If dgvEmployees.SelectedRows.Count = 1 AndAlso Not dgvEmployees.SelectedRows(0).IsNewRow Then
+            updbtn.Enabled = True
+            delbtn.Enabled = True
+        Else
+            updbtn.Enabled = False
+            delbtn.Enabled = False
+        End If
+    End Sub
+
 End Class
