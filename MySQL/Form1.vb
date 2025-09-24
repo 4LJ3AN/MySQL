@@ -5,6 +5,11 @@ Public Class Form1
     Dim conn As New MySqlConnection(connStr)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If sbybox.Items.Count > 0 Then
+            sbybox.SelectedIndex = 1   ' or whichever index you prefer
+        End If
+
         ' Set defaults
         bdybox.Value = Date.Today
         agebox.Text = "0"
@@ -54,7 +59,7 @@ Public Class Form1
         Else
             sufbox.Enabled = True
         End If
-        InputChanged(sufbox, EventArgs.Empty) ' refresh validation
+        InputChanged(sufbox, EventArgs.Empty)
     End Sub
 
 
@@ -129,6 +134,10 @@ Public Class Form1
         If EmployeeExists(idbox.Text) Then
             UpdateEmployee()
             MessageBox.Show("Employee updated successfully!")
+            idbox.Text = GenerateEmployeeID()
+            clearDetails()
+            mncb.Checked = False
+            sufcb.Checked = False
         Else
             InsertEmployee()
             MessageBox.Show("Employee added successfully!")
@@ -170,6 +179,32 @@ Public Class Form1
                 adapter.Fill(table)
 
                 dgvEmployees.DataSource = table
+
+                dgvEmployees.Columns("id").HeaderText = "Employee ID"
+                dgvEmployees.Columns("position").HeaderText = "Position"
+                dgvEmployees.Columns("salary").HeaderText = "Salary"
+                dgvEmployees.Columns("fname").HeaderText = "First Name"
+                dgvEmployees.Columns("mname").HeaderText = "Middle Name"
+                dgvEmployees.Columns("lname").HeaderText = "Last Name"
+                dgvEmployees.Columns("bday").HeaderText = "Birthday"
+                dgvEmployees.Columns("gender").HeaderText = "Gender"
+                dgvEmployees.Columns("contact").HeaderText = "Contact #"
+                dgvEmployees.Columns("email").HeaderText = "Email"
+                dgvEmployees.Columns("address").HeaderText = "Address"
+                dgvEmployees.Columns("suffix").HeaderText = "Suffix"
+                dgvEmployees.Columns("age").HeaderText = "Age"
+                dgvEmployees.Columns("cstatus").HeaderText = "Civil Status"
+
+                For Each col As DataGridViewColumn In dgvEmployees.Columns
+                    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                Next
+
+                ' Optional: prevent resizing making it too narrow later
+                dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+
+                ' Ensure headers don't wrap
+                dgvEmployees.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False
+
             End Using
         Catch ex As Exception
             MessageBox.Show("Error loading employees: " & ex.Message)
@@ -678,7 +713,14 @@ Public Class Form1
     ' Reset search box when search-by option changes
     Private Sub sbybox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sbybox.SelectedIndexChanged
         seabox.Text = "" ' clear old search text
+
+        If sbybox.SelectedIndex >= 0 Then
+            seabox.Enabled = True   ' enable when valid option selected
+        Else
+            seabox.Enabled = False  ' disable when nothing selected
+        End If
     End Sub
+
 
     ' Validation depending on selected search option
     Private Sub seaboxValidation(sender As Object, e As EventArgs) Handles seabox.TextChanged
@@ -787,6 +829,7 @@ Public Class Form1
     End Sub
 
     Private Sub TabControl_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl.SelectedIndexChanged
+        'seaboxDisable()
         ' Only clear fields when leaving the details tab
         If TabControl.SelectedTab IsNot detailstab Then
             clearDetails()
@@ -808,5 +851,13 @@ Public Class Form1
             delbtn.Enabled = False
         End If
     End Sub
+
+    Private Sub seaboxDisable()
+        If sbybox.SelectedIndex = -1 Then
+            seabox.Clear()
+            seabox.Enabled = False
+        End If
+    End Sub
+
 
 End Class
