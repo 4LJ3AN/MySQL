@@ -10,6 +10,7 @@ Public Class Form1
             sbybox.SelectedIndex = 1   ' or whichever index you prefer
         End If
 
+        'potanginaaaaaaaaaaaaaaaa
         ' Set defaults
         bdybox.Value = Date.Today
         agebox.Text = "0"
@@ -151,7 +152,11 @@ Public Class Form1
     End Sub
 
     Private Sub clearDetails()
-        idbox.Text = GenerateEmployeeID()
+        Dim currentId As String = idbox.Text
+        If EmployeeExists(currentId) Then
+            idbox.Text = GenerateEmployeeID()
+        End If
+
         posbox.SelectedIndex = -1
         salbox.Clear()
         fnbox.Clear()
