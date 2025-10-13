@@ -153,7 +153,7 @@ Public Class Form1
 
     Private Sub clearDetails()
         Dim currentId As String = idbox.Text
-        If EmployeeExists(currentId) Then
+        If Not EmployeeExists(currentId) Then
             idbox.Text = GenerateEmployeeID()
         End If
 
