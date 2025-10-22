@@ -10,14 +10,24 @@
         Me.Hide()
     End Sub
 
+    'Private Sub empbtn_Click(sender As Object, e As EventArgs) Handles empbtn.Click
+    '   Dim empForm As New EmployeeLoginForm()
+    '   ' Match location and size
+    '   empForm.StartPosition = FormStartPosition.Manual
+    '   empForm.Location = Me.Location
+    '
+    '   empForm.Show()
+    'Me.Hide()
+    'End Sub
+
     Private Sub empbtn_Click(sender As Object, e As EventArgs) Handles empbtn.Click
-        Dim empForm As New EmployeeLoginForm()
+        Dim empDashb As New EmployeeDashboard()
 
         ' Match location and size
-        empForm.StartPosition = FormStartPosition.Manual
-        empForm.Location = Me.Location
+        empDashb.StartPosition = FormStartPosition.Manual
+        empDashb.Location = Me.Location
 
-        empForm.Show()
+        empDashb.Show()
         Me.Hide()
     End Sub
 

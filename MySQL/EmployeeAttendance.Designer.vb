@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class EmployeeDashboard
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class EmployeeAttendance
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class EmployeeDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         RoundedPanel1 = New RoundedPanel()
         position = New Label()
@@ -33,33 +33,36 @@ Partial Class EmployeeDashboard
         payslip = New RoundedButton()
         dashb = New RoundedButton()
         currentsalary = New RoundedPanel()
-        Label4 = New Label()
         current_net_pay = New Label()
         money = New Label()
         cur_month_sal = New Label()
         RoundedPanel3 = New RoundedPanel()
-        Label5 = New Label()
         att = New Label()
         days = New Label()
         days_present = New Label()
         RoundedPanel4 = New RoundedPanel()
-        Label6 = New Label()
         total_hours = New Label()
         hours = New Label()
         hours_worked = New Label()
         RoundedPanel5 = New RoundedPanel()
-        Label7 = New Label()
         Label3 = New Label()
         ot = New Label()
         ot_hrs = New Label()
         RoundedPanel6 = New RoundedPanel()
+        MonthCalendar1 = New MonthCalendar()
+        Label4 = New Label()
         btnBack = New Button()
+        RoundedPanel7 = New RoundedPanel()
+        Label6 = New Label()
+        Label5 = New Label()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
         currentsalary.SuspendLayout()
         RoundedPanel3.SuspendLayout()
         RoundedPanel4.SuspendLayout()
         RoundedPanel5.SuspendLayout()
+        RoundedPanel6.SuspendLayout()
+        RoundedPanel7.SuspendLayout()
         SuspendLayout()
         ' 
         ' RoundedPanel1
@@ -95,7 +98,7 @@ Partial Class EmployeeDashboard
         ' 
         ' greetings
         ' 
-        greetings.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        greetings.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         greetings.Location = New Point(22, 48)
         greetings.Name = "greetings"
         greetings.Size = New Size(106, 22)
@@ -129,7 +132,7 @@ Partial Class EmployeeDashboard
         profile.BorderSize = 2
         profile.ClickColor = Color.DarkGray
         profile.FlatStyle = FlatStyle.Flat
-        profile.Font = New Font("Berlin Sans FB", 12F)
+        profile.Font = New Font("Berlin Sans FB", 12.0F)
         profile.HoverColor = Color.LightGray
         profile.Location = New Point(518, 5)
         profile.Name = "profile"
@@ -147,7 +150,7 @@ Partial Class EmployeeDashboard
         attendance.BorderSize = 2
         attendance.ClickColor = Color.DarkGray
         attendance.FlatStyle = FlatStyle.Flat
-        attendance.Font = New Font("Berlin Sans FB", 12F)
+        attendance.Font = New Font("Berlin Sans FB", 12.0F)
         attendance.HoverColor = Color.LightGray
         attendance.Location = New Point(349, 6)
         attendance.Name = "attendance"
@@ -165,7 +168,7 @@ Partial Class EmployeeDashboard
         payslip.BorderSize = 2
         payslip.ClickColor = Color.DarkGray
         payslip.FlatStyle = FlatStyle.Flat
-        payslip.Font = New Font("Berlin Sans FB", 12F)
+        payslip.Font = New Font("Berlin Sans FB", 12.0F)
         payslip.HoverColor = Color.LightGray
         payslip.Location = New Point(180, 6)
         payslip.Name = "payslip"
@@ -183,7 +186,7 @@ Partial Class EmployeeDashboard
         dashb.BorderSize = 2
         dashb.ClickColor = Color.DarkGray
         dashb.FlatStyle = FlatStyle.Flat
-        dashb.Font = New Font("Berlin Sans FB", 12F)
+        dashb.Font = New Font("Berlin Sans FB", 12.0F)
         dashb.HoverColor = Color.LightGray
         dashb.Location = New Point(10, 6)
         dashb.Name = "dashb"
@@ -196,7 +199,6 @@ Partial Class EmployeeDashboard
         ' 
         ' currentsalary
         ' 
-        currentsalary.Controls.Add(Label4)
         currentsalary.Controls.Add(current_net_pay)
         currentsalary.Controls.Add(money)
         currentsalary.Controls.Add(cur_month_sal)
@@ -205,26 +207,14 @@ Partial Class EmployeeDashboard
         currentsalary.Size = New Size(200, 100)
         currentsalary.TabIndex = 2
         ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.BackColor = Color.PaleGreen
-        Label4.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.DarkOliveGreen
-        Label4.Location = New Point(163, 12)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(23, 25)
-        Label4.TabIndex = 7
-        Label4.Text = "₱"
-        ' 
         ' current_net_pay
         ' 
         current_net_pay.AutoSize = True
         current_net_pay.Location = New Point(13, 77)
         current_net_pay.Name = "current_net_pay"
-        current_net_pay.Size = New Size(91, 15)
+        current_net_pay.Size = New Size(103, 15)
         current_net_pay.TabIndex = 6
-        current_net_pay.Text = "Current Net Pay"
+        current_net_pay.Text = "Total Present Days"
         ' 
         ' money
         ' 
@@ -234,20 +224,19 @@ Partial Class EmployeeDashboard
         money.Name = "money"
         money.Size = New Size(100, 29)
         money.TabIndex = 7
-        money.Text = "₱69,000"
+        money.Text = "74"
         ' 
         ' cur_month_sal
         ' 
-        cur_month_sal.Font = New Font("Segoe UI", 11F)
+        cur_month_sal.Font = New Font("Segoe UI", 11.0F)
         cur_month_sal.Location = New Point(12, 14)
         cur_month_sal.Name = "cur_month_sal"
         cur_month_sal.Size = New Size(166, 27)
         cur_month_sal.TabIndex = 6
-        cur_month_sal.Text = "Current Month Salary"
+        cur_month_sal.Text = "Present"
         ' 
         ' RoundedPanel3
         ' 
-        RoundedPanel3.Controls.Add(Label5)
         RoundedPanel3.Controls.Add(att)
         RoundedPanel3.Controls.Add(days)
         RoundedPanel3.Controls.Add(days_present)
@@ -256,26 +245,14 @@ Partial Class EmployeeDashboard
         RoundedPanel3.Size = New Size(200, 100)
         RoundedPanel3.TabIndex = 3
         ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.PowderBlue
-        Label5.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = Color.SteelBlue
-        Label5.Location = New Point(154, 11)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(33, 25)
-        Label5.TabIndex = 8
-        Label5.Text = "📅"
-        ' 
         ' att
         ' 
         att.AutoSize = True
         att.Location = New Point(9, 77)
         att.Name = "att"
-        att.Size = New Size(140, 15)
+        att.Size = New Size(131, 15)
         att.TabIndex = 7
-        att.Text = "This Month's Attendance"
+        att.Text = "Leaves used this month"
         ' 
         ' days
         ' 
@@ -285,20 +262,19 @@ Partial Class EmployeeDashboard
         days.Name = "days"
         days.Size = New Size(100, 29)
         days.TabIndex = 7
-        days.Text = "28/31"
+        days.Text = "1"
         ' 
         ' days_present
         ' 
-        days_present.Font = New Font("Segoe UI", 11F)
+        days_present.Font = New Font("Segoe UI", 11.0F)
         days_present.Location = New Point(11, 14)
         days_present.Name = "days_present"
         days_present.Size = New Size(166, 27)
         days_present.TabIndex = 6
-        days_present.Text = "Days Present"
+        days_present.Text = "Leaves"
         ' 
         ' RoundedPanel4
         ' 
-        RoundedPanel4.Controls.Add(Label6)
         RoundedPanel4.Controls.Add(total_hours)
         RoundedPanel4.Controls.Add(hours)
         RoundedPanel4.Controls.Add(hours_worked)
@@ -307,26 +283,14 @@ Partial Class EmployeeDashboard
         RoundedPanel4.Size = New Size(200, 100)
         RoundedPanel4.TabIndex = 4
         ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.BackColor = Color.Plum
-        Label6.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label6.ForeColor = Color.DarkViolet
-        Label6.Location = New Point(156, 11)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(33, 25)
-        Label6.TabIndex = 9
-        Label6.Text = "⏲️"
-        ' 
         ' total_hours
         ' 
         total_hours.AutoSize = True
         total_hours.Location = New Point(9, 77)
         total_hours.Name = "total_hours"
-        total_hours.Size = New Size(129, 15)
+        total_hours.Size = New Size(109, 15)
         total_hours.TabIndex = 7
-        total_hours.Text = "Total Hours this Month"
+        total_hours.Text = "Total late check-ins"
         ' 
         ' hours
         ' 
@@ -336,20 +300,19 @@ Partial Class EmployeeDashboard
         hours.Name = "hours"
         hours.Size = New Size(100, 29)
         hours.TabIndex = 7
-        hours.Text = "144h"
+        hours.Text = "4"
         ' 
         ' hours_worked
         ' 
-        hours_worked.Font = New Font("Segoe UI", 11F)
+        hours_worked.Font = New Font("Segoe UI", 11.0F)
         hours_worked.Location = New Point(10, 15)
         hours_worked.Name = "hours_worked"
         hours_worked.Size = New Size(166, 27)
         hours_worked.TabIndex = 6
-        hours_worked.Text = "Total Hours Worked"
+        hours_worked.Text = "Lates"
         ' 
         ' RoundedPanel5
         ' 
-        RoundedPanel5.Controls.Add(Label7)
         RoundedPanel5.Controls.Add(Label3)
         RoundedPanel5.Controls.Add(ot)
         RoundedPanel5.Controls.Add(ot_hrs)
@@ -358,26 +321,14 @@ Partial Class EmployeeDashboard
         RoundedPanel5.Size = New Size(200, 100)
         RoundedPanel5.TabIndex = 5
         ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
-        Label7.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label7.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        Label7.Location = New Point(136, 9)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(54, 25)
-        Label7.TabIndex = 10
-        Label7.Text = "⏱️📈"
-        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Location = New Point(9, 77)
         Label3.Name = "Label3"
-        Label3.Size = New Size(128, 15)
+        Label3.Size = New Size(86, 15)
         Label3.TabIndex = 7
-        Label3.Text = "Total OT for the Month"
+        Label3.Text = "Total Absences"
         ' 
         ' ot
         ' 
@@ -387,23 +338,40 @@ Partial Class EmployeeDashboard
         ot.Name = "ot"
         ot.Size = New Size(100, 29)
         ot.TabIndex = 7
-        ot.Text = "10h"
+        ot.Text = "2"
         ' 
         ' ot_hrs
         ' 
-        ot_hrs.Font = New Font("Segoe UI", 11F)
+        ot_hrs.Font = New Font("Segoe UI", 11.0F)
         ot_hrs.Location = New Point(12, 13)
         ot_hrs.Name = "ot_hrs"
         ot_hrs.Size = New Size(166, 27)
         ot_hrs.TabIndex = 6
-        ot_hrs.Text = "Overtime Hours"
+        ot_hrs.Text = "Absences"
         ' 
         ' RoundedPanel6
         ' 
-        RoundedPanel6.Location = New Point(90, 364)
+        RoundedPanel6.Controls.Add(MonthCalendar1)
+        RoundedPanel6.Controls.Add(Label4)
+        RoundedPanel6.Location = New Point(90, 332)
         RoundedPanel6.Name = "RoundedPanel6"
-        RoundedPanel6.Size = New Size(846, 210)
+        RoundedPanel6.Size = New Size(416, 291)
         RoundedPanel6.TabIndex = 6
+        ' 
+        ' MonthCalendar1
+        ' 
+        MonthCalendar1.Location = New Point(95, 70)
+        MonthCalendar1.Name = "MonthCalendar1"
+        MonthCalendar1.TabIndex = 8
+        ' 
+        ' Label4
+        ' 
+        Label4.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(17, 13)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(75, 27)
+        Label4.TabIndex = 7
+        Label4.Text = "Calendar"
         ' 
         ' btnBack
         ' 
@@ -415,11 +383,40 @@ Partial Class EmployeeDashboard
         btnBack.Text = "Sign Out"
         btnBack.UseVisualStyleBackColor = True
         ' 
-        ' EmployeeDashboard
+        ' RoundedPanel7
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        RoundedPanel7.Controls.Add(Label6)
+        RoundedPanel7.Controls.Add(Label5)
+        RoundedPanel7.Location = New Point(521, 332)
+        RoundedPanel7.Name = "RoundedPanel7"
+        RoundedPanel7.Size = New Size(416, 291)
+        RoundedPanel7.TabIndex = 8
+        ' 
+        ' Label6
+        ' 
+        Label6.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label6.ForeColor = SystemColors.ButtonShadow
+        Label6.Location = New Point(19, 40)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(200, 23)
+        Label6.TabIndex = 9
+        Label6.Text = "Last 8 days of Attendance Records"
+        ' 
+        ' Label5
+        ' 
+        Label5.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Location = New Point(19, 13)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(191, 27)
+        Label5.TabIndex = 8
+        Label5.Text = "Attendance for this Week"
+        ' 
+        ' EmployeeAttendance
+        ' 
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1018, 660)
+        Controls.Add(RoundedPanel7)
         Controls.Add(btnBack)
         Controls.Add(RoundedPanel6)
         Controls.Add(RoundedPanel5)
@@ -428,7 +425,7 @@ Partial Class EmployeeDashboard
         Controls.Add(currentsalary)
         Controls.Add(RoundedPanel2)
         Controls.Add(RoundedPanel1)
-        Name = "EmployeeDashboard"
+        Name = "EmployeeAttendance"
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel2.ResumeLayout(False)
         currentsalary.ResumeLayout(False)
@@ -439,6 +436,8 @@ Partial Class EmployeeDashboard
         RoundedPanel4.PerformLayout()
         RoundedPanel5.ResumeLayout(False)
         RoundedPanel5.PerformLayout()
+        RoundedPanel6.ResumeLayout(False)
+        RoundedPanel7.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -469,9 +468,10 @@ Partial Class EmployeeDashboard
     Friend WithEvents ot As Label
     Friend WithEvents ot_hrs As Label
     Friend WithEvents RoundedPanel6 As RoundedPanel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents btnBack As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents RoundedPanel7 As RoundedPanel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents Label6 As Label
 End Class

@@ -37,7 +37,21 @@ Partial Class payslip
         Label3 = New Label()
         pays = New Label()
         RoundedPanel4 = New RoundedPanel()
+        Label30 = New Label()
+        Label31 = New Label()
+        Label29 = New Label()
+        Label27 = New Label()
+        Label21 = New Label()
+        Label22 = New Label()
+        Label26 = New Label()
+        Label23 = New Label()
+        Label24 = New Label()
+        Label25 = New Label()
+        Label19 = New Label()
+        Label18 = New Label()
         RoundedPanel6 = New RoundedPanel()
+        Label33 = New Label()
+        Label32 = New Label()
         RoundedPanel5 = New RoundedPanel()
         Label12 = New Label()
         Label13 = New Label()
@@ -47,28 +61,15 @@ Partial Class payslip
         Label6 = New Label()
         Label9 = New Label()
         Label7 = New Label()
+        Label20 = New Label()
+        Label28 = New Label()
         Label14 = New Label()
         Label4 = New Label()
-        Label15 = New Label()
-        Label5 = New Label()
-        Label16 = New Label()
         Label17 = New Label()
-        Label18 = New Label()
-        Label19 = New Label()
-        Label20 = New Label()
-        Label21 = New Label()
-        Label22 = New Label()
-        Label23 = New Label()
-        Label24 = New Label()
-        Label25 = New Label()
-        Label26 = New Label()
-        Label27 = New Label()
-        Label28 = New Label()
-        Label29 = New Label()
-        Label30 = New Label()
-        Label31 = New Label()
-        Label32 = New Label()
-        Label33 = New Label()
+        Label15 = New Label()
+        Label16 = New Label()
+        Label5 = New Label()
+        btnBack = New Button()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
         RoundedPanel3.SuspendLayout()
@@ -277,6 +278,125 @@ Partial Class payslip
         RoundedPanel4.Size = New Size(694, 361)
         RoundedPanel4.TabIndex = 5
         ' 
+        ' Label30
+        ' 
+        Label30.AutoSize = True
+        Label30.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label30.Location = New Point(627, 277)
+        Label30.Name = "Label30"
+        Label30.Size = New Size(56, 16)
+        Label30.TabIndex = 18
+        Label30.Text = "₱ 1,571"
+        ' 
+        ' Label31
+        ' 
+        Label31.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label31.Location = New Point(438, 275)
+        Label31.Name = "Label31"
+        Label31.Size = New Size(174, 23)
+        Label31.TabIndex = 17
+        Label31.Text = "Total Deductions:"
+        ' 
+        ' Label29
+        ' 
+        Label29.AutoSize = True
+        Label29.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label29.Location = New Point(203, 277)
+        Label29.Name = "Label29"
+        Label29.Size = New Size(56, 16)
+        Label29.TabIndex = 16
+        Label29.Text = "₱ 7,700"
+        ' 
+        ' Label27
+        ' 
+        Label27.AutoSize = True
+        Label27.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label27.Location = New Point(626, 244)
+        Label27.Name = "Label27"
+        Label27.Size = New Size(44, 16)
+        Label27.TabIndex = 15
+        Label27.Text = "₱ 567"
+        ' 
+        ' Label21
+        ' 
+        Label21.AutoSize = True
+        Label21.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label21.Location = New Point(626, 221)
+        Label21.Name = "Label21"
+        Label21.Size = New Size(44, 16)
+        Label21.TabIndex = 14
+        Label21.Text = "₱ 234"
+        ' 
+        ' Label22
+        ' 
+        Label22.AutoSize = True
+        Label22.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label22.Location = New Point(626, 198)
+        Label22.Name = "Label22"
+        Label22.Size = New Size(44, 16)
+        Label22.TabIndex = 13
+        Label22.Text = "₱ 770"
+        ' 
+        ' Label26
+        ' 
+        Label26.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label26.ForeColor = SystemColors.ButtonShadow
+        Label26.Location = New Point(447, 241)
+        Label26.Name = "Label26"
+        Label26.Size = New Size(154, 23)
+        Label26.TabIndex = 10
+        Label26.Text = "Pagibig:"
+        ' 
+        ' Label23
+        ' 
+        Label23.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label23.ForeColor = SystemColors.ButtonShadow
+        Label23.Location = New Point(447, 218)
+        Label23.Name = "Label23"
+        Label23.Size = New Size(154, 23)
+        Label23.TabIndex = 10
+        Label23.Text = "SSS:"
+        ' 
+        ' Label24
+        ' 
+        Label24.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label24.ForeColor = SystemColors.ButtonShadow
+        Label24.Location = New Point(448, 196)
+        Label24.Name = "Label24"
+        Label24.Size = New Size(104, 23)
+        Label24.TabIndex = 11
+        Label24.Text = "Income Tax :"
+        ' 
+        ' Label25
+        ' 
+        Label25.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label25.ForeColor = SystemColors.ActiveCaptionText
+        Label25.Location = New Point(448, 198)
+        Label25.Name = "Label25"
+        Label25.Size = New Size(153, 23)
+        Label25.TabIndex = 12
+        Label25.Text = "Basic Earnings"
+        ' 
+        ' Label19
+        ' 
+        Label19.AutoSize = True
+        Label19.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label19.Location = New Point(203, 218)
+        Label19.Name = "Label19"
+        Label19.Size = New Size(44, 16)
+        Label19.TabIndex = 9
+        Label19.Text = "₱ 800"
+        ' 
+        ' Label18
+        ' 
+        Label18.AutoSize = True
+        Label18.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label18.Location = New Point(203, 195)
+        Label18.Name = "Label18"
+        Label18.Size = New Size(56, 16)
+        Label18.TabIndex = 8
+        Label18.Text = "₱ 6,900"
+        ' 
         ' RoundedPanel6
         ' 
         RoundedPanel6.BackColor = Color.FromArgb(CByte(192), CByte(255), CByte(192))
@@ -286,6 +406,25 @@ Partial Class payslip
         RoundedPanel6.Name = "RoundedPanel6"
         RoundedPanel6.Size = New Size(672, 37)
         RoundedPanel6.TabIndex = 7
+        ' 
+        ' Label33
+        ' 
+        Label33.AutoSize = True
+        Label33.Font = New Font("Century", 12.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label33.Location = New Point(581, 7)
+        Label33.Name = "Label33"
+        Label33.Size = New Size(74, 21)
+        Label33.TabIndex = 18
+        Label33.Text = "₱ 6,129"
+        ' 
+        ' Label32
+        ' 
+        Label32.Font = New Font("Century", 12.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label32.Location = New Point(26, 7)
+        Label32.Name = "Label32"
+        Label32.Size = New Size(159, 21)
+        Label32.TabIndex = 0
+        Label32.Text = "Net Pay"
         ' 
         ' RoundedPanel5
         ' 
@@ -379,6 +518,24 @@ Partial Class payslip
         Label7.TabIndex = 5
         Label7.Text = "EMP - 1234"
         ' 
+        ' Label20
+        ' 
+        Label20.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label20.Location = New Point(438, 172)
+        Label20.Name = "Label20"
+        Label20.Size = New Size(174, 23)
+        Label20.TabIndex = 5
+        Label20.Text = "Deductions"
+        ' 
+        ' Label28
+        ' 
+        Label28.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label28.Location = New Point(14, 275)
+        Label28.Name = "Label28"
+        Label28.Size = New Size(174, 23)
+        Label28.TabIndex = 5
+        Label28.Text = "Total Earnings:"
+        ' 
         ' Label14
         ' 
         Label14.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -397,6 +554,16 @@ Partial Class payslip
         Label4.TabIndex = 5
         Label4.Text = "Payslip for"
         ' 
+        ' Label17
+        ' 
+        Label17.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label17.ForeColor = SystemColors.ButtonShadow
+        Label17.Location = New Point(24, 215)
+        Label17.Name = "Label17"
+        Label17.Size = New Size(154, 23)
+        Label17.TabIndex = 5
+        Label17.Text = "Overtime Pay:"
+        ' 
         ' Label15
         ' 
         Label15.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -406,16 +573,6 @@ Partial Class payslip
         Label15.Size = New Size(104, 23)
         Label15.TabIndex = 5
         Label15.Text = "Basic Salary :"
-        ' 
-        ' Label5
-        ' 
-        Label5.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = SystemColors.ButtonShadow
-        Label5.Location = New Point(12, 34)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(209, 23)
-        Label5.TabIndex = 5
-        Label5.Text = "Employee Payment Details"
         ' 
         ' Label16
         ' 
@@ -427,177 +584,32 @@ Partial Class payslip
         Label16.TabIndex = 5
         Label16.Text = "Basic Earnings"
         ' 
-        ' Label17
+        ' Label5
         ' 
-        Label17.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label17.ForeColor = SystemColors.ButtonShadow
-        Label17.Location = New Point(24, 215)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(154, 23)
-        Label17.TabIndex = 5
-        Label17.Text = "Overtime Pay:"
+        Label5.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = SystemColors.ButtonShadow
+        Label5.Location = New Point(12, 34)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(209, 23)
+        Label5.TabIndex = 5
+        Label5.Text = "Employee Payment Details"
         ' 
-        ' Label18
+        ' btnBack
         ' 
-        Label18.AutoSize = True
-        Label18.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label18.Location = New Point(203, 195)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(56, 16)
-        Label18.TabIndex = 8
-        Label18.Text = "₱ 6,900"
-        ' 
-        ' Label19
-        ' 
-        Label19.AutoSize = True
-        Label19.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label19.Location = New Point(203, 218)
-        Label19.Name = "Label19"
-        Label19.Size = New Size(44, 16)
-        Label19.TabIndex = 9
-        Label19.Text = "₱ 800"
-        ' 
-        ' Label20
-        ' 
-        Label20.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label20.Location = New Point(438, 172)
-        Label20.Name = "Label20"
-        Label20.Size = New Size(174, 23)
-        Label20.TabIndex = 5
-        Label20.Text = "Deductions"
-        ' 
-        ' Label21
-        ' 
-        Label21.AutoSize = True
-        Label21.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label21.Location = New Point(626, 221)
-        Label21.Name = "Label21"
-        Label21.Size = New Size(44, 16)
-        Label21.TabIndex = 14
-        Label21.Text = "₱ 234"
-        ' 
-        ' Label22
-        ' 
-        Label22.AutoSize = True
-        Label22.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label22.Location = New Point(626, 198)
-        Label22.Name = "Label22"
-        Label22.Size = New Size(44, 16)
-        Label22.TabIndex = 13
-        Label22.Text = "₱ 770"
-        ' 
-        ' Label23
-        ' 
-        Label23.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label23.ForeColor = SystemColors.ButtonShadow
-        Label23.Location = New Point(447, 218)
-        Label23.Name = "Label23"
-        Label23.Size = New Size(154, 23)
-        Label23.TabIndex = 10
-        Label23.Text = "SSS:"
-        ' 
-        ' Label24
-        ' 
-        Label24.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label24.ForeColor = SystemColors.ButtonShadow
-        Label24.Location = New Point(448, 196)
-        Label24.Name = "Label24"
-        Label24.Size = New Size(104, 23)
-        Label24.TabIndex = 11
-        Label24.Text = "Income Tax :"
-        ' 
-        ' Label25
-        ' 
-        Label25.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label25.ForeColor = SystemColors.ActiveCaptionText
-        Label25.Location = New Point(448, 198)
-        Label25.Name = "Label25"
-        Label25.Size = New Size(153, 23)
-        Label25.TabIndex = 12
-        Label25.Text = "Basic Earnings"
-        ' 
-        ' Label26
-        ' 
-        Label26.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label26.ForeColor = SystemColors.ButtonShadow
-        Label26.Location = New Point(447, 241)
-        Label26.Name = "Label26"
-        Label26.Size = New Size(154, 23)
-        Label26.TabIndex = 10
-        Label26.Text = "Pagibig:"
-        ' 
-        ' Label27
-        ' 
-        Label27.AutoSize = True
-        Label27.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label27.Location = New Point(626, 244)
-        Label27.Name = "Label27"
-        Label27.Size = New Size(44, 16)
-        Label27.TabIndex = 15
-        Label27.Text = "₱ 567"
-        ' 
-        ' Label28
-        ' 
-        Label28.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label28.Location = New Point(14, 275)
-        Label28.Name = "Label28"
-        Label28.Size = New Size(174, 23)
-        Label28.TabIndex = 5
-        Label28.Text = "Total Earnings:"
-        ' 
-        ' Label29
-        ' 
-        Label29.AutoSize = True
-        Label29.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label29.Location = New Point(203, 277)
-        Label29.Name = "Label29"
-        Label29.Size = New Size(56, 16)
-        Label29.TabIndex = 16
-        Label29.Text = "₱ 7,700"
-        ' 
-        ' Label30
-        ' 
-        Label30.AutoSize = True
-        Label30.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label30.Location = New Point(627, 277)
-        Label30.Name = "Label30"
-        Label30.Size = New Size(56, 16)
-        Label30.TabIndex = 18
-        Label30.Text = "₱ 1,571"
-        ' 
-        ' Label31
-        ' 
-        Label31.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label31.Location = New Point(438, 275)
-        Label31.Name = "Label31"
-        Label31.Size = New Size(174, 23)
-        Label31.TabIndex = 17
-        Label31.Text = "Total Deductions:"
-        ' 
-        ' Label32
-        ' 
-        Label32.Font = New Font("Century", 12.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label32.Location = New Point(26, 7)
-        Label32.Name = "Label32"
-        Label32.Size = New Size(159, 21)
-        Label32.TabIndex = 0
-        Label32.Text = "Net Pay"
-        ' 
-        ' Label33
-        ' 
-        Label33.AutoSize = True
-        Label33.Font = New Font("Century", 12.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label33.Location = New Point(581, 7)
-        Label33.Name = "Label33"
-        Label33.Size = New Size(74, 21)
-        Label33.TabIndex = 18
-        Label33.Text = "₱ 6,129"
+        btnBack.Anchor = AnchorStyles.Left
+        btnBack.Location = New Point(12, 625)
+        btnBack.Name = "btnBack"
+        btnBack.Size = New Size(75, 23)
+        btnBack.TabIndex = 8
+        btnBack.Text = "Sign Out"
+        btnBack.UseVisualStyleBackColor = True
         ' 
         ' payslip
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1018, 660)
+        Controls.Add(btnBack)
         Controls.Add(RoundedPanel4)
         Controls.Add(RoundedPanel3)
         Controls.Add(RoundedPanel2)
@@ -662,4 +674,5 @@ Partial Class payslip
     Friend WithEvents Label31 As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents Label33 As Label
+    Friend WithEvents btnBack As Button
 End Class

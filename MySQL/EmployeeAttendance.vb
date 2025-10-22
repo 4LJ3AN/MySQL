@@ -1,4 +1,4 @@
-﻿Public Class EmployeeDashboard
+﻿Public Class EmployeeAttendance
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
@@ -36,15 +36,15 @@
     End Sub
 
     Private Sub dashb_Click(sender As Object, e As EventArgs) Handles dashb.Click
-
+        Dim empDashboardForm As New EmployeeDashboard()
+        empDashboardForm.StartPosition = FormStartPosition.Manual
+        empDashboardForm.Location = Me.Location
+        empDashboardForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub attendance_Click(sender As Object, e As EventArgs) Handles attendance.Click
-        Dim attendanceForm As New EmployeeAttendance()
-        attendanceForm.StartPosition = FormStartPosition.Manual
-        attendanceForm.Location = Me.Location
-        attendanceForm.Show()
-        Me.Hide()
+
     End Sub
 
     Private Sub profile_Click(sender As Object, e As EventArgs) Handles profile.Click
@@ -67,4 +67,6 @@
         landing.Show()
         Close()
     End Sub
+
+
 End Class
