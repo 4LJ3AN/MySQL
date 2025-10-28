@@ -1,4 +1,4 @@
-﻿Public Class EmployeeAttendance
+﻿Public Class EmployeeProfile
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
@@ -23,15 +23,15 @@
 
     End Sub
 
-    Private Sub payslip_Click(sender As Object, e As EventArgs)
-        Dim payslipForm As New EmployeePayslip
+    Private Sub payslip_Click(sender As Object, e As EventArgs) Handles payslip.Click
+        Dim payslipForm As New EmployeePayslip()
         payslipForm.StartPosition = FormStartPosition.Manual
-        payslipForm.Location = Location
-        payslipForm.Show
-        Hide
+        payslipForm.Location = Me.Location
+        payslipForm.Show()
+        Me.Hide()
     End Sub
 
-    Private Sub Label3_Click_1(sender As Object, e As EventArgs) Handles cur_month_sal.Click
+    Private Sub Label3_Click_1(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -43,7 +43,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub attendance_Click(sender As Object, e As EventArgs)
+    Private Sub attendance_Click(sender As Object, e As EventArgs) Handles attendance.Click
         Dim attendanceForm As New EmployeeAttendance()
         attendanceForm.StartPosition = FormStartPosition.Manual
         attendanceForm.Location = Me.Location
@@ -52,11 +52,7 @@
     End Sub
 
     Private Sub profile_Click(sender As Object, e As EventArgs) Handles profile.Click
-        Dim profileForm As New EmployeeProfile()
-        profileForm.StartPosition = FormStartPosition.Manual
-        profileForm.Location = Me.Location
-        profileForm.Show()
-        Me.Hide()
+
     End Sub
 
     Private Sub Label3_Click_2(sender As Object, e As EventArgs)
@@ -76,19 +72,11 @@
         Close()
     End Sub
 
-    Private Sub checkInbtn_Click(sender As Object, e As EventArgs) Handles checkInbtn.Click
+    Private Sub checkInbtn_Click_1(sender As Object, e As EventArgs) Handles checkInbtn.Click
         Dim empCheckInForm As New EmployeeCheckIn()
         empCheckInForm.StartPosition = FormStartPosition.Manual
         empCheckInForm.Location = Me.Location
         empCheckInForm.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub payslip_Click_1(sender As Object, e As EventArgs) Handles payslip.Click
-        Dim payslipForm As New EmployeePayslip()
-        payslipForm.StartPosition = FormStartPosition.Manual
-        payslipForm.Location = Me.Location
-        payslipForm.Show()
         Me.Hide()
     End Sub
 

@@ -117,7 +117,7 @@ Partial Class EmployeeCheckIn
         RoundedButton1.BorderSize = 2
         RoundedButton1.ClickColor = Color.DarkGray
         RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Berlin Sans FB", 12.0F)
+        RoundedButton1.Font = New Font("Berlin Sans FB", 12F)
         RoundedButton1.HoverColor = Color.LightGray
         RoundedButton1.Location = New Point(6, 5)
         RoundedButton1.Name = "RoundedButton1"
@@ -135,7 +135,7 @@ Partial Class EmployeeCheckIn
         profile.BorderSize = 2
         profile.ClickColor = Color.DarkGray
         profile.FlatStyle = FlatStyle.Flat
-        profile.Font = New Font("Berlin Sans FB", 12.0F)
+        profile.Font = New Font("Berlin Sans FB", 12F)
         profile.HoverColor = Color.LightGray
         profile.Location = New Point(684, 5)
         profile.Name = "profile"
@@ -153,7 +153,7 @@ Partial Class EmployeeCheckIn
         attendance.BorderSize = 2
         attendance.ClickColor = Color.DarkGray
         attendance.FlatStyle = FlatStyle.Flat
-        attendance.Font = New Font("Berlin Sans FB", 12.0F)
+        attendance.Font = New Font("Berlin Sans FB", 12F)
         attendance.HoverColor = Color.LightGray
         attendance.Location = New Point(515, 6)
         attendance.Name = "attendance"
@@ -171,7 +171,7 @@ Partial Class EmployeeCheckIn
         payslip.BorderSize = 2
         payslip.ClickColor = Color.DarkGray
         payslip.FlatStyle = FlatStyle.Flat
-        payslip.Font = New Font("Berlin Sans FB", 12.0F)
+        payslip.Font = New Font("Berlin Sans FB", 12F)
         payslip.HoverColor = Color.LightGray
         payslip.Location = New Point(346, 6)
         payslip.Name = "payslip"
@@ -189,7 +189,7 @@ Partial Class EmployeeCheckIn
         dashb.BorderSize = 2
         dashb.ClickColor = Color.DarkGray
         dashb.FlatStyle = FlatStyle.Flat
-        dashb.Font = New Font("Berlin Sans FB", 12.0F)
+        dashb.Font = New Font("Berlin Sans FB", 12F)
         dashb.HoverColor = Color.LightGray
         dashb.Location = New Point(176, 6)
         dashb.Name = "dashb"
@@ -218,7 +218,7 @@ Partial Class EmployeeCheckIn
         ' 
         btnCheckIn.BackColor = Color.LawnGreen
         btnCheckIn.FlatStyle = FlatStyle.Popup
-        btnCheckIn.Font = New Font("Microsoft Sans Serif", 18.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnCheckIn.Font = New Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnCheckIn.Location = New Point(258, 290)
         btnCheckIn.Name = "btnCheckIn"
         btnCheckIn.Size = New Size(229, 52)
@@ -295,7 +295,7 @@ Partial Class EmployeeCheckIn
         ' 
         ' EmployeeCheckIn
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1018, 660)
         Controls.Add(btnBack)

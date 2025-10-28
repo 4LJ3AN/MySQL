@@ -115,7 +115,7 @@ Partial Class EmployeePayslip
         ' 
         ' pays
         ' 
-        pays.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        pays.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         pays.Location = New Point(10, 13)
         pays.Name = "pays"
         pays.Size = New Size(174, 23)
@@ -155,7 +155,7 @@ Partial Class EmployeePayslip
         ' Label30
         ' 
         Label30.AutoSize = True
-        Label30.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label30.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label30.Location = New Point(627, 277)
         Label30.Name = "Label30"
         Label30.Size = New Size(56, 16)
@@ -164,7 +164,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label31
         ' 
-        Label31.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label31.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label31.Location = New Point(438, 275)
         Label31.Name = "Label31"
         Label31.Size = New Size(174, 23)
@@ -174,7 +174,7 @@ Partial Class EmployeePayslip
         ' Label29
         ' 
         Label29.AutoSize = True
-        Label29.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label29.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label29.Location = New Point(203, 277)
         Label29.Name = "Label29"
         Label29.Size = New Size(56, 16)
@@ -184,7 +184,7 @@ Partial Class EmployeePayslip
         ' Label27
         ' 
         Label27.AutoSize = True
-        Label27.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label27.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label27.Location = New Point(626, 244)
         Label27.Name = "Label27"
         Label27.Size = New Size(44, 16)
@@ -194,7 +194,7 @@ Partial Class EmployeePayslip
         ' Label21
         ' 
         Label21.AutoSize = True
-        Label21.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label21.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label21.Location = New Point(626, 221)
         Label21.Name = "Label21"
         Label21.Size = New Size(44, 16)
@@ -204,7 +204,7 @@ Partial Class EmployeePayslip
         ' Label22
         ' 
         Label22.AutoSize = True
-        Label22.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label22.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label22.Location = New Point(626, 198)
         Label22.Name = "Label22"
         Label22.Size = New Size(44, 16)
@@ -254,7 +254,7 @@ Partial Class EmployeePayslip
         ' Label19
         ' 
         Label19.AutoSize = True
-        Label19.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label19.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label19.Location = New Point(203, 218)
         Label19.Name = "Label19"
         Label19.Size = New Size(44, 16)
@@ -264,7 +264,7 @@ Partial Class EmployeePayslip
         ' Label18
         ' 
         Label18.AutoSize = True
-        Label18.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label18.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label18.Location = New Point(203, 195)
         Label18.Name = "Label18"
         Label18.Size = New Size(56, 16)
@@ -328,7 +328,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label13
         ' 
-        Label13.Font = New Font("Cambria", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label13.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label13.Location = New Point(499, 75)
         Label13.Name = "Label13"
         Label13.Size = New Size(174, 23)
@@ -347,7 +347,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label11
         ' 
-        Label11.Font = New Font("Cambria", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label11.Location = New Point(499, 29)
         Label11.Name = "Label11"
         Label11.Size = New Size(174, 23)
@@ -376,7 +376,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label9
         ' 
-        Label9.Font = New Font("Cambria", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label9.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label9.Location = New Point(11, 75)
         Label9.Name = "Label9"
         Label9.Size = New Size(174, 23)
@@ -385,7 +385,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label7
         ' 
-        Label7.Font = New Font("Cambria", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label7.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label7.Location = New Point(11, 29)
         Label7.Name = "Label7"
         Label7.Size = New Size(174, 23)
@@ -394,7 +394,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label20
         ' 
-        Label20.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label20.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label20.Location = New Point(438, 172)
         Label20.Name = "Label20"
         Label20.Size = New Size(174, 23)
@@ -403,7 +403,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label28
         ' 
-        Label28.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label28.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label28.Location = New Point(14, 275)
         Label28.Name = "Label28"
         Label28.Size = New Size(174, 23)
@@ -412,7 +412,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label14
         ' 
-        Label14.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label14.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label14.Location = New Point(14, 172)
         Label14.Name = "Label14"
         Label14.Size = New Size(174, 23)
@@ -421,7 +421,7 @@ Partial Class EmployeePayslip
         ' 
         ' Label4
         ' 
-        Label4.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label4.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label4.Location = New Point(14, 16)
         Label4.Name = "Label4"
         Label4.Size = New Size(174, 23)
@@ -497,7 +497,7 @@ Partial Class EmployeePayslip
         checkInbtn.BorderSize = 2
         checkInbtn.ClickColor = Color.DarkGray
         checkInbtn.FlatStyle = FlatStyle.Flat
-        checkInbtn.Font = New Font("Berlin Sans FB", 12.0F)
+        checkInbtn.Font = New Font("Berlin Sans FB", 12F)
         checkInbtn.HoverColor = Color.LightGray
         checkInbtn.Location = New Point(6, 5)
         checkInbtn.Name = "checkInbtn"
@@ -515,7 +515,7 @@ Partial Class EmployeePayslip
         profile.BorderSize = 2
         profile.ClickColor = Color.DarkGray
         profile.FlatStyle = FlatStyle.Flat
-        profile.Font = New Font("Berlin Sans FB", 12.0F)
+        profile.Font = New Font("Berlin Sans FB", 12F)
         profile.HoverColor = Color.LightGray
         profile.Location = New Point(684, 5)
         profile.Name = "profile"
@@ -533,7 +533,7 @@ Partial Class EmployeePayslip
         attendance.BorderSize = 2
         attendance.ClickColor = Color.DarkGray
         attendance.FlatStyle = FlatStyle.Flat
-        attendance.Font = New Font("Berlin Sans FB", 12.0F)
+        attendance.Font = New Font("Berlin Sans FB", 12F)
         attendance.HoverColor = Color.LightGray
         attendance.Location = New Point(515, 6)
         attendance.Name = "attendance"
@@ -551,7 +551,7 @@ Partial Class EmployeePayslip
         payslip.BorderSize = 2
         payslip.ClickColor = Color.DarkGray
         payslip.FlatStyle = FlatStyle.Flat
-        payslip.Font = New Font("Berlin Sans FB", 12.0F)
+        payslip.Font = New Font("Berlin Sans FB", 12F)
         payslip.HoverColor = Color.LightGray
         payslip.Location = New Point(346, 6)
         payslip.Name = "payslip"
@@ -569,7 +569,7 @@ Partial Class EmployeePayslip
         dashb.BorderSize = 2
         dashb.ClickColor = Color.DarkGray
         dashb.FlatStyle = FlatStyle.Flat
-        dashb.Font = New Font("Berlin Sans FB", 12.0F)
+        dashb.Font = New Font("Berlin Sans FB", 12F)
         dashb.HoverColor = Color.LightGray
         dashb.Location = New Point(176, 6)
         dashb.Name = "dashb"
@@ -633,7 +633,7 @@ Partial Class EmployeePayslip
         ' 
         ' EmployeePayslip
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1018, 660)
         Controls.Add(RoundedPanel1)

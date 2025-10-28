@@ -61,6 +61,14 @@ Public Class EmployeeCheckIn
         Me.Hide()
     End Sub
 
+    Private Sub profile_Click(sender As Object, e As EventArgs) Handles profile.Click
+        Dim profileForm As New EmployeeProfile()
+        profileForm.StartPosition = FormStartPosition.Manual
+        profileForm.Location = Me.Location
+        profileForm.Show()
+        Me.Hide()
+    End Sub
+
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Dim landing As New LandingForm
         landing.StartPosition = FormStartPosition.Manual
@@ -83,5 +91,4 @@ Public Class EmployeeCheckIn
         ' This method would be called to refresh the status from database
         LoadTodayAttendance()
     End Sub
-
 End Class

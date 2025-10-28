@@ -48,7 +48,11 @@
     End Sub
 
     Private Sub profile_Click(sender As Object, e As EventArgs) Handles profile.Click
-
+        Dim profileForm As New EmployeeProfile()
+        profileForm.StartPosition = FormStartPosition.Manual
+        profileForm.Location = Me.Location
+        profileForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Label3_Click_2(sender As Object, e As EventArgs)
