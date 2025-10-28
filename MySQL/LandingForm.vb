@@ -21,13 +21,10 @@
     'End Sub
 
     Private Sub empbtn_Click(sender As Object, e As EventArgs) Handles empbtn.Click
-        Dim empDashb As New EmployeeDashboard()
-
-        ' Match location and size
-        empDashb.StartPosition = FormStartPosition.Manual
-        empDashb.Location = Me.Location
-
-        empDashb.Show()
+        Dim empCheckInForm As New EmployeeCheckIn()
+        empCheckInForm.StartPosition = FormStartPosition.Manual
+        empCheckInForm.Location = Me.Location
+        empCheckInForm.Show()
         Me.Hide()
     End Sub
 

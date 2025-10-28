@@ -43,14 +43,13 @@ Partial Class LandingForm
         ' 
         ' adminbtn
         ' 
-        adminbtn.Font = New Font("Myanmar Text", 18.0F, FontStyle.Bold)
+        adminbtn.Font = New Font("Microsoft Sans Serif", 18F, FontStyle.Bold)
         adminbtn.Location = New Point(283, 274)
         adminbtn.Name = "adminbtn"
         adminbtn.Size = New Size(219, 63)
         adminbtn.TabIndex = 4
         adminbtn.TabStop = False
         adminbtn.Text = "Admin"
-        adminbtn.TextAlign = ContentAlignment.BottomCenter
         adminbtn.UseVisualStyleBackColor = True
         ' 
         ' welcomelbl
@@ -58,7 +57,7 @@ Partial Class LandingForm
         welcomelbl.AccessibleName = ""
         welcomelbl.Anchor = AnchorStyles.Top
         welcomelbl.BackColor = Color.Transparent
-        welcomelbl.Font = New Font("Microsoft YaHei", 24.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        welcomelbl.Font = New Font("Microsoft YaHei", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         welcomelbl.Location = New Point(274, 59)
         welcomelbl.Name = "welcomelbl"
         welcomelbl.Size = New Size(404, 130)
@@ -68,14 +67,13 @@ Partial Class LandingForm
         ' 
         ' empbtn
         ' 
-        empbtn.Font = New Font("Myanmar Text", 18.0F, FontStyle.Bold)
+        empbtn.Font = New Font("Microsoft Sans Serif", 18F, FontStyle.Bold)
         empbtn.Location = New Point(283, 380)
         empbtn.Name = "empbtn"
         empbtn.Size = New Size(219, 63)
         empbtn.TabIndex = 5
         empbtn.TabStop = False
         empbtn.Text = "Employee"
-        empbtn.TextAlign = ContentAlignment.BottomCenter
         empbtn.UseVisualStyleBackColor = True
         ' 
         ' RoundedPanel1
@@ -102,7 +100,7 @@ Partial Class LandingForm
         ' 
         ' LandingForm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LightSteelBlue
         ClientSize = New Size(1018, 660)
