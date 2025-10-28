@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AdminDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EmployeeAttendance.vb" />
     <Compile Update="My Project\Application.Designer.vb">
       <DesignTime>True</DesignTime>

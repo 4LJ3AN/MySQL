@@ -98,7 +98,7 @@ Partial Class EmployeeAttendance
         ' 
         ' greetings
         ' 
-        greetings.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        greetings.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         greetings.Location = New Point(22, 48)
         greetings.Name = "greetings"
         greetings.Size = New Size(106, 22)
@@ -132,7 +132,7 @@ Partial Class EmployeeAttendance
         profile.BorderSize = 2
         profile.ClickColor = Color.DarkGray
         profile.FlatStyle = FlatStyle.Flat
-        profile.Font = New Font("Berlin Sans FB", 12.0F)
+        profile.Font = New Font("Berlin Sans FB", 12F)
         profile.HoverColor = Color.LightGray
         profile.Location = New Point(518, 5)
         profile.Name = "profile"
@@ -150,7 +150,7 @@ Partial Class EmployeeAttendance
         attendance.BorderSize = 2
         attendance.ClickColor = Color.DarkGray
         attendance.FlatStyle = FlatStyle.Flat
-        attendance.Font = New Font("Berlin Sans FB", 12.0F)
+        attendance.Font = New Font("Berlin Sans FB", 12F)
         attendance.HoverColor = Color.LightGray
         attendance.Location = New Point(349, 6)
         attendance.Name = "attendance"
@@ -168,7 +168,7 @@ Partial Class EmployeeAttendance
         payslip.BorderSize = 2
         payslip.ClickColor = Color.DarkGray
         payslip.FlatStyle = FlatStyle.Flat
-        payslip.Font = New Font("Berlin Sans FB", 12.0F)
+        payslip.Font = New Font("Berlin Sans FB", 12F)
         payslip.HoverColor = Color.LightGray
         payslip.Location = New Point(180, 6)
         payslip.Name = "payslip"
@@ -186,7 +186,7 @@ Partial Class EmployeeAttendance
         dashb.BorderSize = 2
         dashb.ClickColor = Color.DarkGray
         dashb.FlatStyle = FlatStyle.Flat
-        dashb.Font = New Font("Berlin Sans FB", 12.0F)
+        dashb.Font = New Font("Berlin Sans FB", 12F)
         dashb.HoverColor = Color.LightGray
         dashb.Location = New Point(10, 6)
         dashb.Name = "dashb"
@@ -212,7 +212,7 @@ Partial Class EmployeeAttendance
         current_net_pay.AutoSize = True
         current_net_pay.Location = New Point(13, 77)
         current_net_pay.Name = "current_net_pay"
-        current_net_pay.Size = New Size(103, 15)
+        current_net_pay.Size = New Size(102, 15)
         current_net_pay.TabIndex = 6
         current_net_pay.Text = "Total Present Days"
         ' 
@@ -228,7 +228,7 @@ Partial Class EmployeeAttendance
         ' 
         ' cur_month_sal
         ' 
-        cur_month_sal.Font = New Font("Segoe UI", 11.0F)
+        cur_month_sal.Font = New Font("Segoe UI", 11F)
         cur_month_sal.Location = New Point(12, 14)
         cur_month_sal.Name = "cur_month_sal"
         cur_month_sal.Size = New Size(166, 27)
@@ -266,7 +266,7 @@ Partial Class EmployeeAttendance
         ' 
         ' days_present
         ' 
-        days_present.Font = New Font("Segoe UI", 11.0F)
+        days_present.Font = New Font("Segoe UI", 11F)
         days_present.Location = New Point(11, 14)
         days_present.Name = "days_present"
         days_present.Size = New Size(166, 27)
@@ -288,7 +288,7 @@ Partial Class EmployeeAttendance
         total_hours.AutoSize = True
         total_hours.Location = New Point(9, 77)
         total_hours.Name = "total_hours"
-        total_hours.Size = New Size(109, 15)
+        total_hours.Size = New Size(108, 15)
         total_hours.TabIndex = 7
         total_hours.Text = "Total late check-ins"
         ' 
@@ -304,7 +304,7 @@ Partial Class EmployeeAttendance
         ' 
         ' hours_worked
         ' 
-        hours_worked.Font = New Font("Segoe UI", 11.0F)
+        hours_worked.Font = New Font("Segoe UI", 11F)
         hours_worked.Location = New Point(10, 15)
         hours_worked.Name = "hours_worked"
         hours_worked.Size = New Size(166, 27)
@@ -326,7 +326,7 @@ Partial Class EmployeeAttendance
         Label3.AutoSize = True
         Label3.Location = New Point(9, 77)
         Label3.Name = "Label3"
-        Label3.Size = New Size(86, 15)
+        Label3.Size = New Size(85, 15)
         Label3.TabIndex = 7
         Label3.Text = "Total Absences"
         ' 
@@ -342,7 +342,7 @@ Partial Class EmployeeAttendance
         ' 
         ' ot_hrs
         ' 
-        ot_hrs.Font = New Font("Segoe UI", 11.0F)
+        ot_hrs.Font = New Font("Segoe UI", 11F)
         ot_hrs.Location = New Point(12, 13)
         ot_hrs.Name = "ot_hrs"
         ot_hrs.Size = New Size(166, 27)
@@ -413,8 +413,9 @@ Partial Class EmployeeAttendance
         ' 
         ' EmployeeAttendance
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.Linen
         ClientSize = New Size(1018, 660)
         Controls.Add(RoundedPanel7)
         Controls.Add(btnBack)
