@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class payslip
+Partial Class EmployeePayslip
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,16 +22,6 @@ Partial Class payslip
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        RoundedPanel1 = New RoundedPanel()
-        position = New Label()
-        Label2 = New Label()
-        greetings = New Label()
-        Label1 = New Label()
-        RoundedPanel2 = New RoundedPanel()
-        profile = New RoundedButton()
-        attendance = New RoundedButton()
-        RoundedButton1 = New RoundedButton()
-        dashb = New RoundedButton()
         RoundedPanel3 = New RoundedPanel()
         DateTimePicker1 = New DateTimePicker()
         Label3 = New Label()
@@ -70,146 +60,24 @@ Partial Class payslip
         Label16 = New Label()
         Label5 = New Label()
         btnBack = New Button()
-        RoundedPanel1.SuspendLayout()
-        RoundedPanel2.SuspendLayout()
+        RoundedPanel2 = New RoundedPanel()
+        checkInbtn = New RoundedButton()
+        profile = New RoundedButton()
+        attendance = New RoundedButton()
+        payslip = New RoundedButton()
+        dashb = New RoundedButton()
+        RoundedPanel1 = New RoundedPanel()
+        position = New Label()
+        Label2 = New Label()
+        greetings = New Label()
+        Label1 = New Label()
         RoundedPanel3.SuspendLayout()
         RoundedPanel4.SuspendLayout()
         RoundedPanel6.SuspendLayout()
         RoundedPanel5.SuspendLayout()
+        RoundedPanel2.SuspendLayout()
+        RoundedPanel1.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' RoundedPanel1
-        ' 
-        RoundedPanel1.Controls.Add(position)
-        RoundedPanel1.Controls.Add(Label2)
-        RoundedPanel1.Controls.Add(greetings)
-        RoundedPanel1.Controls.Add(Label1)
-        RoundedPanel1.ImeMode = ImeMode.Off
-        RoundedPanel1.Location = New Point(0, 0)
-        RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(1040, 89)
-        RoundedPanel1.TabIndex = 1
-        ' 
-        ' position
-        ' 
-        position.Enabled = False
-        position.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        position.Location = New Point(847, 46)
-        position.Name = "position"
-        position.Size = New Size(142, 23)
-        position.TabIndex = 1
-        position.Text = "Position: Employee"
-        ' 
-        ' Label2
-        ' 
-        Label2.AccessibleDescription = ""
-        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(844, 19)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(193, 23)
-        Label2.TabIndex = 3
-        Label2.Text = "Employee ID:  EMP-1234"
-        ' 
-        ' greetings
-        ' 
-        greetings.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        greetings.Location = New Point(22, 48)
-        greetings.Name = "greetings"
-        greetings.Size = New Size(106, 22)
-        greetings.TabIndex = 2
-        greetings.Text = "Welcome Back!"
-        ' 
-        ' Label1
-        ' 
-        Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(16, 15)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(158, 23)
-        Label1.TabIndex = 1
-        Label1.Text = "Employee Portal"
-        ' 
-        ' RoundedPanel2
-        ' 
-        RoundedPanel2.Controls.Add(profile)
-        RoundedPanel2.Controls.Add(attendance)
-        RoundedPanel2.Controls.Add(RoundedButton1)
-        RoundedPanel2.Controls.Add(dashb)
-        RoundedPanel2.Location = New Point(179, 131)
-        RoundedPanel2.Name = "RoundedPanel2"
-        RoundedPanel2.Size = New Size(694, 49)
-        RoundedPanel2.TabIndex = 2
-        ' 
-        ' profile
-        ' 
-        profile.BorderColor = Color.Gray
-        profile.BorderRadius = 20
-        profile.BorderSize = 2
-        profile.ClickColor = Color.DarkGray
-        profile.FlatStyle = FlatStyle.Flat
-        profile.Font = New Font("Berlin Sans FB", 12F)
-        profile.HoverColor = Color.LightGray
-        profile.Location = New Point(518, 5)
-        profile.Name = "profile"
-        profile.SelectedColor = Color.Silver
-        profile.Size = New Size(168, 37)
-        profile.TabIndex = 3
-        profile.TabStop = False
-        profile.Text = "👤  Profile"
-        profile.UseVisualStyleBackColor = True
-        ' 
-        ' attendance
-        ' 
-        attendance.BorderColor = Color.Gray
-        attendance.BorderRadius = 20
-        attendance.BorderSize = 2
-        attendance.ClickColor = Color.DarkGray
-        attendance.FlatStyle = FlatStyle.Flat
-        attendance.Font = New Font("Berlin Sans FB", 12F)
-        attendance.HoverColor = Color.LightGray
-        attendance.Location = New Point(349, 6)
-        attendance.Name = "attendance"
-        attendance.SelectedColor = Color.Silver
-        attendance.Size = New Size(168, 37)
-        attendance.TabIndex = 2
-        attendance.TabStop = False
-        attendance.Text = "📆  Attendance"
-        attendance.UseVisualStyleBackColor = True
-        ' 
-        ' RoundedButton1
-        ' 
-        RoundedButton1.BorderColor = Color.Gray
-        RoundedButton1.BorderRadius = 20
-        RoundedButton1.BorderSize = 2
-        RoundedButton1.ClickColor = Color.DarkGray
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Berlin Sans FB", 12F)
-        RoundedButton1.HoverColor = Color.LightGray
-        RoundedButton1.Location = New Point(180, 6)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.SelectedColor = Color.Silver
-        RoundedButton1.Size = New Size(168, 37)
-        RoundedButton1.TabIndex = 1
-        RoundedButton1.TabStop = False
-        RoundedButton1.Text = "📄  Payslip"
-        RoundedButton1.UseVisualStyleBackColor = True
-        ' 
-        ' dashb
-        ' 
-        dashb.BorderColor = Color.Gray
-        dashb.BorderRadius = 20
-        dashb.BorderSize = 2
-        dashb.ClickColor = Color.DarkGray
-        dashb.FlatStyle = FlatStyle.Flat
-        dashb.Font = New Font("Berlin Sans FB", 12F)
-        dashb.HoverColor = Color.LightGray
-        dashb.Location = New Point(10, 6)
-        dashb.Name = "dashb"
-        dashb.SelectedColor = Color.Silver
-        dashb.Size = New Size(168, 37)
-        dashb.TabIndex = 0
-        dashb.TabStop = False
-        dashb.Text = "📊  Dashboard"
-        dashb.UseVisualStyleBackColor = True
         ' 
         ' RoundedPanel3
         ' 
@@ -223,11 +91,17 @@ Partial Class payslip
         ' 
         ' DateTimePicker1
         ' 
+        DateTimePicker1.Checked = False
+        DateTimePicker1.CustomFormat = ""
+        DateTimePicker1.ImeMode = ImeMode.NoControl
         DateTimePicker1.Location = New Point(10, 58)
+        DateTimePicker1.MaxDate = New Date(2050, 12, 1, 0, 0, 0, 0)
         DateTimePicker1.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(200, 23)
         DateTimePicker1.TabIndex = 6
+        DateTimePicker1.TabStop = False
+        DateTimePicker1.Value = New Date(2025, 10, 28, 16, 51, 16, 0)
         ' 
         ' Label3
         ' 
@@ -241,7 +115,7 @@ Partial Class payslip
         ' 
         ' pays
         ' 
-        pays.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        pays.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         pays.Location = New Point(10, 13)
         pays.Name = "pays"
         pays.Size = New Size(174, 23)
@@ -281,7 +155,7 @@ Partial Class payslip
         ' Label30
         ' 
         Label30.AutoSize = True
-        Label30.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label30.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label30.Location = New Point(627, 277)
         Label30.Name = "Label30"
         Label30.Size = New Size(56, 16)
@@ -290,7 +164,7 @@ Partial Class payslip
         ' 
         ' Label31
         ' 
-        Label31.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label31.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label31.Location = New Point(438, 275)
         Label31.Name = "Label31"
         Label31.Size = New Size(174, 23)
@@ -300,7 +174,7 @@ Partial Class payslip
         ' Label29
         ' 
         Label29.AutoSize = True
-        Label29.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label29.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label29.Location = New Point(203, 277)
         Label29.Name = "Label29"
         Label29.Size = New Size(56, 16)
@@ -310,7 +184,7 @@ Partial Class payslip
         ' Label27
         ' 
         Label27.AutoSize = True
-        Label27.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label27.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label27.Location = New Point(626, 244)
         Label27.Name = "Label27"
         Label27.Size = New Size(44, 16)
@@ -320,7 +194,7 @@ Partial Class payslip
         ' Label21
         ' 
         Label21.AutoSize = True
-        Label21.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label21.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label21.Location = New Point(626, 221)
         Label21.Name = "Label21"
         Label21.Size = New Size(44, 16)
@@ -330,7 +204,7 @@ Partial Class payslip
         ' Label22
         ' 
         Label22.AutoSize = True
-        Label22.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label22.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label22.Location = New Point(626, 198)
         Label22.Name = "Label22"
         Label22.Size = New Size(44, 16)
@@ -380,7 +254,7 @@ Partial Class payslip
         ' Label19
         ' 
         Label19.AutoSize = True
-        Label19.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label19.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label19.Location = New Point(203, 218)
         Label19.Name = "Label19"
         Label19.Size = New Size(44, 16)
@@ -390,7 +264,7 @@ Partial Class payslip
         ' Label18
         ' 
         Label18.AutoSize = True
-        Label18.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label18.Font = New Font("Century", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label18.Location = New Point(203, 195)
         Label18.Name = "Label18"
         Label18.Size = New Size(56, 16)
@@ -454,7 +328,7 @@ Partial Class payslip
         ' 
         ' Label13
         ' 
-        Label13.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label13.Font = New Font("Cambria", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label13.Location = New Point(499, 75)
         Label13.Name = "Label13"
         Label13.Size = New Size(174, 23)
@@ -473,7 +347,7 @@ Partial Class payslip
         ' 
         ' Label11
         ' 
-        Label11.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.Font = New Font("Cambria", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label11.Location = New Point(499, 29)
         Label11.Name = "Label11"
         Label11.Size = New Size(174, 23)
@@ -502,7 +376,7 @@ Partial Class payslip
         ' 
         ' Label9
         ' 
-        Label9.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label9.Font = New Font("Cambria", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label9.Location = New Point(11, 75)
         Label9.Name = "Label9"
         Label9.Size = New Size(174, 23)
@@ -511,7 +385,7 @@ Partial Class payslip
         ' 
         ' Label7
         ' 
-        Label7.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label7.Font = New Font("Cambria", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label7.Location = New Point(11, 29)
         Label7.Name = "Label7"
         Label7.Size = New Size(174, 23)
@@ -520,7 +394,7 @@ Partial Class payslip
         ' 
         ' Label20
         ' 
-        Label20.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label20.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label20.Location = New Point(438, 172)
         Label20.Name = "Label20"
         Label20.Size = New Size(174, 23)
@@ -529,7 +403,7 @@ Partial Class payslip
         ' 
         ' Label28
         ' 
-        Label28.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label28.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label28.Location = New Point(14, 275)
         Label28.Name = "Label28"
         Label28.Size = New Size(174, 23)
@@ -538,7 +412,7 @@ Partial Class payslip
         ' 
         ' Label14
         ' 
-        Label14.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label14.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label14.Location = New Point(14, 172)
         Label14.Name = "Label14"
         Label14.Size = New Size(174, 23)
@@ -547,7 +421,7 @@ Partial Class payslip
         ' 
         ' Label4
         ' 
-        Label4.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label4.Font = New Font("Arial Rounded MT Bold", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label4.Location = New Point(14, 16)
         Label4.Name = "Label4"
         Label4.Size = New Size(174, 23)
@@ -604,39 +478,181 @@ Partial Class payslip
         btnBack.Text = "Sign Out"
         btnBack.UseVisualStyleBackColor = True
         ' 
+        ' RoundedPanel2
+        ' 
+        RoundedPanel2.Controls.Add(checkInbtn)
+        RoundedPanel2.Controls.Add(profile)
+        RoundedPanel2.Controls.Add(attendance)
+        RoundedPanel2.Controls.Add(payslip)
+        RoundedPanel2.Controls.Add(dashb)
+        RoundedPanel2.Location = New Point(80, 126)
+        RoundedPanel2.Name = "RoundedPanel2"
+        RoundedPanel2.Size = New Size(858, 49)
+        RoundedPanel2.TabIndex = 9
+        ' 
+        ' checkInbtn
+        ' 
+        checkInbtn.BorderColor = Color.Gray
+        checkInbtn.BorderRadius = 20
+        checkInbtn.BorderSize = 2
+        checkInbtn.ClickColor = Color.DarkGray
+        checkInbtn.FlatStyle = FlatStyle.Flat
+        checkInbtn.Font = New Font("Berlin Sans FB", 12.0F)
+        checkInbtn.HoverColor = Color.LightGray
+        checkInbtn.Location = New Point(6, 5)
+        checkInbtn.Name = "checkInbtn"
+        checkInbtn.SelectedColor = Color.Silver
+        checkInbtn.Size = New Size(168, 37)
+        checkInbtn.TabIndex = 8
+        checkInbtn.TabStop = False
+        checkInbtn.Text = "☑   Check In"
+        checkInbtn.UseVisualStyleBackColor = True
+        ' 
+        ' profile
+        ' 
+        profile.BorderColor = Color.Gray
+        profile.BorderRadius = 20
+        profile.BorderSize = 2
+        profile.ClickColor = Color.DarkGray
+        profile.FlatStyle = FlatStyle.Flat
+        profile.Font = New Font("Berlin Sans FB", 12.0F)
+        profile.HoverColor = Color.LightGray
+        profile.Location = New Point(684, 5)
+        profile.Name = "profile"
+        profile.SelectedColor = Color.Silver
+        profile.Size = New Size(168, 37)
+        profile.TabIndex = 3
+        profile.TabStop = False
+        profile.Text = "👤  Profile"
+        profile.UseVisualStyleBackColor = True
+        ' 
+        ' attendance
+        ' 
+        attendance.BorderColor = Color.Gray
+        attendance.BorderRadius = 20
+        attendance.BorderSize = 2
+        attendance.ClickColor = Color.DarkGray
+        attendance.FlatStyle = FlatStyle.Flat
+        attendance.Font = New Font("Berlin Sans FB", 12.0F)
+        attendance.HoverColor = Color.LightGray
+        attendance.Location = New Point(515, 6)
+        attendance.Name = "attendance"
+        attendance.SelectedColor = Color.Silver
+        attendance.Size = New Size(168, 37)
+        attendance.TabIndex = 2
+        attendance.TabStop = False
+        attendance.Text = "📆  Attendance"
+        attendance.UseVisualStyleBackColor = True
+        ' 
         ' payslip
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        payslip.BorderColor = Color.Gray
+        payslip.BorderRadius = 20
+        payslip.BorderSize = 2
+        payslip.ClickColor = Color.DarkGray
+        payslip.FlatStyle = FlatStyle.Flat
+        payslip.Font = New Font("Berlin Sans FB", 12.0F)
+        payslip.HoverColor = Color.LightGray
+        payslip.Location = New Point(346, 6)
+        payslip.Name = "payslip"
+        payslip.SelectedColor = Color.Silver
+        payslip.Size = New Size(168, 37)
+        payslip.TabIndex = 1
+        payslip.TabStop = False
+        payslip.Text = "📄  Payslip"
+        payslip.UseVisualStyleBackColor = True
+        ' 
+        ' dashb
+        ' 
+        dashb.BorderColor = Color.Gray
+        dashb.BorderRadius = 20
+        dashb.BorderSize = 2
+        dashb.ClickColor = Color.DarkGray
+        dashb.FlatStyle = FlatStyle.Flat
+        dashb.Font = New Font("Berlin Sans FB", 12.0F)
+        dashb.HoverColor = Color.LightGray
+        dashb.Location = New Point(176, 6)
+        dashb.Name = "dashb"
+        dashb.SelectedColor = Color.Silver
+        dashb.Size = New Size(168, 37)
+        dashb.TabIndex = 0
+        dashb.TabStop = False
+        dashb.Text = "📊  Dashboard"
+        dashb.UseVisualStyleBackColor = True
+        ' 
+        ' RoundedPanel1
+        ' 
+        RoundedPanel1.Controls.Add(position)
+        RoundedPanel1.Controls.Add(Label2)
+        RoundedPanel1.Controls.Add(greetings)
+        RoundedPanel1.Controls.Add(Label1)
+        RoundedPanel1.Location = New Point(12, 3)
+        RoundedPanel1.Name = "RoundedPanel1"
+        RoundedPanel1.Size = New Size(994, 97)
+        RoundedPanel1.TabIndex = 10
+        ' 
+        ' position
+        ' 
+        position.Enabled = False
+        position.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        position.Location = New Point(812, 52)
+        position.Name = "position"
+        position.Size = New Size(142, 23)
+        position.TabIndex = 1
+        position.Text = "Position: Employee"
+        ' 
+        ' Label2
+        ' 
+        Label2.AccessibleDescription = ""
+        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(810, 19)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(167, 23)
+        Label2.TabIndex = 3
+        Label2.Text = "Employee ID: EMP1234"
+        ' 
+        ' greetings
+        ' 
+        greetings.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        greetings.Location = New Point(19, 52)
+        greetings.Name = "greetings"
+        greetings.Size = New Size(100, 22)
+        greetings.TabIndex = 2
+        greetings.Text = "Welcome Back!"
+        greetings.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' Label1
+        ' 
+        Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(16, 15)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(157, 23)
+        Label1.TabIndex = 1
+        Label1.Text = "Employee Portal"
+        Label1.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' EmployeePayslip
+        ' 
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1018, 660)
+        Controls.Add(RoundedPanel1)
+        Controls.Add(RoundedPanel2)
         Controls.Add(btnBack)
         Controls.Add(RoundedPanel4)
         Controls.Add(RoundedPanel3)
-        Controls.Add(RoundedPanel2)
-        Controls.Add(RoundedPanel1)
-        Name = "payslip"
-        Text = "payslip"
-        RoundedPanel1.ResumeLayout(False)
-        RoundedPanel2.ResumeLayout(False)
+        Name = "EmployeePayslip"
+        Text = "Payslip"
         RoundedPanel3.ResumeLayout(False)
         RoundedPanel4.ResumeLayout(False)
         RoundedPanel4.PerformLayout()
         RoundedPanel6.ResumeLayout(False)
         RoundedPanel6.PerformLayout()
         RoundedPanel5.ResumeLayout(False)
+        RoundedPanel2.ResumeLayout(False)
+        RoundedPanel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents position As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents greetings As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents RoundedPanel2 As RoundedPanel
-    Friend WithEvents profile As RoundedButton
-    Friend WithEvents attendance As RoundedButton
-    Friend WithEvents RoundedButton1 As RoundedButton
-    Friend WithEvents dashb As RoundedButton
     Friend WithEvents RoundedPanel3 As RoundedPanel
     Friend WithEvents pays As Label
     Friend WithEvents Label3 As Label
@@ -675,4 +691,15 @@ Partial Class payslip
     Friend WithEvents Label32 As Label
     Friend WithEvents Label33 As Label
     Friend WithEvents btnBack As Button
+    Friend WithEvents RoundedPanel2 As RoundedPanel
+    Friend WithEvents checkInbtn As RoundedButton
+    Friend WithEvents profile As RoundedButton
+    Friend WithEvents attendance As RoundedButton
+    Friend WithEvents payslip As RoundedButton
+    Friend WithEvents dashb As RoundedButton
+    Friend WithEvents RoundedPanel1 As RoundedPanel
+    Friend WithEvents position As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents greetings As Label
+    Friend WithEvents Label1 As Label
 End Class

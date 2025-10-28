@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub payslip_Click(sender As Object, e As EventArgs) Handles payslip.Click
-        Dim payslipForm As New payslip()
+        Dim payslipForm As New EmployeePayslip()
         payslipForm.StartPosition = FormStartPosition.Manual
         payslipForm.Location = Me.Location
         payslipForm.Show()
@@ -67,4 +67,13 @@
         landing.Show()
         Close()
     End Sub
+
+    Private Sub checkInbtn_Click_1(sender As Object, e As EventArgs) Handles checkInbtn.Click
+        Dim empCheckInForm As New EmployeeCheckIn()
+        empCheckInForm.StartPosition = FormStartPosition.Manual
+        empCheckInForm.Location = Me.Location
+        empCheckInForm.Show()
+        Me.Hide()
+    End Sub
+
 End Class
