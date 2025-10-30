@@ -1,10 +1,52 @@
-﻿Imports Org.BouncyCastle.Asn1.Cmp
+﻿Imports MySQL.Data.MySqlClient
+Imports Org.BouncyCastle.Asn1.Cmp
 
 Public Class EmployeeCheckIn
     Private timer As Timer
     Private checkInTime As DateTime?
     Private checkOutTime As DateTime?
     Private currentStatus As String = "Not Checked In"
+
+    Dim db As New DatabaseConnection()
+    Dim conn As MySqlConnection
+    Dim cmd As MySqlCommand
+
+    Private Sub btnCheckIn_Click(sender As Object, e As EventArgs) Handles btnCheckIn.Click
+        Try
+            conn = db.GetConnection()
+            conn.Open()
+
+            Dim empId As String = empIDlbl.Text
+            Dim currentDate As String = DateTime.Now.ToString("yyyy-MM-dd")
+            Dim currentTime As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+
+            ' Prevent duplicate check-in for same day
+            Dim checkQuery As String = "SELECT * FROM attendance WHERE employeeid=@empid AND date=@date"
+            cmd = New MySqlCommand(checkQuery, conn)
+            cmd.Parameters.AddWithValue("@empid", empId)
+            cmd.Parameters.AddWithValue("@date", currentDate)
+
+            Dim reader As MySqlDataReader = cmd.ExecuteReader()
+            If reader.HasRows Then
+                MessageBox.Show("You already checked in today.")
+                reader.Close()
+            Else
+                reader.Close()
+                Dim insertQuery As String = "INSERT INTO attendance (employeeid, date, timein) VALUES (@empid, @date, @timein)"
+                cmd = New MySqlCommand(insertQuery, conn)
+                cmd.Parameters.AddWithValue("@empid", empId)
+                cmd.Parameters.AddWithValue("@date", currentDate)
+                cmd.Parameters.AddWithValue("@timein", currentTime)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Check-in recorded successfully!")
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
 
     Private Sub EmployeeCheckIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializeTimer()

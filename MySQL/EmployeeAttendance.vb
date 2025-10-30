@@ -1,38 +1,13 @@
-﻿Public Class EmployeeAttendance
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+﻿Imports MySQL.Data.MySqlClient
 
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles greetings.Click
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles position.Click
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles profile.Click
-
-    End Sub
+Public Class EmployeeAttendance
 
     Private Sub payslip_Click(sender As Object, e As EventArgs)
         Dim payslipForm As New EmployeePayslip
         payslipForm.StartPosition = FormStartPosition.Manual
         payslipForm.Location = Location
-        payslipForm.Show
-        Hide
-    End Sub
-
-    Private Sub Label3_Click_1(sender As Object, e As EventArgs) Handles cur_month_sal.Click
-
+        payslipForm.Show()
+        Hide()
     End Sub
 
     Private Sub dashb_Click(sender As Object, e As EventArgs) Handles dashb.Click
@@ -59,14 +34,6 @@
         Me.Hide()
     End Sub
 
-    Private Sub Label3_Click_2(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Dim landing As New LandingForm
         landing.StartPosition = FormStartPosition.Manual
@@ -91,5 +58,4 @@
         payslipForm.Show()
         Me.Hide()
     End Sub
-
 End Class

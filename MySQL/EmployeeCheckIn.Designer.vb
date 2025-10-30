@@ -24,7 +24,7 @@ Partial Class EmployeeCheckIn
     Private Sub InitializeComponent()
         RoundedPanel1 = New RoundedPanel()
         position = New Label()
-        Label2 = New Label()
+        empIDlbl = New Label()
         greetings = New Label()
         Label1 = New Label()
         RoundedPanel2 = New RoundedPanel()
@@ -50,7 +50,7 @@ Partial Class EmployeeCheckIn
         ' RoundedPanel1
         ' 
         RoundedPanel1.Controls.Add(position)
-        RoundedPanel1.Controls.Add(Label2)
+        RoundedPanel1.Controls.Add(empIDlbl)
         RoundedPanel1.Controls.Add(greetings)
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Location = New Point(12, 3)
@@ -68,15 +68,15 @@ Partial Class EmployeeCheckIn
         position.TabIndex = 1
         position.Text = "Position: Employee"
         ' 
-        ' Label2
+        ' empIDlbl
         ' 
-        Label2.AccessibleDescription = ""
-        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(810, 19)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(167, 23)
-        Label2.TabIndex = 3
-        Label2.Text = "Employee ID: EMP1234"
+        empIDlbl.AccessibleDescription = ""
+        empIDlbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        empIDlbl.Location = New Point(810, 19)
+        empIDlbl.Name = "empIDlbl"
+        empIDlbl.Size = New Size(167, 23)
+        empIDlbl.TabIndex = 3
+        empIDlbl.Text = "Employee ID: EM-1234"
         ' 
         ' greetings
         ' 
@@ -316,7 +316,7 @@ Partial Class EmployeeCheckIn
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents greetings As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents empIDlbl As Label
     Friend WithEvents position As Label
     Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents attendance As RoundedButton
