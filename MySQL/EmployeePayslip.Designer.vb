@@ -67,9 +67,9 @@ Partial Class EmployeePayslip
         payslip = New RoundedButton()
         dashb = New RoundedButton()
         RoundedPanel1 = New RoundedPanel()
-        position = New Label()
-        Label2 = New Label()
-        greetings = New Label()
+        positionlbl = New Label()
+        empIDlbl = New Label()
+        welcomelbl = New Label()
         Label1 = New Label()
         RoundedPanel3.SuspendLayout()
         RoundedPanel4.SuspendLayout()
@@ -582,44 +582,47 @@ Partial Class EmployeePayslip
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(position)
-        RoundedPanel1.Controls.Add(Label2)
-        RoundedPanel1.Controls.Add(greetings)
+        RoundedPanel1.Controls.Add(positionlbl)
+        RoundedPanel1.Controls.Add(empIDlbl)
+        RoundedPanel1.Controls.Add(welcomelbl)
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Location = New Point(12, 3)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(994, 97)
         RoundedPanel1.TabIndex = 10
         ' 
-        ' position
+        ' positionlbl
         ' 
-        position.Enabled = False
-        position.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        position.Location = New Point(812, 52)
-        position.Name = "position"
-        position.Size = New Size(142, 23)
-        position.TabIndex = 1
-        position.Text = "Position: Employee"
+        positionlbl.AutoSize = True
+        positionlbl.Enabled = False
+        positionlbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        positionlbl.Location = New Point(812, 52)
+        positionlbl.Name = "positionlbl"
+        positionlbl.Size = New Size(123, 17)
+        positionlbl.TabIndex = 1
+        positionlbl.Text = "Position: Employee"
         ' 
-        ' Label2
+        ' empIDlbl
         ' 
-        Label2.AccessibleDescription = ""
-        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(810, 19)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(167, 23)
-        Label2.TabIndex = 3
-        Label2.Text = "Employee ID: EMP1234"
+        empIDlbl.AccessibleDescription = ""
+        empIDlbl.AutoSize = True
+        empIDlbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        empIDlbl.Location = New Point(810, 19)
+        empIDlbl.Name = "empIDlbl"
+        empIDlbl.Size = New Size(165, 20)
+        empIDlbl.TabIndex = 3
+        empIDlbl.Text = "Employee ID: EMP1234"
         ' 
-        ' greetings
+        ' welcomelbl
         ' 
-        greetings.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        greetings.Location = New Point(19, 52)
-        greetings.Name = "greetings"
-        greetings.Size = New Size(100, 22)
-        greetings.TabIndex = 2
-        greetings.Text = "Welcome Back!"
-        greetings.TextAlign = ContentAlignment.MiddleLeft
+        welcomelbl.AutoSize = True
+        welcomelbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        welcomelbl.Location = New Point(19, 52)
+        welcomelbl.Name = "welcomelbl"
+        welcomelbl.Size = New Size(100, 17)
+        welcomelbl.TabIndex = 2
+        welcomelbl.Text = "Welcome Back!"
+        welcomelbl.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label1
         ' 
@@ -651,6 +654,7 @@ Partial Class EmployeePayslip
         RoundedPanel5.ResumeLayout(False)
         RoundedPanel2.ResumeLayout(False)
         RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents RoundedPanel3 As RoundedPanel
@@ -698,8 +702,8 @@ Partial Class EmployeePayslip
     Friend WithEvents payslip As RoundedButton
     Friend WithEvents dashb As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents position As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents greetings As Label
+    Friend WithEvents positionlbl As Label
+    Friend WithEvents empIDlbl As Label
+    Friend WithEvents welcomelbl As Label
     Friend WithEvents Label1 As Label
 End Class

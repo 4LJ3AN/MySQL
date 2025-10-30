@@ -53,13 +53,47 @@ Public Class EmployeePayslip
         End Get
     End Property
 
-    Private Sub dashb_Click(sender As Object, e As EventArgs) Handles dashb.Click
-        Dim empDashboardForm As New EmployeeDashboard
+    Private Sub dashboard_Click(sender As Object, e As EventArgs) Handles dashb.Click
+        Dim empDashboardForm As New EmployeeDashboard()
+        empDashboardForm.empIDlbl.Text = "Employee ID: " + empIDlbl.Text.Replace("Employee ID: ", "").Trim()
+        empDashboardForm.welcomelbl.Text = "Logged in as " + welcomelbl.Text.Replace("Logged in as ", "").Trim()
+        empDashboardForm.positionlbl.Text = "Position: " + positionlbl.Text.Replace("Position: ", "").Trim()
         empDashboardForm.StartPosition = FormStartPosition.Manual
-        empDashboardForm.Location = Location
+        empDashboardForm.Location = Me.Location
         empDashboardForm.Show()
-        Hide()
+        Me.Hide()
+    End Sub
 
+    Private Sub attendance_Click(sender As Object, e As EventArgs) Handles attendance.Click
+        Dim attendanceForm As New EmployeeAttendance()
+        attendanceForm.empIDlbl.Text = "Employee ID: " + empIDlbl.Text.Replace("Employee ID: ", "").Trim()
+        attendanceForm.welcomelbl.Text = "Logged in as " + welcomelbl.Text.Replace("Logged in as ", "").Trim()
+        attendanceForm.positionlbl.Text = "Position: " + positionlbl.Text.Replace("Position: ", "").Trim()
+        attendanceForm.Location = Me.Location
+        attendanceForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub profile_Click(sender As Object, e As EventArgs) Handles profile.Click
+        Dim profileForm As New EmployeeProfile()
+        profileForm.empIDlbl.Text = "Employee ID: " + empIDlbl.Text.Replace("Employee ID: ", "").Trim()
+        profileForm.welcomelbl.Text = "Logged in as " + welcomelbl.Text.Replace("Logged in as ", "").Trim()
+        profileForm.positionlbl.Text = "Position: " + positionlbl.Text.Replace("Position: ", "").Trim()
+        profileForm.StartPosition = FormStartPosition.Manual
+        profileForm.Location = Me.Location
+        profileForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub checkInbtn_Click_1(sender As Object, e As EventArgs) Handles checkInbtn.Click
+        Dim empCheckInForm As New EmployeeCheckIn()
+        empCheckInForm.empIDlbl.Text = "Employee ID: " + empIDlbl.Text.Replace("Employee ID: ", "").Trim()
+        empCheckInForm.welcomelbl.Text = "Logged in as " + welcomelbl.Text.Replace("Logged in as ", "").Trim()
+        empCheckInForm.positionlbl.Text = "Position: " + positionlbl.Text.Replace("Position: ", "").Trim()
+        empCheckInForm.StartPosition = FormStartPosition.Manual
+        empCheckInForm.Location = Me.Location
+        empCheckInForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
@@ -69,29 +103,5 @@ Public Class EmployeePayslip
 
         landing.Show()
         Close()
-    End Sub
-
-    Private Sub attendance_Click(sender As Object, e As EventArgs) Handles attendance.Click
-        Dim attendanceForm As New EmployeeAttendance
-        attendanceForm.StartPosition = FormStartPosition.Manual
-        attendanceForm.Location = Location
-        attendanceForm.Show()
-        Hide()
-    End Sub
-
-    Private Sub checkIn_Click(sender As Object, e As EventArgs) Handles checkInbtn.Click
-        Dim checkInForm As New EmployeeCheckIn
-        checkInForm.StartPosition = FormStartPosition.Manual
-        checkInForm.Location = Location
-        checkInForm.Show()
-        Hide()
-    End Sub
-
-    Private Sub profile_Click(sender As Object, e As EventArgs) Handles profile.Click
-        Dim profileForm As New EmployeeProfile()
-        profileForm.StartPosition = FormStartPosition.Manual
-        profileForm.Location = Me.Location
-        profileForm.Show()
-        Me.Hide()
     End Sub
 End Class

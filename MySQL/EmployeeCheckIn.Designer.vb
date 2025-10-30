@@ -23,9 +23,9 @@ Partial Class EmployeeCheckIn
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         RoundedPanel1 = New RoundedPanel()
-        position = New Label()
+        positionlbl = New Label()
         empIDlbl = New Label()
-        greetings = New Label()
+        welcomelbl = New Label()
         Label1 = New Label()
         RoundedPanel2 = New RoundedPanel()
         RoundedButton1 = New RoundedButton()
@@ -34,6 +34,7 @@ Partial Class EmployeeCheckIn
         payslip = New RoundedButton()
         dashb = New RoundedButton()
         RoundedPanel6 = New RoundedPanel()
+        btnCheckOut = New Button()
         btnCheckIn = New Button()
         lblHoursWorked = New Label()
         lblCheckOutTime = New Label()
@@ -49,24 +50,25 @@ Partial Class EmployeeCheckIn
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(position)
+        RoundedPanel1.Controls.Add(positionlbl)
         RoundedPanel1.Controls.Add(empIDlbl)
-        RoundedPanel1.Controls.Add(greetings)
+        RoundedPanel1.Controls.Add(welcomelbl)
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Location = New Point(12, 3)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(994, 97)
         RoundedPanel1.TabIndex = 0
         ' 
-        ' position
+        ' positionlbl
         ' 
-        position.Enabled = False
-        position.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        position.Location = New Point(812, 52)
-        position.Name = "position"
-        position.Size = New Size(142, 23)
-        position.TabIndex = 1
-        position.Text = "Position: Employee"
+        positionlbl.AutoSize = True
+        positionlbl.Enabled = False
+        positionlbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        positionlbl.Location = New Point(812, 52)
+        positionlbl.Name = "positionlbl"
+        positionlbl.Size = New Size(123, 17)
+        positionlbl.TabIndex = 1
+        positionlbl.Text = "Position: Employee"
         ' 
         ' empIDlbl
         ' 
@@ -78,15 +80,16 @@ Partial Class EmployeeCheckIn
         empIDlbl.TabIndex = 3
         empIDlbl.Text = "Employee ID: EM-1234"
         ' 
-        ' greetings
+        ' welcomelbl
         ' 
-        greetings.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        greetings.Location = New Point(19, 52)
-        greetings.Name = "greetings"
-        greetings.Size = New Size(100, 22)
-        greetings.TabIndex = 2
-        greetings.Text = "Welcome Back!"
-        greetings.TextAlign = ContentAlignment.MiddleLeft
+        welcomelbl.AutoSize = True
+        welcomelbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        welcomelbl.Location = New Point(19, 52)
+        welcomelbl.Name = "welcomelbl"
+        welcomelbl.Size = New Size(100, 17)
+        welcomelbl.TabIndex = 2
+        welcomelbl.Text = "Welcome Back!"
+        welcomelbl.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label1
         ' 
@@ -202,6 +205,7 @@ Partial Class EmployeeCheckIn
         ' 
         ' RoundedPanel6
         ' 
+        RoundedPanel6.Controls.Add(btnCheckOut)
         RoundedPanel6.Controls.Add(btnCheckIn)
         RoundedPanel6.Controls.Add(lblHoursWorked)
         RoundedPanel6.Controls.Add(lblCheckOutTime)
@@ -214,6 +218,19 @@ Partial Class EmployeeCheckIn
         RoundedPanel6.Size = New Size(744, 365)
         RoundedPanel6.TabIndex = 6
         ' 
+        ' btnCheckOut
+        ' 
+        btnCheckOut.BackColor = Color.OrangeRed
+        btnCheckOut.FlatStyle = FlatStyle.Popup
+        btnCheckOut.Font = New Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnCheckOut.Location = New Point(258, 212)
+        btnCheckOut.Name = "btnCheckOut"
+        btnCheckOut.Size = New Size(229, 52)
+        btnCheckOut.TabIndex = 7
+        btnCheckOut.TabStop = False
+        btnCheckOut.Text = "Check out"
+        btnCheckOut.UseVisualStyleBackColor = False
+        ' 
         ' btnCheckIn
         ' 
         btnCheckIn.BackColor = Color.LawnGreen
@@ -224,7 +241,7 @@ Partial Class EmployeeCheckIn
         btnCheckIn.Size = New Size(229, 52)
         btnCheckIn.TabIndex = 6
         btnCheckIn.TabStop = False
-        btnCheckIn.Text = "Check-In"
+        btnCheckIn.Text = "Check in"
         btnCheckIn.UseVisualStyleBackColor = False
         ' 
         ' lblHoursWorked
@@ -305,6 +322,7 @@ Partial Class EmployeeCheckIn
         Name = "EmployeeCheckIn"
         Text = "Check-In"
         RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         RoundedPanel2.ResumeLayout(False)
         RoundedPanel6.ResumeLayout(False)
         RoundedPanel6.PerformLayout()
@@ -315,9 +333,9 @@ Partial Class EmployeeCheckIn
 
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents Label1 As Label
-    Friend WithEvents greetings As Label
+    Friend WithEvents welcomelbl As Label
     Friend WithEvents empIDlbl As Label
-    Friend WithEvents position As Label
+    Friend WithEvents positionlbl As Label
     Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents attendance As RoundedButton
     Friend WithEvents payslip As RoundedButton
@@ -333,4 +351,5 @@ Partial Class EmployeeCheckIn
     Friend WithEvents lblStatus As Label
     Friend WithEvents btnCheckIn As Button
     Friend WithEvents lblCurrentTime As Label
+    Friend WithEvents btnCheckOut As Button
 End Class

@@ -31,9 +31,9 @@ Partial Class EmployeeProfile
         RoundedPanel6 = New RoundedPanel()
         btnBack = New Button()
         RoundedPanel1 = New RoundedPanel()
-        position = New Label()
-        Label2 = New Label()
-        greetings = New Label()
+        positionlbl = New Label()
+        empIDlbl = New Label()
+        welcomelbl = New Label()
         Label1 = New Label()
         RoundedPanel2.SuspendLayout()
         RoundedPanel1.SuspendLayout()
@@ -58,7 +58,7 @@ Partial Class EmployeeProfile
         checkInbtn.BorderSize = 2
         checkInbtn.ClickColor = Color.DarkGray
         checkInbtn.FlatStyle = FlatStyle.Flat
-        checkInbtn.Font = New Font("Berlin Sans FB", 12.0F)
+        checkInbtn.Font = New Font("Berlin Sans FB", 12F)
         checkInbtn.HoverColor = Color.LightGray
         checkInbtn.Location = New Point(6, 5)
         checkInbtn.Name = "checkInbtn"
@@ -76,7 +76,7 @@ Partial Class EmployeeProfile
         profile.BorderSize = 2
         profile.ClickColor = Color.DarkGray
         profile.FlatStyle = FlatStyle.Flat
-        profile.Font = New Font("Berlin Sans FB", 12.0F)
+        profile.Font = New Font("Berlin Sans FB", 12F)
         profile.HoverColor = Color.LightGray
         profile.Location = New Point(684, 5)
         profile.Name = "profile"
@@ -94,7 +94,7 @@ Partial Class EmployeeProfile
         attendance.BorderSize = 2
         attendance.ClickColor = Color.DarkGray
         attendance.FlatStyle = FlatStyle.Flat
-        attendance.Font = New Font("Berlin Sans FB", 12.0F)
+        attendance.Font = New Font("Berlin Sans FB", 12F)
         attendance.HoverColor = Color.LightGray
         attendance.Location = New Point(515, 6)
         attendance.Name = "attendance"
@@ -112,7 +112,7 @@ Partial Class EmployeeProfile
         payslip.BorderSize = 2
         payslip.ClickColor = Color.DarkGray
         payslip.FlatStyle = FlatStyle.Flat
-        payslip.Font = New Font("Berlin Sans FB", 12.0F)
+        payslip.Font = New Font("Berlin Sans FB", 12F)
         payslip.HoverColor = Color.LightGray
         payslip.Location = New Point(346, 6)
         payslip.Name = "payslip"
@@ -130,7 +130,7 @@ Partial Class EmployeeProfile
         dashb.BorderSize = 2
         dashb.ClickColor = Color.DarkGray
         dashb.FlatStyle = FlatStyle.Flat
-        dashb.Font = New Font("Berlin Sans FB", 12.0F)
+        dashb.Font = New Font("Berlin Sans FB", 12F)
         dashb.HoverColor = Color.LightGray
         dashb.Location = New Point(176, 6)
         dashb.Name = "dashb"
@@ -160,44 +160,47 @@ Partial Class EmployeeProfile
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(position)
-        RoundedPanel1.Controls.Add(Label2)
-        RoundedPanel1.Controls.Add(greetings)
+        RoundedPanel1.Controls.Add(positionlbl)
+        RoundedPanel1.Controls.Add(empIDlbl)
+        RoundedPanel1.Controls.Add(welcomelbl)
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Location = New Point(12, 3)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(994, 97)
         RoundedPanel1.TabIndex = 8
         ' 
-        ' position
+        ' positionlbl
         ' 
-        position.Enabled = False
-        position.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        position.Location = New Point(812, 52)
-        position.Name = "position"
-        position.Size = New Size(142, 23)
-        position.TabIndex = 1
-        position.Text = "Position: Employee"
+        positionlbl.AutoSize = True
+        positionlbl.Enabled = False
+        positionlbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        positionlbl.Location = New Point(812, 52)
+        positionlbl.Name = "positionlbl"
+        positionlbl.Size = New Size(123, 17)
+        positionlbl.TabIndex = 1
+        positionlbl.Text = "Position: Employee"
         ' 
-        ' Label2
+        ' empIDlbl
         ' 
-        Label2.AccessibleDescription = ""
-        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(810, 19)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(167, 23)
-        Label2.TabIndex = 3
-        Label2.Text = "Employee ID: EMP1234"
+        empIDlbl.AccessibleDescription = ""
+        empIDlbl.AutoSize = True
+        empIDlbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        empIDlbl.Location = New Point(810, 19)
+        empIDlbl.Name = "empIDlbl"
+        empIDlbl.Size = New Size(165, 20)
+        empIDlbl.TabIndex = 3
+        empIDlbl.Text = "Employee ID: EMP1234"
         ' 
-        ' greetings
+        ' welcomelbl
         ' 
-        greetings.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        greetings.Location = New Point(19, 52)
-        greetings.Name = "greetings"
-        greetings.Size = New Size(100, 22)
-        greetings.TabIndex = 2
-        greetings.Text = "Welcome Back!"
-        greetings.TextAlign = ContentAlignment.MiddleLeft
+        welcomelbl.AutoSize = True
+        welcomelbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        welcomelbl.Location = New Point(19, 52)
+        welcomelbl.Name = "welcomelbl"
+        welcomelbl.Size = New Size(100, 17)
+        welcomelbl.TabIndex = 2
+        welcomelbl.Text = "Welcome Back!"
+        welcomelbl.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label1
         ' 
@@ -211,7 +214,7 @@ Partial Class EmployeeProfile
         ' 
         ' EmployeeProfile
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1018, 660)
         Controls.Add(RoundedPanel1)
@@ -222,6 +225,7 @@ Partial Class EmployeeProfile
         Text = "Dashboard"
         RoundedPanel2.ResumeLayout(False)
         RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents RoundedPanel2 As RoundedPanel
@@ -233,8 +237,8 @@ Partial Class EmployeeProfile
     Friend WithEvents btnBack As Button
     Friend WithEvents checkInbtn As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents position As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents greetings As Label
+    Friend WithEvents positionlbl As Label
+    Friend WithEvents empIDlbl As Label
+    Friend WithEvents welcomelbl As Label
     Friend WithEvents Label1 As Label
 End Class

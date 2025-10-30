@@ -22,7 +22,7 @@ Public Class EmployeeLoginForm
             Dim username As String = usernametxt.Text
             Dim password As String = passwordtxt.Text
 
-            Dim query As String = "SELECT id FROM employees WHERE email=@username AND password=@password"
+            Dim query As String = "SELECT id, fname, position FROM employees WHERE email=@username AND password=@password"
             cmd = New MySqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@username", username)
             cmd.Parameters.AddWithValue("@password", password)
@@ -31,10 +31,14 @@ Public Class EmployeeLoginForm
             If reader.Read() Then
                 ' Get employee id from database
                 Dim empId As String = reader("id").ToString()
+                Dim empName As String = reader("fname").ToString()
+                Dim empPosition As String = reader("position").ToString()
 
                 ' Open the main form and pass the employee id
                 Dim main As New EmployeeCheckIn()
                 main.empIDlbl.Text = "Employee ID: " + empId
+                main.welcomelbl.Text = "Logged in as " + empName + "!"
+                main.positionlbl.Text = "Position: " + empPosition
                 main.Show()
                 Me.Hide()
             Else

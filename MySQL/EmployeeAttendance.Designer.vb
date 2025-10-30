@@ -46,9 +46,9 @@ Partial Class EmployeeAttendance
         Label6 = New Label()
         Label5 = New Label()
         RoundedPanel1 = New RoundedPanel()
-        position = New Label()
-        Label2 = New Label()
-        greetings = New Label()
+        positionlbl = New Label()
+        empIDlbl = New Label()
+        welcomelbl = New Label()
         Label1 = New Label()
         RoundedPanel2 = New RoundedPanel()
         checkInbtn = New RoundedButton()
@@ -81,7 +81,7 @@ Partial Class EmployeeAttendance
         current_net_pay.AutoSize = True
         current_net_pay.Location = New Point(13, 77)
         current_net_pay.Name = "current_net_pay"
-        current_net_pay.Size = New Size(102, 15)
+        current_net_pay.Size = New Size(103, 15)
         current_net_pay.TabIndex = 6
         current_net_pay.Text = "Total Present Days"
         ' 
@@ -157,7 +157,7 @@ Partial Class EmployeeAttendance
         total_hours.AutoSize = True
         total_hours.Location = New Point(9, 77)
         total_hours.Name = "total_hours"
-        total_hours.Size = New Size(108, 15)
+        total_hours.Size = New Size(109, 15)
         total_hours.TabIndex = 7
         total_hours.Text = "Total late check-ins"
         ' 
@@ -195,7 +195,7 @@ Partial Class EmployeeAttendance
         Label3.AutoSize = True
         Label3.Location = New Point(9, 77)
         Label3.Name = "Label3"
-        Label3.Size = New Size(85, 15)
+        Label3.Size = New Size(86, 15)
         Label3.TabIndex = 7
         Label3.Text = "Total Absences"
         ' 
@@ -282,44 +282,47 @@ Partial Class EmployeeAttendance
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(position)
-        RoundedPanel1.Controls.Add(Label2)
-        RoundedPanel1.Controls.Add(greetings)
+        RoundedPanel1.Controls.Add(positionlbl)
+        RoundedPanel1.Controls.Add(empIDlbl)
+        RoundedPanel1.Controls.Add(welcomelbl)
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Location = New Point(12, 3)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(994, 97)
         RoundedPanel1.TabIndex = 9
         ' 
-        ' position
+        ' positionlbl
         ' 
-        position.Enabled = False
-        position.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        position.Location = New Point(812, 52)
-        position.Name = "position"
-        position.Size = New Size(142, 23)
-        position.TabIndex = 1
-        position.Text = "Position: Employee"
+        positionlbl.AutoSize = True
+        positionlbl.Enabled = False
+        positionlbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        positionlbl.Location = New Point(812, 52)
+        positionlbl.Name = "positionlbl"
+        positionlbl.Size = New Size(123, 17)
+        positionlbl.TabIndex = 1
+        positionlbl.Text = "Position: Employee"
         ' 
-        ' Label2
+        ' empIDlbl
         ' 
-        Label2.AccessibleDescription = ""
-        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(810, 19)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(167, 23)
-        Label2.TabIndex = 3
-        Label2.Text = "Employee ID: EMP1234"
+        empIDlbl.AccessibleDescription = ""
+        empIDlbl.AutoSize = True
+        empIDlbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        empIDlbl.Location = New Point(810, 19)
+        empIDlbl.Name = "empIDlbl"
+        empIDlbl.Size = New Size(165, 20)
+        empIDlbl.TabIndex = 3
+        empIDlbl.Text = "Employee ID: EMP1234"
         ' 
-        ' greetings
+        ' welcomelbl
         ' 
-        greetings.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        greetings.Location = New Point(19, 52)
-        greetings.Name = "greetings"
-        greetings.Size = New Size(100, 22)
-        greetings.TabIndex = 2
-        greetings.Text = "Welcome Back!"
-        greetings.TextAlign = ContentAlignment.MiddleLeft
+        welcomelbl.AutoSize = True
+        welcomelbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        welcomelbl.Location = New Point(19, 52)
+        welcomelbl.Name = "welcomelbl"
+        welcomelbl.Size = New Size(100, 17)
+        welcomelbl.TabIndex = 2
+        welcomelbl.Text = "Welcome Back!"
+        welcomelbl.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label1
         ' 
@@ -460,6 +463,7 @@ Partial Class EmployeeAttendance
         RoundedPanel6.ResumeLayout(False)
         RoundedPanel7.ResumeLayout(False)
         RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         RoundedPanel2.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
@@ -487,9 +491,9 @@ Partial Class EmployeeAttendance
     Friend WithEvents MonthCalendar1 As MonthCalendar
     Friend WithEvents Label6 As Label
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents position As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents greetings As Label
+    Friend WithEvents positionlbl As Label
+    Friend WithEvents empIDlbl As Label
+    Friend WithEvents welcomelbl As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents checkInbtn As RoundedButton
