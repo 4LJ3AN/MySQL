@@ -245,4 +245,5 @@ Public Class EmployeeCheckIn
         ' checkInTime = GetCheckInTimeFromDatabase(employeeId, today)
 
     End Sub
+
 End Class

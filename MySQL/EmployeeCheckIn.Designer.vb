@@ -64,7 +64,7 @@ Partial Class EmployeeCheckIn
         positionlbl.AutoSize = True
         positionlbl.Enabled = False
         positionlbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        positionlbl.Location = New Point(812, 52)
+        positionlbl.Location = New Point(772, 52)
         positionlbl.Name = "positionlbl"
         positionlbl.Size = New Size(123, 17)
         positionlbl.TabIndex = 1
@@ -74,7 +74,7 @@ Partial Class EmployeeCheckIn
         ' 
         empIDlbl.AccessibleDescription = ""
         empIDlbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        empIDlbl.Location = New Point(810, 19)
+        empIDlbl.Location = New Point(770, 19)
         empIDlbl.Name = "empIDlbl"
         empIDlbl.Size = New Size(167, 23)
         empIDlbl.TabIndex = 3
@@ -220,10 +220,10 @@ Partial Class EmployeeCheckIn
         ' 
         ' btnCheckOut
         ' 
-        btnCheckOut.BackColor = Color.OrangeRed
+        btnCheckOut.BackColor = Color.IndianRed
         btnCheckOut.FlatStyle = FlatStyle.Popup
         btnCheckOut.Font = New Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnCheckOut.Location = New Point(258, 212)
+        btnCheckOut.Location = New Point(258, 290)
         btnCheckOut.Name = "btnCheckOut"
         btnCheckOut.Size = New Size(229, 52)
         btnCheckOut.TabIndex = 7
@@ -246,39 +246,43 @@ Partial Class EmployeeCheckIn
         ' 
         ' lblHoursWorked
         ' 
-        lblHoursWorked.Location = New Point(35, 298)
+        lblHoursWorked.AutoSize = True
+        lblHoursWorked.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblHoursWorked.Location = New Point(455, 63)
         lblHoursWorked.Name = "lblHoursWorked"
-        lblHoursWorked.Size = New Size(82, 22)
+        lblHoursWorked.Size = New Size(245, 25)
         lblHoursWorked.TabIndex = 5
-        lblHoursWorked.Text = "hrsWorked"
-        lblHoursWorked.Visible = False
+        lblHoursWorked.Text = "Hours worked today: 2.6"
         ' 
         ' lblCheckOutTime
         ' 
+        lblCheckOutTime.AutoSize = True
         lblCheckOutTime.Location = New Point(35, 276)
         lblCheckOutTime.Name = "lblCheckOutTime"
-        lblCheckOutTime.Size = New Size(138, 22)
+        lblCheckOutTime.Size = New Size(85, 15)
         lblCheckOutTime.TabIndex = 4
         lblCheckOutTime.Text = "checkOutTime"
         lblCheckOutTime.Visible = False
         ' 
         ' lblCheckInTime
         ' 
+        lblCheckInTime.AutoSize = True
         lblCheckInTime.Location = New Point(35, 254)
         lblCheckInTime.Name = "lblCheckInTime"
-        lblCheckInTime.Size = New Size(96, 22)
+        lblCheckInTime.Size = New Size(75, 15)
         lblCheckInTime.TabIndex = 3
         lblCheckInTime.Text = "checkInTime"
         lblCheckInTime.Visible = False
         ' 
         ' lblStatus
         ' 
-        lblStatus.Location = New Point(35, 320)
+        lblStatus.AutoSize = True
+        lblStatus.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblStatus.Location = New Point(550, 20)
         lblStatus.Name = "lblStatus"
-        lblStatus.Size = New Size(61, 22)
+        lblStatus.Size = New Size(150, 25)
         lblStatus.TabIndex = 2
-        lblStatus.Text = "status"
-        lblStatus.Visible = False
+        lblStatus.Text = "Status: Bisaya"
         ' 
         ' lblCurrentTime
         ' 

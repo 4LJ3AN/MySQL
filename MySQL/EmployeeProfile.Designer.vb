@@ -174,7 +174,7 @@ Partial Class EmployeeProfile
         positionlbl.AutoSize = True
         positionlbl.Enabled = False
         positionlbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        positionlbl.Location = New Point(812, 52)
+        positionlbl.Location = New Point(772, 52)
         positionlbl.Name = "positionlbl"
         positionlbl.Size = New Size(123, 17)
         positionlbl.TabIndex = 1
@@ -185,7 +185,7 @@ Partial Class EmployeeProfile
         empIDlbl.AccessibleDescription = ""
         empIDlbl.AutoSize = True
         empIDlbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        empIDlbl.Location = New Point(810, 19)
+        empIDlbl.Location = New Point(770, 19)
         empIDlbl.Name = "empIDlbl"
         empIDlbl.Size = New Size(165, 20)
         empIDlbl.TabIndex = 3
