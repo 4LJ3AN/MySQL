@@ -247,60 +247,60 @@ Partial Class EmployeeCheckIn
         ' lblHoursWorked
         ' 
         lblHoursWorked.AutoSize = True
-        lblHoursWorked.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblHoursWorked.Location = New Point(455, 63)
+        lblHoursWorked.Font = New Font("Microsoft Sans Serif", 20.25F)
+        lblHoursWorked.Location = New Point(392, 89)
         lblHoursWorked.Name = "lblHoursWorked"
-        lblHoursWorked.Size = New Size(245, 25)
+        lblHoursWorked.Size = New Size(310, 31)
         lblHoursWorked.TabIndex = 5
-        lblHoursWorked.Text = "Hours worked today: 2.6"
+        lblHoursWorked.Text = "Hours worked: 12.67 hrs"
         ' 
         ' lblCheckOutTime
         ' 
         lblCheckOutTime.AutoSize = True
-        lblCheckOutTime.Location = New Point(35, 276)
+        lblCheckOutTime.Font = New Font("Microsoft Sans Serif", 20.25F)
+        lblCheckOutTime.Location = New Point(202, 217)
         lblCheckOutTime.Name = "lblCheckOutTime"
-        lblCheckOutTime.Size = New Size(85, 15)
+        lblCheckOutTime.Size = New Size(340, 31)
         lblCheckOutTime.TabIndex = 4
-        lblCheckOutTime.Text = "checkOutTime"
-        lblCheckOutTime.Visible = False
+        lblCheckOutTime.Text = "Check Out Time: 01:08 PM"
         ' 
         ' lblCheckInTime
         ' 
         lblCheckInTime.AutoSize = True
-        lblCheckInTime.Location = New Point(35, 254)
+        lblCheckInTime.Font = New Font("Microsoft Sans Serif", 20.25F)
+        lblCheckInTime.Location = New Point(202, 177)
         lblCheckInTime.Name = "lblCheckInTime"
-        lblCheckInTime.Size = New Size(75, 15)
+        lblCheckInTime.Size = New Size(319, 31)
         lblCheckInTime.TabIndex = 3
-        lblCheckInTime.Text = "checkInTime"
-        lblCheckInTime.Visible = False
+        lblCheckInTime.Text = "Check In Time: 01:07 PM"
         ' 
         ' lblStatus
         ' 
         lblStatus.AutoSize = True
-        lblStatus.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblStatus.Location = New Point(550, 20)
+        lblStatus.Font = New Font("Microsoft Sans Serif", 20.25F)
+        lblStatus.Location = New Point(42, 89)
         lblStatus.Name = "lblStatus"
-        lblStatus.Size = New Size(150, 25)
+        lblStatus.Size = New Size(260, 31)
         lblStatus.TabIndex = 2
-        lblStatus.Text = "Status: Bisaya"
+        lblStatus.Text = "Status: Checked out"
         ' 
         ' lblCurrentTime
         ' 
         lblCurrentTime.AutoSize = True
-        lblCurrentTime.Font = New Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblCurrentTime.Location = New Point(19, 63)
+        lblCurrentTime.Font = New Font("Microsoft Sans Serif", 24F, FontStyle.Bold)
+        lblCurrentTime.Location = New Point(513, 20)
         lblCurrentTime.Name = "lblCurrentTime"
-        lblCurrentTime.Size = New Size(215, 39)
+        lblCurrentTime.Size = New Size(199, 37)
         lblCurrentTime.TabIndex = 1
         lblCurrentTime.Text = "currentTime"
         ' 
         ' lblCurrentDate
         ' 
         lblCurrentDate.AutoSize = True
-        lblCurrentDate.Font = New Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblCurrentDate.Location = New Point(19, 20)
+        lblCurrentDate.Font = New Font("Microsoft Sans Serif", 24F, FontStyle.Bold)
+        lblCurrentDate.Location = New Point(27, 20)
         lblCurrentDate.Name = "lblCurrentDate"
-        lblCurrentDate.Size = New Size(210, 39)
+        lblCurrentDate.Size = New Size(195, 37)
         lblCurrentDate.TabIndex = 0
         lblCurrentDate.Text = "currentDate"
         ' 
