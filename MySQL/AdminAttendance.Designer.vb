@@ -45,11 +45,11 @@ Partial Class AdminAttendance
         Label11 = New Label()
         RoundedPanel6 = New RoundedPanel()
         positionlbl = New Label()
-        empIDlbl = New Label()
+        lblAdminId = New Label()
         welcomelbl = New Label()
         Label13 = New Label()
         RoundedPanel7 = New RoundedPanel()
-        profile = New RoundedButton()
+        employees = New RoundedButton()
         attendance = New RoundedButton()
         payslip = New RoundedButton()
         dashb = New RoundedButton()
@@ -248,7 +248,7 @@ Partial Class AdminAttendance
         ' RoundedPanel6
         ' 
         RoundedPanel6.Controls.Add(positionlbl)
-        RoundedPanel6.Controls.Add(empIDlbl)
+        RoundedPanel6.Controls.Add(lblAdminId)
         RoundedPanel6.Controls.Add(welcomelbl)
         RoundedPanel6.Controls.Add(Label13)
         RoundedPanel6.Location = New Point(12, 3)
@@ -267,16 +267,16 @@ Partial Class AdminAttendance
         positionlbl.TabIndex = 1
         positionlbl.Text = "Position: Human Resources"
         ' 
-        ' empIDlbl
+        ' lblAdminId
         ' 
-        empIDlbl.AccessibleDescription = ""
-        empIDlbl.AutoSize = True
-        empIDlbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        empIDlbl.Location = New Point(770, 19)
-        empIDlbl.Name = "empIDlbl"
-        empIDlbl.Size = New Size(118, 20)
-        empIDlbl.TabIndex = 3
-        empIDlbl.Text = "Admin ID: AD69"
+        lblAdminId.AccessibleDescription = ""
+        lblAdminId.AutoSize = True
+        lblAdminId.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblAdminId.Location = New Point(770, 19)
+        lblAdminId.Name = "lblAdminId"
+        lblAdminId.Size = New Size(118, 20)
+        lblAdminId.TabIndex = 3
+        lblAdminId.Text = "Admin ID: AD69"
         ' 
         ' welcomelbl
         ' 
@@ -301,7 +301,7 @@ Partial Class AdminAttendance
         ' 
         ' RoundedPanel7
         ' 
-        RoundedPanel7.Controls.Add(profile)
+        RoundedPanel7.Controls.Add(employees)
         RoundedPanel7.Controls.Add(attendance)
         RoundedPanel7.Controls.Add(payslip)
         RoundedPanel7.Controls.Add(dashb)
@@ -310,24 +310,24 @@ Partial Class AdminAttendance
         RoundedPanel7.Size = New Size(889, 44)
         RoundedPanel7.TabIndex = 11
         ' 
-        ' profile
+        ' employees
         ' 
-        profile.BackColor = Color.White
-        profile.BorderColor = Color.Gray
-        profile.BorderRadius = 20
-        profile.BorderSize = 2
-        profile.ClickColor = Color.DarkGray
-        profile.FlatStyle = FlatStyle.Flat
-        profile.Font = New Font("Berlin Sans FB", 12F)
-        profile.HoverColor = Color.LightGray
-        profile.Location = New Point(258, 6)
-        profile.Name = "profile"
-        profile.SelectedColor = Color.Silver
-        profile.Size = New Size(177, 32)
-        profile.TabIndex = 3
-        profile.TabStop = False
-        profile.Text = "👤  Employees"
-        profile.UseVisualStyleBackColor = False
+        employees.BackColor = Color.White
+        employees.BorderColor = Color.Gray
+        employees.BorderRadius = 20
+        employees.BorderSize = 2
+        employees.ClickColor = Color.DarkGray
+        employees.FlatStyle = FlatStyle.Flat
+        employees.Font = New Font("Berlin Sans FB", 12F)
+        employees.HoverColor = Color.LightGray
+        employees.Location = New Point(258, 6)
+        employees.Name = "employees"
+        employees.SelectedColor = Color.Silver
+        employees.Size = New Size(177, 32)
+        employees.TabIndex = 3
+        employees.TabStop = False
+        employees.Text = "👤  Employees"
+        employees.UseVisualStyleBackColor = False
         ' 
         ' attendance
         ' 
@@ -437,11 +437,11 @@ Partial Class AdminAttendance
     Friend WithEvents Label11 As Label
     Friend WithEvents RoundedPanel6 As RoundedPanel
     Friend WithEvents positionlbl As Label
-    Friend WithEvents empIDlbl As Label
+    Friend WithEvents lblAdminId As Label
     Friend WithEvents welcomelbl As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents RoundedPanel7 As RoundedPanel
-    Friend WithEvents profile As RoundedButton
+    Friend WithEvents employees As RoundedButton
     Friend WithEvents attendance As RoundedButton
     Friend WithEvents payslip As RoundedButton
     Friend WithEvents dashb As RoundedButton

@@ -25,35 +25,35 @@ Partial Class AdminPayroll
     Private Sub InitializeComponent()
         RoundedPanel1 = New RoundedPanel()
         positionlbl = New Label()
-        empIDlbl = New Label()
+        lblAdminId = New Label()
         welcomelbl = New Label()
         Label1 = New Label()
         RoundedPanel3 = New RoundedPanel()
+        Button2 = New Button()
+        Button1 = New Button()
+        TextBox1 = New TextBox()
+        ComboBox2 = New ComboBox()
+        ComboBox1 = New ComboBox()
+        Label6 = New Label()
+        Label2 = New Label()
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
-        Label2 = New Label()
-        Label6 = New Label()
-        ComboBox1 = New ComboBox()
-        ComboBox2 = New ComboBox()
-        TextBox1 = New TextBox()
-        Button1 = New Button()
-        Button2 = New Button()
         RoundedPanel4 = New RoundedPanel()
+        Label12 = New Label()
         Label9 = New Label()
         RoundedPanel5 = New RoundedPanel()
-        RoundedPanel6 = New RoundedPanel()
-        Label7 = New Label()
-        Label8 = New Label()
         Label10 = New Label()
+        Label7 = New Label()
+        RoundedPanel6 = New RoundedPanel()
         Label11 = New Label()
-        Label12 = New Label()
+        Label8 = New Label()
         DataGridView1 = New DataGridView()
         RoundedPanel7 = New RoundedPanel()
-        RoundedButton4 = New RoundedButton()
-        RoundedButton5 = New RoundedButton()
-        RoundedButton6 = New RoundedButton()
-        RoundedButton7 = New RoundedButton()
+        employees = New RoundedButton()
+        attendance = New RoundedButton()
+        payslip = New RoundedButton()
+        dashb = New RoundedButton()
         RoundedPanel1.SuspendLayout()
         RoundedPanel3.SuspendLayout()
         RoundedPanel4.SuspendLayout()
@@ -66,7 +66,7 @@ Partial Class AdminPayroll
         ' RoundedPanel1
         ' 
         RoundedPanel1.Controls.Add(positionlbl)
-        RoundedPanel1.Controls.Add(empIDlbl)
+        RoundedPanel1.Controls.Add(lblAdminId)
         RoundedPanel1.Controls.Add(welcomelbl)
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Location = New Point(12, 3)
@@ -85,16 +85,16 @@ Partial Class AdminPayroll
         positionlbl.TabIndex = 1
         positionlbl.Text = "Position: Human Resources"
         ' 
-        ' empIDlbl
+        ' lblAdminId
         ' 
-        empIDlbl.AccessibleDescription = ""
-        empIDlbl.AutoSize = True
-        empIDlbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        empIDlbl.Location = New Point(770, 19)
-        empIDlbl.Name = "empIDlbl"
-        empIDlbl.Size = New Size(118, 20)
-        empIDlbl.TabIndex = 3
-        empIDlbl.Text = "Admin ID: AD69"
+        lblAdminId.AccessibleDescription = ""
+        lblAdminId.AutoSize = True
+        lblAdminId.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblAdminId.Location = New Point(770, 19)
+        lblAdminId.Name = "lblAdminId"
+        lblAdminId.Size = New Size(118, 20)
+        lblAdminId.TabIndex = 3
+        lblAdminId.Text = "Admin ID: AD69"
         ' 
         ' welcomelbl
         ' 
@@ -134,6 +134,74 @@ Partial Class AdminPayroll
         RoundedPanel3.Size = New Size(948, 209)
         RoundedPanel3.TabIndex = 11
         ' 
+        ' Button2
+        ' 
+        Button2.BackColor = Color.White
+        Button2.ForeColor = SystemColors.ActiveCaptionText
+        Button2.Location = New Point(159, 148)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(134, 37)
+        Button2.TabIndex = 10
+        Button2.Text = "Lock Period"
+        Button2.UseVisualStyleBackColor = False
+        ' 
+        ' Button1
+        ' 
+        Button1.BackColor = Color.Black
+        Button1.ForeColor = SystemColors.ButtonHighlight
+        Button1.Location = New Point(14, 148)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(134, 37)
+        Button1.TabIndex = 9
+        Button1.Text = "Generate Payroll"
+        Button1.UseVisualStyleBackColor = False
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(622, 110)
+        TextBox1.Name = "TextBox1"
+        TextBox1.PlaceholderText = "Search...."
+        TextBox1.Size = New Size(292, 23)
+        TextBox1.TabIndex = 8
+        ' 
+        ' ComboBox2
+        ' 
+        ComboBox2.FormattingEnabled = True
+        ComboBox2.Location = New Point(320, 110)
+        ComboBox2.Name = "ComboBox2"
+        ComboBox2.Size = New Size(250, 23)
+        ComboBox2.TabIndex = 7
+        ComboBox2.Text = "All Position"
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(16, 110)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(263, 23)
+        ComboBox1.TabIndex = 6
+        ComboBox1.Text = "November 2025"
+        ' 
+        ' Label6
+        ' 
+        Label6.AccessibleDescription = ""
+        Label6.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.Location = New Point(621, 82)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(136, 20)
+        Label6.TabIndex = 5
+        Label6.Text = "Search Employee"
+        ' 
+        ' Label2
+        ' 
+        Label2.AccessibleDescription = ""
+        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(320, 82)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(136, 20)
+        Label2.TabIndex = 4
+        Label2.Text = "Position"
+        ' 
         ' Label3
         ' 
         Label3.AccessibleDescription = ""
@@ -165,74 +233,6 @@ Partial Class AdminPayroll
         Label5.Text = "Admin Portal"
         Label5.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label2
-        ' 
-        Label2.AccessibleDescription = ""
-        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(320, 82)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(136, 20)
-        Label2.TabIndex = 4
-        Label2.Text = "Position"
-        ' 
-        ' Label6
-        ' 
-        Label6.AccessibleDescription = ""
-        Label6.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(621, 82)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(136, 20)
-        Label6.TabIndex = 5
-        Label6.Text = "Search Employee"
-        ' 
-        ' ComboBox1
-        ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(16, 110)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(263, 23)
-        ComboBox1.TabIndex = 6
-        ComboBox1.Text = "November 2025"
-        ' 
-        ' ComboBox2
-        ' 
-        ComboBox2.FormattingEnabled = True
-        ComboBox2.Location = New Point(320, 110)
-        ComboBox2.Name = "ComboBox2"
-        ComboBox2.Size = New Size(250, 23)
-        ComboBox2.TabIndex = 7
-        ComboBox2.Text = "All Position"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(622, 110)
-        TextBox1.Name = "TextBox1"
-        TextBox1.PlaceholderText = "Search...."
-        TextBox1.Size = New Size(292, 23)
-        TextBox1.TabIndex = 8
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.Black
-        Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(14, 148)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(134, 37)
-        Button1.TabIndex = 9
-        Button1.Text = "Generate Payroll"
-        Button1.UseVisualStyleBackColor = False
-        ' 
-        ' Button2
-        ' 
-        Button2.BackColor = Color.White
-        Button2.ForeColor = SystemColors.ActiveCaptionText
-        Button2.Location = New Point(159, 148)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(134, 37)
-        Button2.TabIndex = 10
-        Button2.Text = "Lock Period"
-        Button2.UseVisualStyleBackColor = False
-        ' 
         ' RoundedPanel4
         ' 
         RoundedPanel4.Controls.Add(Label12)
@@ -241,6 +241,17 @@ Partial Class AdminPayroll
         RoundedPanel4.Name = "RoundedPanel4"
         RoundedPanel4.Size = New Size(294, 118)
         RoundedPanel4.TabIndex = 12
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label12.ForeColor = Color.Black
+        Label12.Location = New Point(15, 54)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(167, 40)
+        Label12.TabIndex = 6
+        Label12.Text = "11/05/2025"
         ' 
         ' Label9
         ' 
@@ -261,14 +272,16 @@ Partial Class AdminPayroll
         RoundedPanel5.Size = New Size(294, 118)
         RoundedPanel5.TabIndex = 13
         ' 
-        ' RoundedPanel6
+        ' Label10
         ' 
-        RoundedPanel6.Controls.Add(Label11)
-        RoundedPanel6.Controls.Add(Label8)
-        RoundedPanel6.Location = New Point(679, 395)
-        RoundedPanel6.Name = "RoundedPanel6"
-        RoundedPanel6.Size = New Size(294, 118)
-        RoundedPanel6.TabIndex = 13
+        Label10.AutoSize = True
+        Label10.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label10.ForeColor = Color.Blue
+        Label10.Location = New Point(18, 54)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(144, 40)
+        Label10.TabIndex = 5
+        Label10.Text = "₱ 4759.00"
         ' 
         ' Label7
         ' 
@@ -280,26 +293,14 @@ Partial Class AdminPayroll
         Label7.TabIndex = 4
         Label7.Text = "Total Gross Pay"
         ' 
-        ' Label8
+        ' RoundedPanel6
         ' 
-        Label8.AccessibleDescription = ""
-        Label8.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(16, 18)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(136, 20)
-        Label8.TabIndex = 5
-        Label8.Text = "Total Net Pay"
-        ' 
-        ' Label10
-        ' 
-        Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label10.ForeColor = Color.Blue
-        Label10.Location = New Point(18, 54)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(144, 40)
-        Label10.TabIndex = 5
-        Label10.Text = "₱ 4759.00"
+        RoundedPanel6.Controls.Add(Label11)
+        RoundedPanel6.Controls.Add(Label8)
+        RoundedPanel6.Location = New Point(679, 395)
+        RoundedPanel6.Name = "RoundedPanel6"
+        RoundedPanel6.Size = New Size(294, 118)
+        RoundedPanel6.TabIndex = 13
         ' 
         ' Label11
         ' 
@@ -312,16 +313,15 @@ Partial Class AdminPayroll
         Label11.TabIndex = 6
         Label11.Text = "₱ 4739.00"
         ' 
-        ' Label12
+        ' Label8
         ' 
-        Label12.AutoSize = True
-        Label12.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label12.ForeColor = Color.Black
-        Label12.Location = New Point(15, 54)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(167, 40)
-        Label12.TabIndex = 6
-        Label12.Text = "11/05/2025"
+        Label8.AccessibleDescription = ""
+        Label8.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label8.Location = New Point(16, 18)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(136, 20)
+        Label8.TabIndex = 5
+        Label8.Text = "Total Net Pay"
         ' 
         ' DataGridView1
         ' 
@@ -333,90 +333,90 @@ Partial Class AdminPayroll
         ' 
         ' RoundedPanel7
         ' 
-        RoundedPanel7.Controls.Add(RoundedButton4)
-        RoundedPanel7.Controls.Add(RoundedButton5)
-        RoundedPanel7.Controls.Add(RoundedButton6)
-        RoundedPanel7.Controls.Add(RoundedButton7)
+        RoundedPanel7.Controls.Add(employees)
+        RoundedPanel7.Controls.Add(attendance)
+        RoundedPanel7.Controls.Add(payslip)
+        RoundedPanel7.Controls.Add(dashb)
         RoundedPanel7.Location = New Point(60, 111)
         RoundedPanel7.Name = "RoundedPanel7"
         RoundedPanel7.Size = New Size(889, 44)
         RoundedPanel7.TabIndex = 11
         ' 
-        ' RoundedButton4
+        ' employees
         ' 
-        RoundedButton4.BackColor = Color.White
-        RoundedButton4.BorderColor = Color.Gray
-        RoundedButton4.BorderRadius = 20
-        RoundedButton4.BorderSize = 2
-        RoundedButton4.ClickColor = Color.DarkGray
-        RoundedButton4.FlatStyle = FlatStyle.Flat
-        RoundedButton4.Font = New Font("Berlin Sans FB", 12F)
-        RoundedButton4.HoverColor = Color.LightGray
-        RoundedButton4.Location = New Point(257, 6)
-        RoundedButton4.Name = "RoundedButton4"
-        RoundedButton4.SelectedColor = Color.Silver
-        RoundedButton4.Size = New Size(177, 32)
-        RoundedButton4.TabIndex = 3
-        RoundedButton4.TabStop = False
-        RoundedButton4.Text = "👤  Employees"
-        RoundedButton4.UseVisualStyleBackColor = False
+        employees.BackColor = Color.White
+        employees.BorderColor = Color.Gray
+        employees.BorderRadius = 20
+        employees.BorderSize = 2
+        employees.ClickColor = Color.DarkGray
+        employees.FlatStyle = FlatStyle.Flat
+        employees.Font = New Font("Berlin Sans FB", 12F)
+        employees.HoverColor = Color.LightGray
+        employees.Location = New Point(257, 6)
+        employees.Name = "employees"
+        employees.SelectedColor = Color.Silver
+        employees.Size = New Size(177, 32)
+        employees.TabIndex = 3
+        employees.TabStop = False
+        employees.Text = "👤  Employees"
+        employees.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton5
+        ' attendance
         ' 
-        RoundedButton5.BackColor = Color.White
-        RoundedButton5.BorderColor = Color.Gray
-        RoundedButton5.BorderRadius = 20
-        RoundedButton5.BorderSize = 2
-        RoundedButton5.ClickColor = Color.DarkGray
-        RoundedButton5.FlatStyle = FlatStyle.Flat
-        RoundedButton5.Font = New Font("Berlin Sans FB", 12F)
-        RoundedButton5.HoverColor = Color.LightGray
-        RoundedButton5.Location = New Point(468, 6)
-        RoundedButton5.Name = "RoundedButton5"
-        RoundedButton5.SelectedColor = Color.Silver
-        RoundedButton5.Size = New Size(177, 32)
-        RoundedButton5.TabIndex = 2
-        RoundedButton5.TabStop = False
-        RoundedButton5.Text = "📆  Attendance"
-        RoundedButton5.UseVisualStyleBackColor = False
+        attendance.BackColor = Color.White
+        attendance.BorderColor = Color.Gray
+        attendance.BorderRadius = 20
+        attendance.BorderSize = 2
+        attendance.ClickColor = Color.DarkGray
+        attendance.FlatStyle = FlatStyle.Flat
+        attendance.Font = New Font("Berlin Sans FB", 12F)
+        attendance.HoverColor = Color.LightGray
+        attendance.Location = New Point(468, 6)
+        attendance.Name = "attendance"
+        attendance.SelectedColor = Color.Silver
+        attendance.Size = New Size(177, 32)
+        attendance.TabIndex = 2
+        attendance.TabStop = False
+        attendance.Text = "📆  Attendance"
+        attendance.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton6
+        ' payslip
         ' 
-        RoundedButton6.BackColor = Color.White
-        RoundedButton6.BorderColor = Color.Gray
-        RoundedButton6.BorderRadius = 20
-        RoundedButton6.BorderSize = 2
-        RoundedButton6.ClickColor = Color.DarkGray
-        RoundedButton6.FlatStyle = FlatStyle.Flat
-        RoundedButton6.Font = New Font("Berlin Sans FB", 12F)
-        RoundedButton6.HoverColor = Color.LightGray
-        RoundedButton6.Location = New Point(674, 6)
-        RoundedButton6.Name = "RoundedButton6"
-        RoundedButton6.SelectedColor = Color.Silver
-        RoundedButton6.Size = New Size(177, 32)
-        RoundedButton6.TabIndex = 1
-        RoundedButton6.TabStop = False
-        RoundedButton6.Text = "📄  Payroll"
-        RoundedButton6.UseVisualStyleBackColor = False
+        payslip.BackColor = Color.White
+        payslip.BorderColor = Color.Gray
+        payslip.BorderRadius = 20
+        payslip.BorderSize = 2
+        payslip.ClickColor = Color.DarkGray
+        payslip.FlatStyle = FlatStyle.Flat
+        payslip.Font = New Font("Berlin Sans FB", 12F)
+        payslip.HoverColor = Color.LightGray
+        payslip.Location = New Point(674, 6)
+        payslip.Name = "payslip"
+        payslip.SelectedColor = Color.Silver
+        payslip.Size = New Size(177, 32)
+        payslip.TabIndex = 1
+        payslip.TabStop = False
+        payslip.Text = "📄  Payroll"
+        payslip.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton7
+        ' dashb
         ' 
-        RoundedButton7.BackColor = Color.White
-        RoundedButton7.BorderColor = Color.Gray
-        RoundedButton7.BorderRadius = 20
-        RoundedButton7.BorderSize = 2
-        RoundedButton7.ClickColor = Color.DarkGray
-        RoundedButton7.FlatStyle = FlatStyle.Flat
-        RoundedButton7.Font = New Font("Berlin Sans FB", 12F)
-        RoundedButton7.HoverColor = Color.LightGray
-        RoundedButton7.Location = New Point(47, 6)
-        RoundedButton7.Name = "RoundedButton7"
-        RoundedButton7.SelectedColor = Color.Silver
-        RoundedButton7.Size = New Size(177, 32)
-        RoundedButton7.TabIndex = 0
-        RoundedButton7.TabStop = False
-        RoundedButton7.Text = "📊  Dashboard"
-        RoundedButton7.UseVisualStyleBackColor = False
+        dashb.BackColor = Color.White
+        dashb.BorderColor = Color.Gray
+        dashb.BorderRadius = 20
+        dashb.BorderSize = 2
+        dashb.ClickColor = Color.DarkGray
+        dashb.FlatStyle = FlatStyle.Flat
+        dashb.Font = New Font("Berlin Sans FB", 12F)
+        dashb.HoverColor = Color.LightGray
+        dashb.Location = New Point(47, 6)
+        dashb.Name = "dashb"
+        dashb.SelectedColor = Color.Silver
+        dashb.Size = New Size(177, 32)
+        dashb.TabIndex = 0
+        dashb.TabStop = False
+        dashb.Text = "📊  Dashboard"
+        dashb.UseVisualStyleBackColor = False
         ' 
         ' AdminPayroll
         ' 
@@ -430,7 +430,7 @@ Partial Class AdminPayroll
         Controls.Add(RoundedPanel3)
         Controls.Add(RoundedPanel1)
         Name = "AdminPayroll"
-        Text = "Payroll"
+        Text = "Payslip"
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
         RoundedPanel3.ResumeLayout(False)
@@ -452,7 +452,7 @@ Partial Class AdminPayroll
     End Sub
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents positionlbl As Label
-    Friend WithEvents empIDlbl As Label
+    Friend WithEvents lblAdminId As Label
     Friend WithEvents welcomelbl As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents RoundedPanel3 As RoundedPanel
@@ -477,8 +477,8 @@ Partial Class AdminPayroll
     Friend WithEvents Label12 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents RoundedPanel7 As RoundedPanel
-    Friend WithEvents RoundedButton4 As RoundedButton
-    Friend WithEvents RoundedButton5 As RoundedButton
-    Friend WithEvents RoundedButton6 As RoundedButton
-    Friend WithEvents RoundedButton7 As RoundedButton
+    Friend WithEvents employees As RoundedButton
+    Friend WithEvents attendance As RoundedButton
+    Friend WithEvents payslip As RoundedButton
+    Friend WithEvents dashb As RoundedButton
 End Class

@@ -32,6 +32,8 @@ Partial Class AdminLoginForm
         userbox = New TextBox()
         btnLogIn = New Button()
         passbox = New TextBox()
+        hidepass = New CheckBox()
+        lblError = New Label()
         SuspendLayout()
         ' 
         ' btnBack
@@ -87,7 +89,7 @@ Partial Class AdminLoginForm
         ' Label4
         ' 
         Label4.Font = New Font("Eras Medium ITC", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(301, 337)
+        Label4.Location = New Point(295, 337)
         Label4.Name = "Label4"
         Label4.Size = New Size(79, 25)
         Label4.TabIndex = 6
@@ -97,7 +99,7 @@ Partial Class AdminLoginForm
         ' Label5
         ' 
         Label5.Font = New Font("Eras Medium ITC", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(299, 380)
+        Label5.Location = New Point(293, 380)
         Label5.Name = "Label5"
         Label5.Size = New Size(79, 25)
         Label5.TabIndex = 7
@@ -106,31 +108,56 @@ Partial Class AdminLoginForm
         ' 
         ' userbox
         ' 
-        userbox.Location = New Point(420, 337)
+        userbox.HideSelection = False
+        userbox.Location = New Point(414, 337)
         userbox.Multiline = True
         userbox.Name = "userbox"
         userbox.Size = New Size(312, 25)
         userbox.TabIndex = 8
+        userbox.TabStop = False
         ' 
         ' btnLogIn
         ' 
         btnLogIn.BackColor = Color.White
         btnLogIn.Font = New Font("Eras Medium ITC", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnLogIn.Location = New Point(474, 456)
+        btnLogIn.Location = New Point(454, 475)
         btnLogIn.Name = "btnLogIn"
         btnLogIn.Size = New Size(110, 33)
         btnLogIn.TabIndex = 10
+        btnLogIn.TabStop = False
         btnLogIn.Text = "Log In"
         btnLogIn.UseVisualStyleBackColor = False
         ' 
         ' passbox
         ' 
         passbox.BorderStyle = BorderStyle.FixedSingle
-        passbox.Location = New Point(420, 380)
+        passbox.HideSelection = False
+        passbox.Location = New Point(414, 380)
         passbox.Multiline = True
         passbox.Name = "passbox"
         passbox.Size = New Size(312, 25)
         passbox.TabIndex = 11
+        passbox.TabStop = False
+        ' 
+        ' hidepass
+        ' 
+        hidepass.AutoSize = True
+        hidepass.Location = New Point(622, 411)
+        hidepass.Name = "hidepass"
+        hidepass.Size = New Size(108, 19)
+        hidepass.TabIndex = 12
+        hidepass.Text = "Show password"
+        hidepass.UseVisualStyleBackColor = True
+        ' 
+        ' lblError
+        ' 
+        lblError.AutoSize = True
+        lblError.ForeColor = Color.Red
+        lblError.Location = New Point(437, 438)
+        lblError.Name = "lblError"
+        lblError.Size = New Size(145, 15)
+        lblError.TabIndex = 13
+        lblError.Text = "Error fetching admin data."
         ' 
         ' AdminLoginForm
         ' 
@@ -138,6 +165,8 @@ Partial Class AdminLoginForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Linen
         ClientSize = New Size(1018, 660)
+        Controls.Add(lblError)
+        Controls.Add(hidepass)
         Controls.Add(passbox)
         Controls.Add(btnLogIn)
         Controls.Add(userbox)
@@ -164,4 +193,6 @@ Partial Class AdminLoginForm
     Friend WithEvents userbox As TextBox
     Friend WithEvents btnLogIn As Button
     Friend WithEvents passbox As TextBox
+    Friend WithEvents hidepass As CheckBox
+    Friend WithEvents lblError As Label
 End Class

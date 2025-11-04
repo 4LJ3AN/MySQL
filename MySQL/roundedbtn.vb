@@ -18,11 +18,32 @@ Public Class RoundedButton
 
     ' Shared reference to the last clicked button
     Private Shared lastClicked As RoundedButton = Nothing
+    Private selectionTimer As Timer
 
     Public Sub New()
         Me.FlatStyle = FlatStyle.Flat
         Me.FlatAppearance.BorderSize = 0
         Me.DoubleBuffered = True
+
+        ' Initialize timer to auto-clear selection
+        selectionTimer = New Timer()
+        selectionTimer.Interval = 300 ' 300ms - enough time to see the click effect
+        selectionTimer.Enabled = False
+        AddHandler selectionTimer.Tick, AddressOf SelectionTimer_Tick
+    End Sub
+
+    Private Sub SelectionTimer_Tick(sender As Object, e As EventArgs)
+        selectionTimer.Stop()
+        ClearSelection()
+    End Sub
+
+    ' Method to clear selection state
+    Public Sub ClearSelection()
+        isSelected = False
+        If lastClicked Is Me Then
+            lastClicked = Nothing
+        End If
+        Me.Invalidate()
     End Sub
 
     ' ====== EVENTS ======
@@ -50,13 +71,15 @@ Public Class RoundedButton
 
         ' Mark this button as selected, deselect previous
         If lastClicked IsNot Nothing AndAlso lastClicked IsNot Me Then
-            lastClicked.isSelected = False
-            lastClicked.Invalidate()
+            lastClicked.ClearSelection()
         End If
 
         lastClicked = Me
         isSelected = True
         Me.Invalidate()
+
+        ' Start timer to auto-clear selection
+        selectionTimer.Start()
     End Sub
 
     ' ====== PAINT ======
@@ -106,4 +129,11 @@ Public Class RoundedButton
         path.CloseFigure()
         Return path
     End Function
+
+    Protected Overrides Sub Dispose(disposing As Boolean)
+        If disposing Then
+            selectionTimer?.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
 End Class
