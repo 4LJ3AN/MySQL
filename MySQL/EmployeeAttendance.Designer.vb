@@ -23,14 +23,12 @@ Partial Class EmployeeAttendance
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         currentsalary = New RoundedPanel()
+        cmbPresent = New ComboBox()
         current_net_pay = New Label()
         money = New Label()
         cur_month_sal = New Label()
-        RoundedPanel3 = New RoundedPanel()
-        att = New Label()
-        days = New Label()
-        days_present = New Label()
         RoundedPanel4 = New RoundedPanel()
+        cmbLate = New ComboBox()
         total_hours = New Label()
         hours = New Label()
         hours_worked = New Label()
@@ -56,8 +54,8 @@ Partial Class EmployeeAttendance
         attendance = New RoundedButton()
         payslip = New RoundedButton()
         dashb = New RoundedButton()
+        cmbAbsent = New ComboBox()
         currentsalary.SuspendLayout()
-        RoundedPanel3.SuspendLayout()
         RoundedPanel4.SuspendLayout()
         RoundedPanel5.SuspendLayout()
         RoundedPanel6.SuspendLayout()
@@ -68,124 +66,116 @@ Partial Class EmployeeAttendance
         ' 
         ' currentsalary
         ' 
+        currentsalary.Controls.Add(cmbPresent)
         currentsalary.Controls.Add(current_net_pay)
         currentsalary.Controls.Add(money)
         currentsalary.Controls.Add(cur_month_sal)
-        currentsalary.Location = New Point(90, 214)
+        currentsalary.Location = New Point(153, 214)
         currentsalary.Name = "currentsalary"
         currentsalary.Size = New Size(200, 100)
         currentsalary.TabIndex = 2
         ' 
+        ' cmbPresent
+        ' 
+        cmbPresent.DropDownStyle = ComboBoxStyle.DropDownList
+        cmbPresent.FormattingEnabled = True
+        cmbPresent.Items.AddRange(New Object() {"This Week", "This Month"})
+        cmbPresent.Location = New Point(92, 72)
+        cmbPresent.Name = "cmbPresent"
+        cmbPresent.Size = New Size(96, 23)
+        cmbPresent.TabIndex = 8
+        ' 
         ' current_net_pay
         ' 
         current_net_pay.AutoSize = True
-        current_net_pay.Location = New Point(13, 77)
+        current_net_pay.Location = New Point(12, 75)
         current_net_pay.Name = "current_net_pay"
-        current_net_pay.Size = New Size(103, 15)
+        current_net_pay.Size = New Size(74, 15)
         current_net_pay.TabIndex = 6
-        current_net_pay.Text = "Total Present Days"
+        current_net_pay.Text = "Present Days"
         ' 
         ' money
         ' 
-        money.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        money.AutoEllipsis = True
+        money.AutoSize = True
+        money.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         money.ForeColor = Color.YellowGreen
-        money.Location = New Point(12, 41)
+        money.Location = New Point(132, 13)
         money.Name = "money"
-        money.Size = New Size(100, 29)
+        money.Size = New Size(56, 45)
         money.TabIndex = 7
         money.Text = "74"
         ' 
         ' cur_month_sal
         ' 
+        cur_month_sal.AutoSize = True
         cur_month_sal.Font = New Font("Segoe UI", 11F)
-        cur_month_sal.Location = New Point(12, 14)
+        cur_month_sal.Location = New Point(12, 13)
         cur_month_sal.Name = "cur_month_sal"
-        cur_month_sal.Size = New Size(166, 27)
+        cur_month_sal.Size = New Size(57, 20)
         cur_month_sal.TabIndex = 6
         cur_month_sal.Text = "Present"
         ' 
-        ' RoundedPanel3
-        ' 
-        RoundedPanel3.Controls.Add(att)
-        RoundedPanel3.Controls.Add(days)
-        RoundedPanel3.Controls.Add(days_present)
-        RoundedPanel3.Location = New Point(306, 214)
-        RoundedPanel3.Name = "RoundedPanel3"
-        RoundedPanel3.Size = New Size(200, 100)
-        RoundedPanel3.TabIndex = 3
-        ' 
-        ' att
-        ' 
-        att.AutoSize = True
-        att.Location = New Point(9, 77)
-        att.Name = "att"
-        att.Size = New Size(131, 15)
-        att.TabIndex = 7
-        att.Text = "Leaves used this month"
-        ' 
-        ' days
-        ' 
-        days.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        days.ForeColor = Color.SteelBlue
-        days.Location = New Point(9, 41)
-        days.Name = "days"
-        days.Size = New Size(100, 29)
-        days.TabIndex = 7
-        days.Text = "1"
-        ' 
-        ' days_present
-        ' 
-        days_present.Font = New Font("Segoe UI", 11F)
-        days_present.Location = New Point(11, 14)
-        days_present.Name = "days_present"
-        days_present.Size = New Size(166, 27)
-        days_present.TabIndex = 6
-        days_present.Text = "Leaves"
-        ' 
         ' RoundedPanel4
         ' 
+        RoundedPanel4.Controls.Add(cmbLate)
         RoundedPanel4.Controls.Add(total_hours)
         RoundedPanel4.Controls.Add(hours)
         RoundedPanel4.Controls.Add(hours_worked)
-        RoundedPanel4.Location = New Point(521, 214)
+        RoundedPanel4.Location = New Point(409, 214)
         RoundedPanel4.Name = "RoundedPanel4"
         RoundedPanel4.Size = New Size(200, 100)
         RoundedPanel4.TabIndex = 4
         ' 
+        ' cmbLate
+        ' 
+        cmbLate.DropDownStyle = ComboBoxStyle.DropDownList
+        cmbLate.FormattingEnabled = True
+        cmbLate.Items.AddRange(New Object() {"This Week", "This Month"})
+        cmbLate.Location = New Point(89, 72)
+        cmbLate.Name = "cmbLate"
+        cmbLate.Size = New Size(96, 23)
+        cmbLate.TabIndex = 9
+        ' 
         ' total_hours
         ' 
         total_hours.AutoSize = True
-        total_hours.Location = New Point(9, 77)
+        total_hours.Location = New Point(17, 75)
         total_hours.Name = "total_hours"
-        total_hours.Size = New Size(109, 15)
+        total_hours.Size = New Size(68, 15)
         total_hours.TabIndex = 7
-        total_hours.Text = "Total late check-ins"
+        total_hours.Text = "Late counts"
         ' 
         ' hours
         ' 
-        hours.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        hours.AutoEllipsis = True
+        hours.AutoSize = True
+        hours.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         hours.ForeColor = Color.DarkViolet
-        hours.Location = New Point(9, 41)
+        hours.Location = New Point(147, 13)
         hours.Name = "hours"
-        hours.Size = New Size(100, 29)
+        hours.Size = New Size(38, 45)
         hours.TabIndex = 7
         hours.Text = "4"
+        hours.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' hours_worked
         ' 
+        hours_worked.AutoSize = True
         hours_worked.Font = New Font("Segoe UI", 11F)
-        hours_worked.Location = New Point(10, 15)
+        hours_worked.Location = New Point(12, 13)
         hours_worked.Name = "hours_worked"
-        hours_worked.Size = New Size(166, 27)
+        hours_worked.Size = New Size(43, 20)
         hours_worked.TabIndex = 6
         hours_worked.Text = "Lates"
         ' 
         ' RoundedPanel5
         ' 
+        RoundedPanel5.Controls.Add(cmbAbsent)
         RoundedPanel5.Controls.Add(Label3)
         RoundedPanel5.Controls.Add(ot)
         RoundedPanel5.Controls.Add(ot_hrs)
-        RoundedPanel5.Location = New Point(736, 214)
+        RoundedPanel5.Location = New Point(672, 214)
         RoundedPanel5.Name = "RoundedPanel5"
         RoundedPanel5.Size = New Size(200, 100)
         RoundedPanel5.TabIndex = 5
@@ -193,28 +183,30 @@ Partial Class EmployeeAttendance
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(9, 77)
+        Label3.Location = New Point(12, 77)
         Label3.Name = "Label3"
-        Label3.Size = New Size(86, 15)
+        Label3.Size = New Size(57, 15)
         Label3.TabIndex = 7
-        Label3.Text = "Total Absences"
+        Label3.Text = "Absences"
         ' 
         ' ot
         ' 
-        ot.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        ot.AutoSize = True
+        ot.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ot.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        ot.Location = New Point(9, 41)
+        ot.Location = New Point(148, 13)
         ot.Name = "ot"
-        ot.Size = New Size(100, 29)
+        ot.Size = New Size(38, 45)
         ot.TabIndex = 7
         ot.Text = "2"
         ' 
         ' ot_hrs
         ' 
+        ot_hrs.AutoSize = True
         ot_hrs.Font = New Font("Segoe UI", 11F)
         ot_hrs.Location = New Point(12, 13)
         ot_hrs.Name = "ot_hrs"
-        ot_hrs.Size = New Size(166, 27)
+        ot_hrs.Size = New Size(71, 20)
         ot_hrs.TabIndex = 6
         ot_hrs.Text = "Absences"
         ' 
@@ -436,6 +428,16 @@ Partial Class EmployeeAttendance
         dashb.Text = "📊  Dashboard"
         dashb.UseVisualStyleBackColor = True
         ' 
+        ' cmbAbsent
+        ' 
+        cmbAbsent.DropDownStyle = ComboBoxStyle.DropDownList
+        cmbAbsent.FormattingEnabled = True
+        cmbAbsent.Items.AddRange(New Object() {"This Week", "This Month"})
+        cmbAbsent.Location = New Point(90, 72)
+        cmbAbsent.Name = "cmbAbsent"
+        cmbAbsent.Size = New Size(96, 23)
+        cmbAbsent.TabIndex = 9
+        ' 
         ' EmployeeAttendance
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -448,14 +450,11 @@ Partial Class EmployeeAttendance
         Controls.Add(RoundedPanel6)
         Controls.Add(RoundedPanel5)
         Controls.Add(RoundedPanel4)
-        Controls.Add(RoundedPanel3)
         Controls.Add(currentsalary)
         Name = "EmployeeAttendance"
-        Text = "Attendance"
+        Text = "S"
         currentsalary.ResumeLayout(False)
         currentsalary.PerformLayout()
-        RoundedPanel3.ResumeLayout(False)
-        RoundedPanel3.PerformLayout()
         RoundedPanel4.ResumeLayout(False)
         RoundedPanel4.PerformLayout()
         RoundedPanel5.ResumeLayout(False)
@@ -471,10 +470,6 @@ Partial Class EmployeeAttendance
     Friend WithEvents cur_month_sal As Label
     Friend WithEvents money As Label
     Friend WithEvents current_net_pay As Label
-    Friend WithEvents RoundedPanel3 As RoundedPanel
-    Friend WithEvents att As Label
-    Friend WithEvents days As Label
-    Friend WithEvents days_present As Label
     Friend WithEvents RoundedPanel4 As RoundedPanel
     Friend WithEvents total_hours As Label
     Friend WithEvents hours As Label
@@ -501,4 +496,7 @@ Partial Class EmployeeAttendance
     Friend WithEvents attendance As RoundedButton
     Friend WithEvents payslip As RoundedButton
     Friend WithEvents dashb As RoundedButton
+    Friend WithEvents cmbPresent As ComboBox
+    Friend WithEvents cmbLate As ComboBox
+    Friend WithEvents cmbAbsent As ComboBox
 End Class
