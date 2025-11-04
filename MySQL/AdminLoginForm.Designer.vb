@@ -29,9 +29,9 @@ Partial Class AdminLoginForm
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
-        TextBox1 = New TextBox()
-        Button1 = New Button()
-        TextBox2 = New TextBox()
+        userbox = New TextBox()
+        btnLogIn = New Button()
+        passbox = New TextBox()
         SuspendLayout()
         ' 
         ' btnBack
@@ -104,33 +104,33 @@ Partial Class AdminLoginForm
         Label5.Text = "Password"
         Label5.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' TextBox1
+        ' userbox
         ' 
-        TextBox1.Location = New Point(420, 337)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(312, 25)
-        TextBox1.TabIndex = 8
+        userbox.Location = New Point(420, 337)
+        userbox.Multiline = True
+        userbox.Name = "userbox"
+        userbox.Size = New Size(312, 25)
+        userbox.TabIndex = 8
         ' 
-        ' Button1
+        ' btnLogIn
         ' 
-        Button1.BackColor = Color.White
-        Button1.Font = New Font("Eras Medium ITC", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button1.Location = New Point(474, 456)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(110, 33)
-        Button1.TabIndex = 10
-        Button1.Text = "Log In"
-        Button1.UseVisualStyleBackColor = False
+        btnLogIn.BackColor = Color.White
+        btnLogIn.Font = New Font("Eras Medium ITC", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnLogIn.Location = New Point(474, 456)
+        btnLogIn.Name = "btnLogIn"
+        btnLogIn.Size = New Size(110, 33)
+        btnLogIn.TabIndex = 10
+        btnLogIn.Text = "Log In"
+        btnLogIn.UseVisualStyleBackColor = False
         ' 
-        ' TextBox2
+        ' passbox
         ' 
-        TextBox2.BorderStyle = BorderStyle.FixedSingle
-        TextBox2.Location = New Point(420, 380)
-        TextBox2.Multiline = True
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(312, 25)
-        TextBox2.TabIndex = 11
+        passbox.BorderStyle = BorderStyle.FixedSingle
+        passbox.Location = New Point(420, 380)
+        passbox.Multiline = True
+        passbox.Name = "passbox"
+        passbox.Size = New Size(312, 25)
+        passbox.TabIndex = 11
         ' 
         ' AdminLoginForm
         ' 
@@ -138,9 +138,9 @@ Partial Class AdminLoginForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Linen
         ClientSize = New Size(1018, 660)
-        Controls.Add(TextBox2)
-        Controls.Add(Button1)
-        Controls.Add(TextBox1)
+        Controls.Add(passbox)
+        Controls.Add(btnLogIn)
+        Controls.Add(userbox)
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
@@ -161,7 +161,7 @@ Partial Class AdminLoginForm
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents userbox As TextBox
+    Friend WithEvents btnLogIn As Button
+    Friend WithEvents passbox As TextBox
 End Class

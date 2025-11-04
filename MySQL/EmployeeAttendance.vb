@@ -167,8 +167,7 @@ Public Class EmployeeAttendance
             currentDate = currentDate.AddDays(-1)
         End While
 
-        ' Reverse to show oldest first
-        workingDays.Reverse()
+        ' Return in descending order (most recent first)
         Return workingDays
     End Function
 
