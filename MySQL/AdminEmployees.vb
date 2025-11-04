@@ -13,7 +13,7 @@ Partial Public Class AdminEmployees
 
     End Sub
 
-    Private Sub RoundedButton7_Click(sender As Object, e As EventArgs) Handles RoundedButton7.Click
+    Private Sub RoundedButton7_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

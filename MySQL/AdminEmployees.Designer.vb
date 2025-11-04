@@ -24,9 +24,6 @@ Partial Class AdminEmployees
 
     Private Sub InitializeComponent()
         RoundedPanel2 = New RoundedPanel()
-        RoundedButton3 = New RoundedButton()
-        RoundedButton2 = New RoundedButton()
-        RoundedButton1 = New RoundedButton()
         profile = New RoundedButton()
         attendance = New RoundedButton()
         payslip = New RoundedButton()
@@ -43,8 +40,6 @@ Partial Class AdminEmployees
         Label11 = New Label()
         DataGridView1 = New DataGridView()
         RoundedPanel3 = New RoundedPanel()
-        RoundedButton7 = New RoundedButton()
-        RoundedButton6 = New RoundedButton()
         RoundedButton5 = New RoundedButton()
         RoundedButton11 = New RoundedButton()
         RoundedPanel2.SuspendLayout()
@@ -56,9 +51,6 @@ Partial Class AdminEmployees
         ' 
         ' RoundedPanel2
         ' 
-        RoundedPanel2.Controls.Add(RoundedButton3)
-        RoundedPanel2.Controls.Add(RoundedButton2)
-        RoundedPanel2.Controls.Add(RoundedButton1)
         RoundedPanel2.Controls.Add(profile)
         RoundedPanel2.Controls.Add(attendance)
         RoundedPanel2.Controls.Add(payslip)
@@ -68,131 +60,81 @@ Partial Class AdminEmployees
         RoundedPanel2.Size = New Size(889, 44)
         RoundedPanel2.TabIndex = 2
         ' 
-        ' RoundedButton3
-        ' 
-        RoundedButton3.BorderColor = Color.Gray
-        RoundedButton3.BorderRadius = 20
-        RoundedButton3.BorderSize = 2
-        RoundedButton3.ClickColor = Color.DarkGray
-        RoundedButton3.FlatStyle = FlatStyle.Flat
-        RoundedButton3.Font = New Font("Berlin Sans FB", 12.0F)
-        RoundedButton3.HoverColor = Color.LightGray
-        RoundedButton3.Location = New Point(760, 6)
-        RoundedButton3.Name = "RoundedButton3"
-        RoundedButton3.SelectedColor = Color.Silver
-        RoundedButton3.Size = New Size(119, 32)
-        RoundedButton3.TabIndex = 6
-        RoundedButton3.TabStop = False
-        RoundedButton3.Text = "⚙️ Settings"
-        RoundedButton3.UseVisualStyleBackColor = True
-        ' 
-        ' RoundedButton2
-        ' 
-        RoundedButton2.BorderColor = Color.Gray
-        RoundedButton2.BorderRadius = 20
-        RoundedButton2.BorderSize = 2
-        RoundedButton2.ClickColor = Color.DarkGray
-        RoundedButton2.FlatStyle = FlatStyle.Flat
-        RoundedButton2.Font = New Font("Berlin Sans FB", 12.0F)
-        RoundedButton2.HoverColor = Color.LightGray
-        RoundedButton2.Location = New Point(635, 6)
-        RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.SelectedColor = Color.Silver
-        RoundedButton2.Size = New Size(119, 32)
-        RoundedButton2.TabIndex = 5
-        RoundedButton2.TabStop = False
-        RoundedButton2.Text = "🚨 Reports"
-        RoundedButton2.UseVisualStyleBackColor = True
-        ' 
-        ' RoundedButton1
-        ' 
-        RoundedButton1.BorderColor = Color.Gray
-        RoundedButton1.BorderRadius = 20
-        RoundedButton1.BorderSize = 2
-        RoundedButton1.ClickColor = Color.DarkGray
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Berlin Sans FB", 12.0F)
-        RoundedButton1.HoverColor = Color.LightGray
-        RoundedButton1.Location = New Point(510, 6)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.SelectedColor = Color.Silver
-        RoundedButton1.Size = New Size(119, 32)
-        RoundedButton1.TabIndex = 4
-        RoundedButton1.TabStop = False
-        RoundedButton1.Text = " 🚫 Deduction"
-        RoundedButton1.UseVisualStyleBackColor = True
-        ' 
         ' profile
         ' 
+        profile.BackColor = Color.White
         profile.BorderColor = Color.Gray
         profile.BorderRadius = 20
         profile.BorderSize = 2
         profile.ClickColor = Color.DarkGray
         profile.FlatStyle = FlatStyle.Flat
-        profile.Font = New Font("Berlin Sans FB", 12.0F)
+        profile.Font = New Font("Berlin Sans FB", 12F)
         profile.HoverColor = Color.LightGray
-        profile.Location = New Point(135, 6)
+        profile.Location = New Point(258, 6)
         profile.Name = "profile"
         profile.SelectedColor = Color.Silver
-        profile.Size = New Size(119, 32)
+        profile.Size = New Size(177, 32)
         profile.TabIndex = 3
         profile.TabStop = False
         profile.Text = "👤  Employees"
-        profile.UseVisualStyleBackColor = True
+        profile.UseVisualStyleBackColor = False
         ' 
         ' attendance
         ' 
+        attendance.BackColor = Color.White
         attendance.BorderColor = Color.Gray
         attendance.BorderRadius = 20
         attendance.BorderSize = 2
         attendance.ClickColor = Color.DarkGray
         attendance.FlatStyle = FlatStyle.Flat
-        attendance.Font = New Font("Berlin Sans FB", 12.0F)
+        attendance.Font = New Font("Berlin Sans FB", 12F)
         attendance.HoverColor = Color.LightGray
-        attendance.Location = New Point(260, 6)
+        attendance.Location = New Point(469, 6)
         attendance.Name = "attendance"
         attendance.SelectedColor = Color.Silver
-        attendance.Size = New Size(119, 32)
+        attendance.Size = New Size(177, 32)
         attendance.TabIndex = 2
         attendance.TabStop = False
         attendance.Text = "📆  Attendance"
-        attendance.UseVisualStyleBackColor = True
+        attendance.UseVisualStyleBackColor = False
         ' 
         ' payslip
         ' 
+        payslip.BackColor = Color.White
         payslip.BorderColor = Color.Gray
         payslip.BorderRadius = 20
         payslip.BorderSize = 2
         payslip.ClickColor = Color.DarkGray
         payslip.FlatStyle = FlatStyle.Flat
-        payslip.Font = New Font("Berlin Sans FB", 12.0F)
+        payslip.Font = New Font("Berlin Sans FB", 12F)
         payslip.HoverColor = Color.LightGray
-        payslip.Location = New Point(385, 6)
+        payslip.Location = New Point(674, 6)
         payslip.Name = "payslip"
         payslip.SelectedColor = Color.Silver
-        payslip.Size = New Size(119, 32)
+        payslip.Size = New Size(177, 32)
         payslip.TabIndex = 1
         payslip.TabStop = False
         payslip.Text = "📄  Payroll"
-        payslip.UseVisualStyleBackColor = True
+        payslip.UseVisualStyleBackColor = False
         ' 
         ' dashb
         ' 
+        dashb.BackColor = Color.White
         dashb.BorderColor = Color.Gray
         dashb.BorderRadius = 20
         dashb.BorderSize = 2
         dashb.ClickColor = Color.DarkGray
         dashb.FlatStyle = FlatStyle.Flat
-        dashb.Font = New Font("Berlin Sans FB", 12.0F)
+        dashb.Font = New Font("Berlin Sans FB", 12F)
         dashb.HoverColor = Color.LightGray
-        dashb.Location = New Point(10, 6)
+        dashb.Location = New Point(49, 6)
         dashb.Name = "dashb"
         dashb.SelectedColor = Color.Silver
-        dashb.Size = New Size(119, 32)
+        dashb.Size = New Size(177, 32)
         dashb.TabIndex = 0
         dashb.TabStop = False
         dashb.Text = "📊  Dashboard"
-        dashb.UseVisualStyleBackColor = True
+        dashb.UseVisualStyleBackColor = False
         ' 
         ' RoundedPanel1
         ' 
@@ -267,7 +209,7 @@ Partial Class AdminEmployees
         RoundedButton4.BorderSize = 2
         RoundedButton4.ClickColor = Color.DarkGray
         RoundedButton4.FlatStyle = FlatStyle.Flat
-        RoundedButton4.Font = New Font("Berlin Sans FB", 12.0F)
+        RoundedButton4.Font = New Font("Berlin Sans FB", 12F)
         RoundedButton4.ForeColor = SystemColors.Control
         RoundedButton4.HoverColor = Color.LightGray
         RoundedButton4.Location = New Point(678, 12)
@@ -317,50 +259,12 @@ Partial Class AdminEmployees
         ' 
         ' RoundedPanel3
         ' 
-        RoundedPanel3.Controls.Add(RoundedButton7)
-        RoundedPanel3.Controls.Add(RoundedButton6)
         RoundedPanel3.Controls.Add(RoundedButton5)
         RoundedPanel3.Controls.Add(RoundedButton11)
         RoundedPanel3.Location = New Point(60, 598)
         RoundedPanel3.Name = "RoundedPanel3"
         RoundedPanel3.Size = New Size(889, 59)
         RoundedPanel3.TabIndex = 15
-        ' 
-        ' RoundedButton7
-        ' 
-        RoundedButton7.BorderColor = Color.Gray
-        RoundedButton7.BorderRadius = 20
-        RoundedButton7.BorderSize = 2
-        RoundedButton7.ClickColor = Color.DarkGray
-        RoundedButton7.FlatStyle = FlatStyle.Flat
-        RoundedButton7.Font = New Font("Berlin Sans FB", 12.0F)
-        RoundedButton7.HoverColor = Color.LightGray
-        RoundedButton7.Location = New Point(350, 14)
-        RoundedButton7.Name = "RoundedButton7"
-        RoundedButton7.SelectedColor = Color.Silver
-        RoundedButton7.Size = New Size(106, 32)
-        RoundedButton7.TabIndex = 3
-        RoundedButton7.TabStop = False
-        RoundedButton7.Text = "Reports"
-        RoundedButton7.UseVisualStyleBackColor = True
-        ' 
-        ' RoundedButton6
-        ' 
-        RoundedButton6.BorderColor = Color.Gray
-        RoundedButton6.BorderRadius = 20
-        RoundedButton6.BorderSize = 2
-        RoundedButton6.ClickColor = Color.DarkGray
-        RoundedButton6.FlatStyle = FlatStyle.Flat
-        RoundedButton6.Font = New Font("Berlin Sans FB", 12.0F)
-        RoundedButton6.HoverColor = Color.LightGray
-        RoundedButton6.Location = New Point(226, 14)
-        RoundedButton6.Name = "RoundedButton6"
-        RoundedButton6.SelectedColor = Color.Silver
-        RoundedButton6.Size = New Size(106, 32)
-        RoundedButton6.TabIndex = 2
-        RoundedButton6.TabStop = False
-        RoundedButton6.Text = "Deduction"
-        RoundedButton6.UseVisualStyleBackColor = True
         ' 
         ' RoundedButton5
         ' 
@@ -369,7 +273,7 @@ Partial Class AdminEmployees
         RoundedButton5.BorderSize = 2
         RoundedButton5.ClickColor = Color.DarkGray
         RoundedButton5.FlatStyle = FlatStyle.Flat
-        RoundedButton5.Font = New Font("Berlin Sans FB", 12.0F)
+        RoundedButton5.Font = New Font("Berlin Sans FB", 12F)
         RoundedButton5.HoverColor = Color.LightGray
         RoundedButton5.Location = New Point(120, 14)
         RoundedButton5.Name = "RoundedButton5"
@@ -387,7 +291,7 @@ Partial Class AdminEmployees
         RoundedButton11.BorderSize = 2
         RoundedButton11.ClickColor = Color.DarkGray
         RoundedButton11.FlatStyle = FlatStyle.Flat
-        RoundedButton11.Font = New Font("Berlin Sans FB", 12.0F)
+        RoundedButton11.Font = New Font("Berlin Sans FB", 12F)
         RoundedButton11.HoverColor = Color.LightGray
         RoundedButton11.Location = New Point(14, 14)
         RoundedButton11.Name = "RoundedButton11"
@@ -429,10 +333,6 @@ Partial Class AdminEmployees
     Private Sub profile_Click(sender As Object, e As EventArgs) Handles profile.Click
 
     End Sub
-
-    Friend WithEvents RoundedButton1 As RoundedButton
-    Friend WithEvents RoundedButton3 As RoundedButton
-    Friend WithEvents RoundedButton2 As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents positionlbl As Label
     Friend WithEvents empIDlbl As Label
@@ -447,6 +347,4 @@ Partial Class AdminEmployees
     Friend WithEvents RoundedPanel3 As RoundedPanel
     Friend WithEvents RoundedButton5 As RoundedButton
     Friend WithEvents RoundedButton11 As RoundedButton
-    Friend WithEvents RoundedButton7 As RoundedButton
-    Friend WithEvents RoundedButton6 As RoundedButton
 End Class
