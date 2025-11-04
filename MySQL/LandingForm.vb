@@ -1,6 +1,6 @@
 ﻿Public Class LandingForm
     Private Sub adminbtn_Click(sender As Object, e As EventArgs) Handles adminbtn.Click
-        Dim adminForm As New AdminLog()
+        Dim adminForm As New AdminLoginForm()
 
         ' Match location and size
         adminForm.StartPosition = FormStartPosition.Manual

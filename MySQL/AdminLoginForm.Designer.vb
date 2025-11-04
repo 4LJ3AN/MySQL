@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class AdminLog
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class AdminLoginForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AdminLog
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         btnBack = New Button()
         adminlbl = New Label()
@@ -115,8 +115,8 @@ Partial Class AdminLog
         ' Button1
         ' 
         Button1.BackColor = Color.White
-        Button1.Font = New Font("Eras Medium ITC", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button1.Location = New Point(454, 448)
+        Button1.Font = New Font("Eras Medium ITC", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button1.Location = New Point(474, 456)
         Button1.Name = "Button1"
         Button1.Size = New Size(110, 33)
         Button1.TabIndex = 10
@@ -132,9 +132,9 @@ Partial Class AdminLog
         TextBox2.Size = New Size(312, 25)
         TextBox2.TabIndex = 11
         ' 
-        ' AdminLog
+        ' AdminLoginForm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Linen
         ClientSize = New Size(1018, 660)
@@ -148,7 +148,7 @@ Partial Class AdminLog
         Controls.Add(Label1)
         Controls.Add(adminlbl)
         Controls.Add(btnBack)
-        Name = "AdminLog"
+        Name = "AdminLoginForm"
         Text = "LoginForm"
         ResumeLayout(False)
         PerformLayout()
