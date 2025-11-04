@@ -23,42 +23,45 @@ Partial Class EmployeePayslip
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         RoundedPanel3 = New RoundedPanel()
-        DateTimePicker1 = New DateTimePicker()
+        cmbPayslipRecords = New ComboBox()
         Label3 = New Label()
         pays = New Label()
         RoundedPanel4 = New RoundedPanel()
-        Label30 = New Label()
+        lblOTPay = New Label()
+        Label9 = New Label()
+        lblBasicPay = New Label()
+        Label7 = New Label()
+        lblTotalDeductions = New Label()
         Label31 = New Label()
-        Label29 = New Label()
-        Label27 = New Label()
-        Label21 = New Label()
-        Label22 = New Label()
+        lblGrossPay = New Label()
+        lblPagibig = New Label()
+        lblSSS = New Label()
+        lblIncomeTax = New Label()
         Label26 = New Label()
         Label23 = New Label()
         Label24 = New Label()
-        Label25 = New Label()
-        Label19 = New Label()
-        Label18 = New Label()
+        lblOTHours = New Label()
+        lblBasicHours = New Label()
         RoundedPanel6 = New RoundedPanel()
-        Label33 = New Label()
+        lblNetPay = New Label()
         Label32 = New Label()
         RoundedPanel5 = New RoundedPanel()
+        Label2 = New Label()
+        lblPayPeriodEnd = New Label()
         Label12 = New Label()
-        Label13 = New Label()
+        lblPayPeriodStart = New Label()
         Label10 = New Label()
-        Label11 = New Label()
+        namelbl = New Label()
         Label8 = New Label()
         Label6 = New Label()
-        Label9 = New Label()
-        Label7 = New Label()
+        poslbl = New Label()
+        idlbl = New Label()
         Label20 = New Label()
         Label28 = New Label()
         Label14 = New Label()
         Label4 = New Label()
         Label17 = New Label()
         Label15 = New Label()
-        Label16 = New Label()
-        Label5 = New Label()
         btnBack = New Button()
         RoundedPanel2 = New RoundedPanel()
         checkInbtn = New RoundedButton()
@@ -71,6 +74,8 @@ Partial Class EmployeePayslip
         empIDlbl = New Label()
         welcomelbl = New Label()
         Label1 = New Label()
+        lblPayslipId = New Label()
+        btnGeneratePDF = New Button()
         RoundedPanel3.SuspendLayout()
         RoundedPanel4.SuspendLayout()
         RoundedPanel6.SuspendLayout()
@@ -81,27 +86,23 @@ Partial Class EmployeePayslip
         ' 
         ' RoundedPanel3
         ' 
-        RoundedPanel3.Controls.Add(DateTimePicker1)
+        RoundedPanel3.Controls.Add(btnGeneratePDF)
+        RoundedPanel3.Controls.Add(cmbPayslipRecords)
         RoundedPanel3.Controls.Add(Label3)
         RoundedPanel3.Controls.Add(pays)
-        RoundedPanel3.Location = New Point(179, 205)
+        RoundedPanel3.Location = New Point(162, 205)
         RoundedPanel3.Name = "RoundedPanel3"
         RoundedPanel3.Size = New Size(694, 100)
         RoundedPanel3.TabIndex = 4
         ' 
-        ' DateTimePicker1
+        ' cmbPayslipRecords
         ' 
-        DateTimePicker1.Checked = False
-        DateTimePicker1.CustomFormat = ""
-        DateTimePicker1.ImeMode = ImeMode.NoControl
-        DateTimePicker1.Location = New Point(10, 58)
-        DateTimePicker1.MaxDate = New Date(2050, 12, 1, 0, 0, 0, 0)
-        DateTimePicker1.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(200, 23)
-        DateTimePicker1.TabIndex = 6
-        DateTimePicker1.TabStop = False
-        DateTimePicker1.Value = New Date(2025, 10, 28, 16, 51, 16, 0)
+        cmbPayslipRecords.DropDownStyle = ComboBoxStyle.DropDownList
+        cmbPayslipRecords.FormattingEnabled = True
+        cmbPayslipRecords.Location = New Point(20, 58)
+        cmbPayslipRecords.Name = "cmbPayslipRecords"
+        cmbPayslipRecords.Size = New Size(242, 23)
+        cmbPayslipRecords.TabIndex = 6
         ' 
         ' Label3
         ' 
@@ -115,28 +116,32 @@ Partial Class EmployeePayslip
         ' 
         ' pays
         ' 
+        pays.AutoSize = True
         pays.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         pays.Location = New Point(10, 13)
         pays.Name = "pays"
-        pays.Size = New Size(174, 23)
+        pays.Size = New Size(183, 18)
         pays.TabIndex = 5
-        pays.Text = "Select Payslip Month"
+        pays.Text = "Select Payslip Record"
         ' 
         ' RoundedPanel4
         ' 
         RoundedPanel4.BackColor = Color.White
-        RoundedPanel4.Controls.Add(Label30)
+        RoundedPanel4.Controls.Add(lblOTPay)
+        RoundedPanel4.Controls.Add(Label9)
+        RoundedPanel4.Controls.Add(lblBasicPay)
+        RoundedPanel4.Controls.Add(Label7)
+        RoundedPanel4.Controls.Add(lblTotalDeductions)
         RoundedPanel4.Controls.Add(Label31)
-        RoundedPanel4.Controls.Add(Label29)
-        RoundedPanel4.Controls.Add(Label27)
-        RoundedPanel4.Controls.Add(Label21)
-        RoundedPanel4.Controls.Add(Label22)
+        RoundedPanel4.Controls.Add(lblGrossPay)
+        RoundedPanel4.Controls.Add(lblPagibig)
+        RoundedPanel4.Controls.Add(lblSSS)
+        RoundedPanel4.Controls.Add(lblIncomeTax)
         RoundedPanel4.Controls.Add(Label26)
         RoundedPanel4.Controls.Add(Label23)
         RoundedPanel4.Controls.Add(Label24)
-        RoundedPanel4.Controls.Add(Label25)
-        RoundedPanel4.Controls.Add(Label19)
-        RoundedPanel4.Controls.Add(Label18)
+        RoundedPanel4.Controls.Add(lblOTHours)
+        RoundedPanel4.Controls.Add(lblBasicHours)
         RoundedPanel4.Controls.Add(RoundedPanel6)
         RoundedPanel4.Controls.Add(RoundedPanel5)
         RoundedPanel4.Controls.Add(Label20)
@@ -145,220 +150,281 @@ Partial Class EmployeePayslip
         RoundedPanel4.Controls.Add(Label4)
         RoundedPanel4.Controls.Add(Label17)
         RoundedPanel4.Controls.Add(Label15)
-        RoundedPanel4.Controls.Add(Label16)
-        RoundedPanel4.Controls.Add(Label5)
-        RoundedPanel4.Location = New Point(179, 311)
+        RoundedPanel4.Location = New Point(133, 311)
         RoundedPanel4.Name = "RoundedPanel4"
-        RoundedPanel4.Size = New Size(694, 361)
+        RoundedPanel4.Size = New Size(753, 361)
         RoundedPanel4.TabIndex = 5
         ' 
-        ' Label30
+        ' lblOTPay
         ' 
-        Label30.AutoSize = True
-        Label30.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label30.Location = New Point(627, 277)
-        Label30.Name = "Label30"
-        Label30.Size = New Size(56, 16)
-        Label30.TabIndex = 18
-        Label30.Text = "₱ 1,571"
+        lblOTPay.AutoSize = True
+        lblOTPay.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblOTPay.Location = New Point(203, 251)
+        lblOTPay.Name = "lblOTPay"
+        lblOTPay.Size = New Size(56, 16)
+        lblOTPay.TabIndex = 22
+        lblOTPay.Text = "₱ 6,900"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label9.ForeColor = SystemColors.ButtonShadow
+        Label9.Location = New Point(25, 226)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(98, 20)
+        Label9.TabIndex = 21
+        Label9.Text = "Overtime Hours:"
+        ' 
+        ' lblBasicPay
+        ' 
+        lblBasicPay.AutoSize = True
+        lblBasicPay.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblBasicPay.Location = New Point(203, 205)
+        lblBasicPay.Name = "lblBasicPay"
+        lblBasicPay.Size = New Size(56, 16)
+        lblBasicPay.TabIndex = 20
+        lblBasicPay.Text = "₱ 6,900"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label7.ForeColor = SystemColors.ButtonShadow
+        Label7.Location = New Point(25, 180)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(79, 20)
+        Label7.TabIndex = 19
+        Label7.Text = "Basic Hours:"
+        ' 
+        ' lblTotalDeductions
+        ' 
+        lblTotalDeductions.AutoSize = True
+        lblTotalDeductions.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTotalDeductions.Location = New Point(627, 278)
+        lblTotalDeductions.Name = "lblTotalDeductions"
+        lblTotalDeductions.Size = New Size(56, 16)
+        lblTotalDeductions.TabIndex = 18
+        lblTotalDeductions.Text = "₱ 1,571"
         ' 
         ' Label31
         ' 
+        Label31.AutoSize = True
         Label31.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label31.Location = New Point(438, 275)
+        Label31.Location = New Point(438, 278)
         Label31.Name = "Label31"
-        Label31.Size = New Size(174, 23)
+        Label31.Size = New Size(148, 18)
         Label31.TabIndex = 17
         Label31.Text = "Total Deductions:"
         ' 
-        ' Label29
+        ' lblGrossPay
         ' 
-        Label29.AutoSize = True
-        Label29.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label29.Location = New Point(203, 277)
-        Label29.Name = "Label29"
-        Label29.Size = New Size(56, 16)
-        Label29.TabIndex = 16
-        Label29.Text = "₱ 7,700"
+        lblGrossPay.AutoSize = True
+        lblGrossPay.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblGrossPay.Location = New Point(203, 278)
+        lblGrossPay.Name = "lblGrossPay"
+        lblGrossPay.Size = New Size(56, 16)
+        lblGrossPay.TabIndex = 16
+        lblGrossPay.Text = "₱ 7,700"
         ' 
-        ' Label27
+        ' lblPagibig
         ' 
-        Label27.AutoSize = True
-        Label27.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label27.Location = New Point(626, 244)
-        Label27.Name = "Label27"
-        Label27.Size = New Size(44, 16)
-        Label27.TabIndex = 15
-        Label27.Text = "₱ 567"
+        lblPagibig.AutoSize = True
+        lblPagibig.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPagibig.Location = New Point(626, 226)
+        lblPagibig.Name = "lblPagibig"
+        lblPagibig.Size = New Size(44, 16)
+        lblPagibig.TabIndex = 15
+        lblPagibig.Text = "₱ 567"
         ' 
-        ' Label21
+        ' lblSSS
         ' 
-        Label21.AutoSize = True
-        Label21.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label21.Location = New Point(626, 221)
-        Label21.Name = "Label21"
-        Label21.Size = New Size(44, 16)
-        Label21.TabIndex = 14
-        Label21.Text = "₱ 234"
+        lblSSS.AutoSize = True
+        lblSSS.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblSSS.Location = New Point(626, 203)
+        lblSSS.Name = "lblSSS"
+        lblSSS.Size = New Size(44, 16)
+        lblSSS.TabIndex = 14
+        lblSSS.Text = "₱ 234"
         ' 
-        ' Label22
+        ' lblIncomeTax
         ' 
-        Label22.AutoSize = True
-        Label22.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label22.Location = New Point(626, 198)
-        Label22.Name = "Label22"
-        Label22.Size = New Size(44, 16)
-        Label22.TabIndex = 13
-        Label22.Text = "₱ 770"
+        lblIncomeTax.AutoSize = True
+        lblIncomeTax.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblIncomeTax.Location = New Point(626, 180)
+        lblIncomeTax.Name = "lblIncomeTax"
+        lblIncomeTax.Size = New Size(44, 16)
+        lblIncomeTax.TabIndex = 13
+        lblIncomeTax.Text = "₱ 770"
         ' 
         ' Label26
         ' 
+        Label26.AutoSize = True
         Label26.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label26.ForeColor = SystemColors.ButtonShadow
-        Label26.Location = New Point(447, 241)
+        Label26.Location = New Point(447, 226)
         Label26.Name = "Label26"
-        Label26.Size = New Size(154, 23)
+        Label26.Size = New Size(54, 20)
         Label26.TabIndex = 10
         Label26.Text = "Pagibig:"
         ' 
         ' Label23
         ' 
+        Label23.AutoSize = True
         Label23.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label23.ForeColor = SystemColors.ButtonShadow
-        Label23.Location = New Point(447, 218)
+        Label23.Location = New Point(447, 203)
         Label23.Name = "Label23"
-        Label23.Size = New Size(154, 23)
+        Label23.Size = New Size(36, 20)
         Label23.TabIndex = 10
         Label23.Text = "SSS:"
         ' 
         ' Label24
         ' 
+        Label24.AutoSize = True
         Label24.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label24.ForeColor = SystemColors.ButtonShadow
-        Label24.Location = New Point(448, 196)
+        Label24.Location = New Point(448, 180)
         Label24.Name = "Label24"
-        Label24.Size = New Size(104, 23)
+        Label24.Size = New Size(82, 20)
         Label24.TabIndex = 11
         Label24.Text = "Income Tax :"
         ' 
-        ' Label25
+        ' lblOTHours
         ' 
-        Label25.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label25.ForeColor = SystemColors.ActiveCaptionText
-        Label25.Location = New Point(448, 198)
-        Label25.Name = "Label25"
-        Label25.Size = New Size(153, 23)
-        Label25.TabIndex = 12
-        Label25.Text = "Basic Earnings"
+        lblOTHours.AutoSize = True
+        lblOTHours.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblOTHours.Location = New Point(203, 228)
+        lblOTHours.Name = "lblOTHours"
+        lblOTHours.Size = New Size(72, 16)
+        lblOTHours.TabIndex = 9
+        lblOTHours.Text = "69420 hrs"
         ' 
-        ' Label19
+        ' lblBasicHours
         ' 
-        Label19.AutoSize = True
-        Label19.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label19.Location = New Point(203, 218)
-        Label19.Name = "Label19"
-        Label19.Size = New Size(44, 16)
-        Label19.TabIndex = 9
-        Label19.Text = "₱ 800"
-        ' 
-        ' Label18
-        ' 
-        Label18.AutoSize = True
-        Label18.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label18.Location = New Point(203, 195)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(56, 16)
-        Label18.TabIndex = 8
-        Label18.Text = "₱ 6,900"
+        lblBasicHours.AutoSize = True
+        lblBasicHours.Font = New Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblBasicHours.Location = New Point(203, 182)
+        lblBasicHours.Name = "lblBasicHours"
+        lblBasicHours.Size = New Size(72, 16)
+        lblBasicHours.TabIndex = 8
+        lblBasicHours.Text = "69420 hrs"
         ' 
         ' RoundedPanel6
         ' 
         RoundedPanel6.BackColor = Color.FromArgb(CByte(192), CByte(255), CByte(192))
-        RoundedPanel6.Controls.Add(Label33)
+        RoundedPanel6.Controls.Add(lblNetPay)
         RoundedPanel6.Controls.Add(Label32)
         RoundedPanel6.Location = New Point(10, 301)
         RoundedPanel6.Name = "RoundedPanel6"
-        RoundedPanel6.Size = New Size(672, 37)
+        RoundedPanel6.Size = New Size(731, 37)
         RoundedPanel6.TabIndex = 7
         ' 
-        ' Label33
+        ' lblNetPay
         ' 
-        Label33.AutoSize = True
-        Label33.Font = New Font("Century", 12.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label33.Location = New Point(581, 7)
-        Label33.Name = "Label33"
-        Label33.Size = New Size(74, 21)
-        Label33.TabIndex = 18
-        Label33.Text = "₱ 6,129"
+        lblNetPay.AutoSize = True
+        lblNetPay.Font = New Font("Century", 12.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblNetPay.Location = New Point(595, 8)
+        lblNetPay.Name = "lblNetPay"
+        lblNetPay.Size = New Size(74, 21)
+        lblNetPay.TabIndex = 18
+        lblNetPay.Text = "₱ 6,129"
         ' 
         ' Label32
         ' 
-        Label32.Font = New Font("Century", 12.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label32.AutoSize = True
+        Label32.Font = New Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label32.Location = New Point(26, 7)
         Label32.Name = "Label32"
-        Label32.Size = New Size(159, 21)
+        Label32.Size = New Size(87, 22)
         Label32.TabIndex = 0
-        Label32.Text = "Net Pay"
+        Label32.Text = "Net Pay:"
         ' 
         ' RoundedPanel5
         ' 
         RoundedPanel5.BackColor = SystemColors.ControlLight
+        RoundedPanel5.Controls.Add(Label2)
+        RoundedPanel5.Controls.Add(lblPayPeriodEnd)
         RoundedPanel5.Controls.Add(Label12)
-        RoundedPanel5.Controls.Add(Label13)
+        RoundedPanel5.Controls.Add(lblPayPeriodStart)
         RoundedPanel5.Controls.Add(Label10)
-        RoundedPanel5.Controls.Add(Label11)
+        RoundedPanel5.Controls.Add(namelbl)
         RoundedPanel5.Controls.Add(Label8)
         RoundedPanel5.Controls.Add(Label6)
-        RoundedPanel5.Controls.Add(Label9)
-        RoundedPanel5.Controls.Add(Label7)
-        RoundedPanel5.Location = New Point(9, 57)
+        RoundedPanel5.Controls.Add(poslbl)
+        RoundedPanel5.Controls.Add(idlbl)
+        RoundedPanel5.Location = New Point(11, 42)
         RoundedPanel5.Name = "RoundedPanel5"
-        RoundedPanel5.Size = New Size(676, 112)
+        RoundedPanel5.Size = New Size(730, 112)
         RoundedPanel5.TabIndex = 6
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.ForeColor = SystemColors.ButtonShadow
+        Label2.Location = New Point(252, 56)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(109, 20)
+        Label2.TabIndex = 10
+        Label2.Text = "End of Pay Period:"
+        ' 
+        ' lblPayPeriodEnd
+        ' 
+        lblPayPeriodEnd.AutoSize = True
+        lblPayPeriodEnd.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPayPeriodEnd.Location = New Point(252, 75)
+        lblPayPeriodEnd.Name = "lblPayPeriodEnd"
+        lblPayPeriodEnd.Size = New Size(53, 19)
+        lblPayPeriodEnd.TabIndex = 11
+        lblPayPeriodEnd.Text = "bukas"
         ' 
         ' Label12
         ' 
+        Label12.AutoSize = True
         Label12.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label12.ForeColor = SystemColors.ButtonShadow
-        Label12.Location = New Point(499, 56)
+        Label12.Location = New Point(14, 56)
         Label12.Name = "Label12"
-        Label12.Size = New Size(113, 23)
+        Label12.Size = New Size(112, 20)
         Label12.TabIndex = 8
-        Label12.Text = "Sex:"
+        Label12.Text = "Start of Pay Period:"
         ' 
-        ' Label13
+        ' lblPayPeriodStart
         ' 
-        Label13.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label13.Location = New Point(499, 75)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(174, 23)
-        Label13.TabIndex = 9
-        Label13.Text = "Male"
+        lblPayPeriodStart.AutoSize = True
+        lblPayPeriodStart.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPayPeriodStart.Location = New Point(14, 75)
+        lblPayPeriodStart.Name = "lblPayPeriodStart"
+        lblPayPeriodStart.Size = New Size(75, 19)
+        lblPayPeriodStart.TabIndex = 9
+        lblPayPeriodStart.Text = "kahapon"
         ' 
         ' Label10
         ' 
         Label10.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label10.ForeColor = SystemColors.ButtonShadow
-        Label10.Location = New Point(499, 10)
+        Label10.Location = New Point(252, 10)
         Label10.Name = "Label10"
         Label10.Size = New Size(113, 23)
         Label10.TabIndex = 6
         Label10.Text = "Employee Name:"
         ' 
-        ' Label11
+        ' namelbl
         ' 
-        Label11.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label11.Location = New Point(499, 29)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(174, 23)
-        Label11.TabIndex = 7
-        Label11.Text = "Gian Dela Torre"
+        namelbl.AutoSize = True
+        namelbl.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        namelbl.Location = New Point(252, 29)
+        namelbl.Name = "namelbl"
+        namelbl.Size = New Size(124, 19)
+        namelbl.TabIndex = 7
+        namelbl.Text = "Gian Dela Torre"
         ' 
         ' Label8
         ' 
         Label8.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label8.ForeColor = SystemColors.ButtonShadow
-        Label8.Location = New Point(11, 54)
+        Label8.Location = New Point(528, 10)
         Label8.Name = "Label8"
         Label8.Size = New Size(84, 23)
         Label8.TabIndex = 5
@@ -368,54 +434,58 @@ Partial Class EmployeePayslip
         ' 
         Label6.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label6.ForeColor = SystemColors.ButtonShadow
-        Label6.Location = New Point(11, 10)
+        Label6.Location = New Point(14, 10)
         Label6.Name = "Label6"
         Label6.Size = New Size(84, 23)
         Label6.TabIndex = 5
         Label6.Text = "Employee ID:"
         ' 
-        ' Label9
+        ' poslbl
         ' 
-        Label9.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label9.Location = New Point(11, 75)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(174, 23)
-        Label9.TabIndex = 5
-        Label9.Text = "Employee"
+        poslbl.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        poslbl.Location = New Point(528, 29)
+        poslbl.Name = "poslbl"
+        poslbl.Size = New Size(179, 65)
+        poslbl.TabIndex = 5
+        poslbl.Text = "Employee"
         ' 
-        ' Label7
+        ' idlbl
         ' 
-        Label7.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(11, 29)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(174, 23)
-        Label7.TabIndex = 5
-        Label7.Text = "EMP - 1234"
+        idlbl.AutoSize = True
+        idlbl.Font = New Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        idlbl.Location = New Point(14, 29)
+        idlbl.Name = "idlbl"
+        idlbl.Size = New Size(73, 19)
+        idlbl.TabIndex = 5
+        idlbl.Text = "EM-1234"
         ' 
         ' Label20
         ' 
+        Label20.AutoSize = True
         Label20.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label20.Location = New Point(438, 172)
+        Label20.Location = New Point(438, 157)
         Label20.Name = "Label20"
-        Label20.Size = New Size(174, 23)
+        Label20.Size = New Size(99, 18)
         Label20.TabIndex = 5
         Label20.Text = "Deductions"
         ' 
         ' Label28
         ' 
+        Label28.AutoSize = True
         Label28.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label28.Location = New Point(14, 275)
+        Label28.Location = New Point(14, 278)
         Label28.Name = "Label28"
-        Label28.Size = New Size(174, 23)
+        Label28.Size = New Size(128, 18)
         Label28.TabIndex = 5
         Label28.Text = "Total Earnings:"
         ' 
         ' Label14
         ' 
+        Label14.AutoSize = True
         Label14.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(14, 172)
+        Label14.Location = New Point(25, 157)
         Label14.Name = "Label14"
-        Label14.Size = New Size(174, 23)
+        Label14.Size = New Size(79, 18)
         Label14.TabIndex = 5
         Label14.Text = "Earnings"
         ' 
@@ -426,47 +496,29 @@ Partial Class EmployeePayslip
         Label4.Name = "Label4"
         Label4.Size = New Size(174, 23)
         Label4.TabIndex = 5
-        Label4.Text = "Payslip for"
+        Label4.Text = "Payslip"
         ' 
         ' Label17
         ' 
+        Label17.AutoSize = True
         Label17.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label17.ForeColor = SystemColors.ButtonShadow
-        Label17.Location = New Point(24, 215)
+        Label17.Location = New Point(25, 249)
         Label17.Name = "Label17"
-        Label17.Size = New Size(154, 23)
+        Label17.Size = New Size(85, 20)
         Label17.TabIndex = 5
         Label17.Text = "Overtime Pay:"
         ' 
         ' Label15
         ' 
+        Label15.AutoSize = True
         Label15.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label15.ForeColor = SystemColors.ButtonShadow
-        Label15.Location = New Point(25, 193)
+        Label15.Location = New Point(25, 203)
         Label15.Name = "Label15"
-        Label15.Size = New Size(104, 23)
+        Label15.Size = New Size(83, 20)
         Label15.TabIndex = 5
         Label15.Text = "Basic Salary :"
-        ' 
-        ' Label16
-        ' 
-        Label16.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label16.ForeColor = SystemColors.ActiveCaptionText
-        Label16.Location = New Point(25, 195)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(153, 23)
-        Label16.TabIndex = 5
-        Label16.Text = "Basic Earnings"
-        ' 
-        ' Label5
-        ' 
-        Label5.Font = New Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = SystemColors.ButtonShadow
-        Label5.Location = New Point(12, 34)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(209, 23)
-        Label5.TabIndex = 5
-        Label5.Text = "Employee Payment Details"
         ' 
         ' btnBack
         ' 
@@ -634,11 +686,32 @@ Partial Class EmployeePayslip
         Label1.Text = "Employee Portal"
         Label1.TextAlign = ContentAlignment.MiddleLeft
         ' 
+        ' lblPayslipId
+        ' 
+        lblPayslipId.AutoSize = True
+        lblPayslipId.Location = New Point(950, 625)
+        lblPayslipId.Name = "lblPayslipId"
+        lblPayslipId.Size = New Size(41, 15)
+        lblPayslipId.TabIndex = 11
+        lblPayslipId.Text = "Label5"
+        lblPayslipId.Visible = False
+        ' 
+        ' btnGeneratePDF
+        ' 
+        btnGeneratePDF.FlatStyle = FlatStyle.Popup
+        btnGeneratePDF.Location = New Point(576, 58)
+        btnGeneratePDF.Name = "btnGeneratePDF"
+        btnGeneratePDF.Size = New Size(90, 23)
+        btnGeneratePDF.TabIndex = 7
+        btnGeneratePDF.Text = "Generate PDF"
+        btnGeneratePDF.UseVisualStyleBackColor = True
+        ' 
         ' EmployeePayslip
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1018, 660)
+        Controls.Add(lblPayslipId)
         Controls.Add(RoundedPanel1)
         Controls.Add(RoundedPanel2)
         Controls.Add(btnBack)
@@ -647,53 +720,52 @@ Partial Class EmployeePayslip
         Name = "EmployeePayslip"
         Text = "Payslip"
         RoundedPanel3.ResumeLayout(False)
+        RoundedPanel3.PerformLayout()
         RoundedPanel4.ResumeLayout(False)
         RoundedPanel4.PerformLayout()
         RoundedPanel6.ResumeLayout(False)
         RoundedPanel6.PerformLayout()
         RoundedPanel5.ResumeLayout(False)
+        RoundedPanel5.PerformLayout()
         RoundedPanel2.ResumeLayout(False)
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
     Friend WithEvents RoundedPanel3 As RoundedPanel
     Friend WithEvents pays As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents RoundedPanel4 As RoundedPanel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents RoundedPanel5 As RoundedPanel
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents idlbl As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents poslbl As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
+    Friend WithEvents namelbl As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents lblPayPeriodStart As Label
     Friend WithEvents RoundedPanel6 As RoundedPanel
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label19 As Label
+    Friend WithEvents lblBasicHours As Label
+    Friend WithEvents lblOTHours As Label
     Friend WithEvents Label20 As Label
-    Friend WithEvents Label29 As Label
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Label22 As Label
+    Friend WithEvents lblGrossPay As Label
+    Friend WithEvents lblPagibig As Label
+    Friend WithEvents lblSSS As Label
+    Friend WithEvents lblIncomeTax As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents Label25 As Label
     Friend WithEvents Label28 As Label
-    Friend WithEvents Label30 As Label
+    Friend WithEvents lblTotalDeductions As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Label32 As Label
-    Friend WithEvents Label33 As Label
+    Friend WithEvents lblNetPay As Label
     Friend WithEvents btnBack As Button
     Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents checkInbtn As RoundedButton
@@ -706,4 +778,13 @@ Partial Class EmployeePayslip
     Friend WithEvents empIDlbl As Label
     Friend WithEvents welcomelbl As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents cmbPayslipRecords As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblPayPeriodEnd As Label
+    Friend WithEvents lblBasicPay As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents lblOTPay As Label
+    Friend WithEvents lblPayslipId As Label
+    Friend WithEvents btnGeneratePDF As Button
 End Class
