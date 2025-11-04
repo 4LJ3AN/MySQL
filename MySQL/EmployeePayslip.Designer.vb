@@ -23,6 +23,7 @@ Partial Class EmployeePayslip
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         RoundedPanel3 = New RoundedPanel()
+        btnGeneratePDF = New Button()
         cmbPayslipRecords = New ComboBox()
         Label3 = New Label()
         pays = New Label()
@@ -75,7 +76,6 @@ Partial Class EmployeePayslip
         welcomelbl = New Label()
         Label1 = New Label()
         lblPayslipId = New Label()
-        btnGeneratePDF = New Button()
         RoundedPanel3.SuspendLayout()
         RoundedPanel4.SuspendLayout()
         RoundedPanel6.SuspendLayout()
@@ -94,6 +94,16 @@ Partial Class EmployeePayslip
         RoundedPanel3.Name = "RoundedPanel3"
         RoundedPanel3.Size = New Size(694, 100)
         RoundedPanel3.TabIndex = 4
+        ' 
+        ' btnGeneratePDF
+        ' 
+        btnGeneratePDF.FlatStyle = FlatStyle.Flat
+        btnGeneratePDF.Location = New Point(576, 58)
+        btnGeneratePDF.Name = "btnGeneratePDF"
+        btnGeneratePDF.Size = New Size(90, 23)
+        btnGeneratePDF.TabIndex = 7
+        btnGeneratePDF.Text = "Generate PDF"
+        btnGeneratePDF.UseVisualStyleBackColor = True
         ' 
         ' cmbPayslipRecords
         ' 
@@ -695,16 +705,6 @@ Partial Class EmployeePayslip
         lblPayslipId.TabIndex = 11
         lblPayslipId.Text = "Label5"
         lblPayslipId.Visible = False
-        ' 
-        ' btnGeneratePDF
-        ' 
-        btnGeneratePDF.FlatStyle = FlatStyle.Popup
-        btnGeneratePDF.Location = New Point(576, 58)
-        btnGeneratePDF.Name = "btnGeneratePDF"
-        btnGeneratePDF.Size = New Size(90, 23)
-        btnGeneratePDF.TabIndex = 7
-        btnGeneratePDF.Text = "Generate PDF"
-        btnGeneratePDF.UseVisualStyleBackColor = True
         ' 
         ' EmployeePayslip
         ' 

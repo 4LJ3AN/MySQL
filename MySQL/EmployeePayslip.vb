@@ -9,6 +9,18 @@ Imports MySQL.Data.MySqlClient
 Public Class EmployeePayslip
 
     ' ===========================================================
+    ' = FORM LOAD
+    ' ===========================================================
+    Private Sub EmployeePayslip_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        namelbl.Text = GetEmployeeFullName(empIDlbl.Text.Replace("Employee ID: ", "").Trim())
+        idlbl.Text = empIDlbl.Text.Replace("Employee ID: ", "").Trim()
+        poslbl.Text = positionlbl.Text.Replace("Position: ", "").Trim()
+        CheckAndGeneratePayslips()
+        LoadPayslipRecords(empIDlbl.Text.Replace("Employee ID: ", "").Trim())
+        TogglePayslipDetails(False)
+    End Sub
+
+    ' ===========================================================
     ' = FETCH FULL EMPLOYEE NAME BY ID
     ' ===========================================================
     Private Function GetEmployeeFullName(empId As String) As String
@@ -43,75 +55,96 @@ Public Class EmployeePayslip
     End Function
 
     ' ===========================================================
-    ' = FORM LOAD
-    ' ===========================================================
-    Private Sub EmployeePayslip_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        namelbl.Text = GetEmployeeFullName(empIDlbl.Text.Replace("Employee ID: ", "").Trim())
-        idlbl.Text = empIDlbl.Text.Replace("Employee ID: ", "").Trim()
-        poslbl.Text = positionlbl.Text.Replace("Position: ", "").Trim()
-        CheckAndGeneratePayslips()
-        LoadPayslipRecords(empIDlbl.Text.Replace("Employee ID: ", "").Trim())
-        TogglePayslipDetails(False)
-    End Sub
-
-    ' ===========================================================
     ' = PAYSLIP AUTO-GENERATION (Runs only on the 15th)
     ' ===========================================================
-    Public Sub CheckAndGeneratePayslips()
+
+    Public Sub CheckAndGeneratePayslips(Optional forceRun As Boolean = False)
         Dim today As Date = Date.Now
-        If today.Day = 15 Then
+        If today.Day = 15 OrElse forceRun Then
             GeneratePayslipsForAllEmployees()
         Else
             Debug.WriteLine("[INFO] Today is not the 15th. Payslips will not be generated.")
         End If
     End Sub
 
-    Private Sub GeneratePayslipsForAllEmployees()
+    Private Sub GeneratePayslipsForAllEmployees(Optional currentDate As Date = Nothing)
+        If currentDate = Nothing Then
+            currentDate = Date.Now
+        End If
+
         Try
             Using conn As MySqlConnection = (New DatabaseConnection).GetConnection()
                 conn.Open()
 
-                Dim checkCmd As New MySqlCommand("
-                    SELECT COUNT(*) FROM payslips 
-                    WHERE MONTH(generated_on) = MONTH(CURDATE())
-                    AND YEAR(generated_on) = YEAR(CURDATE());
-                ", conn)
+                ' Calculate payroll period: ALWAYS use previous period (15th of previous month to 14th of current month)
+                Dim periodStart As Date
+                Dim periodEnd As Date
 
-                Dim existing As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
-                If existing > 0 Then
-                    Debug.WriteLine("[INFO] Payslips already generated for this month’s 15th.")
-                    Return
+                If currentDate.Day >= 15 Then
+                    ' If it's the 15th or later, generate for current period (15th of current month to 14th of next month)
+                    periodStart = New Date(currentDate.Year, currentDate.Month, 15)
+                    periodEnd = New Date(currentDate.Year, currentDate.Month, 14).AddMonths(1)
+                Else
+                    ' If it's before the 15th (force run), generate for previous period (15th of previous month to 14th of current month)
+                    periodStart = New Date(currentDate.Year, currentDate.Month, 15).AddMonths(-1)
+                    periodEnd = New Date(currentDate.Year, currentDate.Month, 14)
                 End If
 
+                Debug.WriteLine($"[INFO] Generating payslips for period: {periodStart:yyyy-MM-dd} to {periodEnd:yyyy-MM-dd}")
+
+                ' Load all employees
                 Dim empCmd As New MySqlCommand("SELECT id, hourlyrate FROM employees", conn)
                 Using reader As MySqlDataReader = empCmd.ExecuteReader()
-                    Dim empList As New List(Of Tuple(Of Integer, Double))
+                    Dim empList As New List(Of Tuple(Of String, Double))
                     While reader.Read()
-                        empList.Add(New Tuple(Of Integer, Double)(reader("id"), reader("hourlyrate")))
+                        empList.Add(New Tuple(Of String, Double)(
+                    reader("id").ToString(),
+                    Convert.ToDouble(reader("hourlyrate"))
+                ))
                     End While
                     reader.Close()
 
+                    ' Generate payslips for each employee
                     For Each emp In empList
-                        Dim empId As Integer = emp.Item1
+                        Dim empId As String = emp.Item1
                         Dim hourlyRate As Double = emp.Item2
+
+                        ' Check if THIS EMPLOYEE already has a payslip for this period
+                        Dim checkCmd As New MySqlCommand("
+                        SELECT COUNT(*) FROM payslips 
+                        WHERE employeeid = @empid 
+                        AND period_start = @start 
+                        AND period_end = @end;
+                    ", conn)
+                        checkCmd.Parameters.AddWithValue("@empid", empId)
+                        checkCmd.Parameters.AddWithValue("@start", periodStart)
+                        checkCmd.Parameters.AddWithValue("@end", periodEnd)
+
+                        Dim existing As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
+                        If existing > 0 Then
+                            Debug.WriteLine($"[INFO] Payslip already exists for employee {empId} for period {periodStart:MMM dd} - {periodEnd:MMM dd}")
+                            Continue For ' Skip to next employee
+                        End If
+
                         Dim basicHours As Double = 0.0
                         Dim otHours As Double = 0.0
 
-                        Dim grossPay As Double = ComputeGrossPay(empId, hourlyRate, conn, basicHours, otHours)
+                        ' Pass the period to ComputeGrossPay
+                        Dim grossPay As Double = ComputeGrossPay(empId, hourlyRate, conn, periodStart, periodEnd, basicHours, otHours)
+                        Debug.WriteLine($"Employee {empId} | BasicHours={basicHours}, OTHours={otHours}, Gross={grossPay}")
+
                         Dim incomeTax As Double = grossPay * 0.1
                         Dim pagibig As Double = grossPay * 0.01
                         Dim sss As Double = grossPay * 0.02
                         Dim totalDeductions As Double = incomeTax + pagibig + sss
                         Dim netPay As Double = grossPay - totalDeductions
-                        Dim startDate As New Date(Date.Now.Year, Date.Now.Month, 1)
-                        Dim endDate As New Date(Date.Now.Year, Date.Now.Month, 15)
 
                         Dim insertCmd As New MySqlCommand("
-                            INSERT INTO payslips 
-                                (employeeid, basic_hours, ot_hours, gross_pay, income_tax, pagibig, sss, total_deductions, net_pay, generated_on, period_start, period_end)
-                            VALUES 
-                                (@empid, @basic, @ot, @gross, @tax, @pagibig, @sss, @ded, @net, NOW(), @periodStart, @periodEnd);
-                        ", conn)
+                    INSERT INTO payslips 
+                        (employeeid, basic_hours, ot_hours, gross_pay, income_tax, pagibig, sss, total_deductions, net_pay, generated_on, period_start, period_end)
+                    VALUES 
+                        (@empid, @basic, @ot, @gross, @tax, @pagibig, @sss, @ded, @net, NOW(), @periodStart, @periodEnd);
+                ", conn)
 
                         insertCmd.Parameters.AddWithValue("@empid", empId)
                         insertCmd.Parameters.AddWithValue("@basic", basicHours)
@@ -122,40 +155,49 @@ Public Class EmployeePayslip
                         insertCmd.Parameters.AddWithValue("@sss", sss)
                         insertCmd.Parameters.AddWithValue("@ded", totalDeductions)
                         insertCmd.Parameters.AddWithValue("@net", netPay)
-                        insertCmd.Parameters.AddWithValue("@periodStart", startDate)
-                        insertCmd.Parameters.AddWithValue("@periodEnd", endDate)
+                        insertCmd.Parameters.AddWithValue("@periodStart", periodStart)
+                        insertCmd.Parameters.AddWithValue("@periodEnd", periodEnd)
                         insertCmd.ExecuteNonQuery()
+
+                        Debug.WriteLine($"[SUCCESS] Payslip generated for employee {empId}")
                     Next
                 End Using
             End Using
 
+            Debug.WriteLine("[SUCCESS] Payslip generation process completed.")
         Catch ex As Exception
             Debug.WriteLine($"[ERROR] Error generating payslips: {ex.Message}")
         End Try
     End Sub
 
+
     ' ===========================================================
-    ' = GROSS PAY CALCULATION
+    ' = GROSS PAY CALCULATION (Uses pay period dates)
     ' ===========================================================
-    Private Function ComputeGrossPay(empId As Integer, hourlyRate As Double, conn As MySqlConnection, ByRef basicHours As Double, ByRef otHours As Double) As Double
-        Dim startDate As New Date(Date.Now.Year, Date.Now.Month, 1)
-        Dim endDate As New Date(Date.Now.Year, Date.Now.Month, 15)
+    Private Function ComputeGrossPay(empId As String, hourlyRate As Double, conn As MySqlConnection,
+                           periodStart As Date, periodEnd As Date,
+                           ByRef basicHours As Double, ByRef otHours As Double) As Double
 
         Dim cmd As New MySqlCommand("
-            SELECT timein, timeout, totalhours
-            FROM attendance 
-            WHERE id = @empid 
-            AND date BETWEEN @startDate AND @endDate;
-        ", conn)
+    SELECT timein, timeout, totalhours, date
+    FROM attendance 
+    WHERE employeeid = @empid 
+    AND date BETWEEN @startDate AND @endDate
+    AND DAYOFWEEK(date) <> 1;  -- Exclude Sundays
+", conn)
         cmd.Parameters.AddWithValue("@empid", empId)
-        cmd.Parameters.AddWithValue("@startDate", startDate.ToString("yyyy-MM-dd"))
-        cmd.Parameters.AddWithValue("@endDate", endDate.ToString("yyyy-MM-dd"))
+        cmd.Parameters.AddWithValue("@startDate", periodStart.ToString("yyyy-MM-dd"))
+        cmd.Parameters.AddWithValue("@endDate", periodEnd.ToString("yyyy-MM-dd"))
 
         basicHours = 0.0
         otHours = 0.0
 
+        Debug.WriteLine($"[DEBUG] Looking for attendance records for {empId} between {periodStart:yyyy-MM-dd} and {periodEnd:yyyy-MM-dd}")
+
         Using reader As MySqlDataReader = cmd.ExecuteReader()
+            Dim recordCount As Integer = 0
             While reader.Read()
+                recordCount += 1
                 If Not IsDBNull(reader("timein")) Then
                     Dim timeIn As DateTime = Convert.ToDateTime(reader("timein"))
                     Dim timeOut As DateTime = If(IsDBNull(reader("timeout")), timeIn.AddHours(6), Convert.ToDateTime(reader("timeout")))
@@ -165,11 +207,26 @@ Public Class EmployeePayslip
 
                     basicHours += regularHours
                     otHours += overtimeHours
+
+                    Debug.WriteLine($"  Date: {reader("date")}, TimeIn: {timeIn:HH:mm}, TimeOut: {timeOut:HH:mm}, TotalHrs: {totalHours:F2}, Regular: {regularHours:F2}, OT: {overtimeHours:F2}")
                 End If
             End While
+
+            Debug.WriteLine($"[DEBUG] Found {recordCount} attendance records for {empId}")
+
+            If recordCount = 0 Then
+                Debug.WriteLine($"[DEBUG] NO ATTENDANCE RECORDS FOUND for the specified period!")
+            End If
         End Using
 
-        Return (basicHours * hourlyRate) + (otHours * hourlyRate * 1.25)
+        ' Calculate pay
+        Dim basicPay As Double = basicHours * hourlyRate
+        Dim otPay As Double = otHours * hourlyRate * 1.25
+        Dim grossPay As Double = basicPay + otPay
+
+        Debug.WriteLine($"  Summary - Basic: {basicHours:F2} hrs (₱{basicPay:F2}), OT: {otHours:F2} hrs (₱{otPay:F2}), Gross: ₱{grossPay:F2}")
+
+        Return grossPay
     End Function
 
     ' ===========================================================
@@ -181,13 +238,13 @@ Public Class EmployeePayslip
                 conn.Open()
 
                 Dim query As String = "
-                    SELECT gross_pay, basic_hours, ot_hours,
-                           income_tax, pagibig, sss, total_deductions, net_pay,
-                           period_start, period_end, e.hourlyrate
-                    FROM payslips p
-                    JOIN employees e ON p.employeeid = e.id
-                    WHERE payslip_id = @payslipId;
-                "
+                SELECT gross_pay, basic_hours, ot_hours,
+                       income_tax, pagibig, sss, total_deductions, net_pay,
+                       period_start, period_end, e.hourlyrate
+                FROM payslips p
+                JOIN employees e ON p.employeeid = e.id
+                WHERE payslip_id = @payslipId;
+            "
 
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@payslipId", payslipId)
@@ -209,8 +266,12 @@ Public Class EmployeePayslip
                             lblSSS.Text = $"₱{Convert.ToDecimal(reader("sss")):N2}"
                             lblTotalDeductions.Text = $"₱{Convert.ToDecimal(reader("total_deductions")):N2}"
                             lblNetPay.Text = $"₱{Convert.ToDecimal(reader("net_pay")):N2}"
-                            lblPayPeriodStart.Text = Convert.ToDateTime(reader("period_start")).ToString("MMMM dd, yyyy")
-                            lblPayPeriodEnd.Text = Convert.ToDateTime(reader("period_end")).ToString("MMMM dd, yyyy")
+
+                            ' Format the period display to show the correct structure
+                            Dim periodStart As Date = Convert.ToDateTime(reader("period_start"))
+                            Dim periodEnd As Date = Convert.ToDateTime(reader("period_end"))
+                            lblPayPeriodStart.Text = periodStart.ToString("MMMM dd, yyyy")
+                            lblPayPeriodEnd.Text = periodEnd.ToString("MMMM dd, yyyy")
 
                             TogglePayslipDetails(True)
                         End If
